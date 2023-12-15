@@ -1,0 +1,30 @@
+<div class="card">
+    <p-table [value]="citesList" [tableStyle]="{ 'min-width': '50rem' }">
+        <ng-template pTemplate="header">
+            <tr>
+                <!-- <th pSortableColumn="id" style="width:20%">Id<p-sortIcon field="id"></p-sortIcon></th> -->
+                <th pSortableColumn="dia" style="width:20%">Dia<p-sortIcon field="dia"></p-sortIcon></th>
+                <th>Hora</th>
+                <th>Sol·licitant</th>
+                <th>Estri</th>
+                <th>Voluntari</th>
+                <th>ACCIÓ</th>
+            </tr>
+        </ng-template>
+        <ng-template pTemplate="body" let-cita>
+            <tr>
+                <!-- <td>{{ cita.id }}</td> -->
+                <td>{{ cita.dia }}</td>
+                <td>{{ cita.hora }}</td>
+                <td>{{ cita.sollicitant }}</td>
+                <td>{{ cita.estri }}</td>
+                <!-- <td>{{ cita.voluntari }}</td> -->
+                <td>
+                    <p-tag [value]="cita.voluntari==''?'pendent':cita.voluntari" 
+                    [severity]="cita.voluntari==''?'warning':'primary'"></p-tag>
+                </td>
+                <button pButton pRipple label="Submit" class="p-button-success"></button>
+            </tr>
+        </ng-template>
+    </p-table>
+</div>
