@@ -8,12 +8,13 @@ import { TagModule } from 'primeng/tag';
 
 
 import { ICita } from '../ICita';
+import { RouterLink, RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'cites-llista-cites',
   standalone: true,
   imports: [
-    CommonModule,TableModule,ButtonModule,TagModule
+    CommonModule,TableModule,ButtonModule,TagModule, RouterLink, RouterOutlet
   ],
   templateUrl: './llista-cites.component.html',
   styleUrl: './llista-cites.component.css',

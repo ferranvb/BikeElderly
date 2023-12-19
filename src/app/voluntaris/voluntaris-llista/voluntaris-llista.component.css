@@ -1,0 +1,17 @@
+:host {
+  display: block;
+}
+
+body {
+  .ui-table {
+      .ui-table-tbody {
+          > tr {
+              background: #1699ef;
+          }
+
+          > tr:nth-child(even) {
+              background-color: #ffffff;
+          }
+      }
+  }
+}

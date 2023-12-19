@@ -1,0 +1,28 @@
+<div class="card">
+    <h2>Voluntaris</h2>
+           
+    <p-table [value]="voluntarisList" styleClass="p-datatable-striped" [tableStyle]="{ 'min-width': '50rem' }">
+        <ng-template pTemplate="header">
+            <tr>
+                <!-- <th pSortableColumn="id" style="width:20%">Id<p-sortIcon field="id"></p-sortIcon></th> -->
+                <th>Id</th>
+                <th>Nom</th>
+                <th>Cognom1</th>
+                <th>Cognom2</th>
+                <th>Telèfon</th>
+                <th>ACCIÓ</th>
+            </tr>
+        </ng-template>
+        <ng-template pTemplate="body" let-voluntari>
+            <tr>
+                <!-- <td>{{ cita.id }}</td> -->
+                <td>{{ voluntari.id_voluntari }}</td>
+                <td>{{ voluntari.nom }}</td>
+                <td>{{ voluntari.cognom1 }}</td>
+                <td>{{ voluntari.cognom2 }}</td>
+                <td>{{ voluntari.telefon_contacte }}</td>
+                <td><button pButton pRipple label="Submit" class="p-button-success"></button></td>
+            </tr>
+        </ng-template>
+    </p-table>
+</div>
