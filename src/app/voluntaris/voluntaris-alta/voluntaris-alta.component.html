@@ -5,14 +5,14 @@
     <div class="field grid">
         <span class="p-float-label">
             <input id="nom" pInputText type="text" formControlName="nom" class="p-inputtext-sm">
-            <label for="nom">Nom </label>
+            <label for="nom">Nom * </label>
         </span>
     </div>
     <br>
     <div class="field grid">
         <span class="p-float-label">    
             <input id="cognom1" pInputText type="text" formControlName="cognom1"  class="p-inputtext-sm">
-            <label for="cognom1">Cognom1 </label>    
+            <label for="cognom1">Cognom1 *</label>    
         </span>
     </div>
     <br>
@@ -32,29 +32,52 @@
             <label for="data_naixement">Data naixement </label>    
         </span>
     </div>
-
-    <div class="field grid">
-        <span class="p-float-label">
-            <input id="telefon_contacte" pInputText type="text" formControlName="telefon_contacte"   class="p-inputtext-sm">
-            <label for="telefon_contacte">Telèfon contacte </label>    
-        </span>
-    </div>
 </div>
 <br>
 <div class="formgroup-inline">
     <div class="field grid">
         <span class="p-float-label">
-            <input id="email" pInputText type="text" formControlName="email"   class="p-inputtext-sm">
-            <label for="email">Correu electrònic</label>    
+            <input id="telefon_contacte*" pInputText type="text" formControlName="telefon_contacte"   class="p-inputtext-sm">
+            <label for="telefon_contacte">Telèfon contacte *</label>    
+        </span>
+    </div>
+
+    <div class="field grid">
+        <span class="p-float-label">
+            <input id="email*" pInputText type="text" formControlName="email"   class="p-inputtext-sm">
+            <label for="email">Correu electrònic *</label>    
         </span>
     </div>
 </div>
 <br>
 <div class="formgroup-inline">
     <span class="p-float-label">
-          <p-dropdown formControlName="rol" [options]="cities" optionLabel="name" inputId="float-label"></p-dropdown> 
+          <p-dropdown formControlName="rol" [options]="cities" optionLabel="rol" inputId="float-label"></p-dropdown> 
           <label for="float-label">Tria rol</label>
      </span>
 </div>
+<br>
+<div formGroupName="address">
+    <h2>Addreça</h2>
+    <span class="p-float-label">
+        <input id="street" pInputText type="text" formControlName="street"   class="p-inputtext-sm">
+        <label for="street">Adreça</label> 
+    </span>
+  
+    <span class="p-float-label">
+        <input id="city" pInputText type="text" formControlName="city">
+        <label for="city">Ciutat </label>
+    </span>
+    <span class="p-float-label">
+        <input id="zip" pInputText type="text" formControlName="state">
+        <label for="zip">Codi Postal </label>       
+    </span>
+  </div>
 
+
+<br>
+<div class="formgroup-inline">
+    <button pButton pRipple label="Submit" class="p-button-success"
+    [disabled]="!profileForm.valid" (click)="addVolunteer()"></button>
+</div>
 </form>
