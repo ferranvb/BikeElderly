@@ -2,13 +2,13 @@ import { CommonModule } from '@angular/common';
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 
 @Component({
-  selector: 'app-footer',
+  selector: 'app-panell-resum',
   standalone: true,
   imports: [
     CommonModule,
   ],
-  templateUrl: './app-footer.component.html',
-  styleUrl: './app-footer.component.css',
+  templateUrl: './panell-resum.component.html',
+  styleUrl: './panell-resum.component.css',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class AppFooterComponent { }
+export class PanellResumComponent { }

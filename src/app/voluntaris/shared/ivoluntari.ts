@@ -9,7 +9,7 @@ export interface Ivoluntari {
     data_naixement? : string,
     urlFoto?  : string,
     telefon_contacte? : string,
-    Email?: string,
+    email?: string,
     associacio? : number,
     actiu? : boolean,
 }

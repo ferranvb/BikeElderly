@@ -1,0 +1,10 @@
+:host {
+  display: block;
+}
+
+.p-panelmenu-icon {
+  order: 1; 
+ }
+ .p-menuitem-text {
+  flex-grow: 1; 
+ }
