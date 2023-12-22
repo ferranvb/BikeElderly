@@ -25,3 +25,12 @@ Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To u
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+
+
+# Json Server
+Instruccions: https://www.freecodecamp.org/news/json-server-for-frontend-development/
+1. npm install -g json-server
+2. create a .json file extension. Exemple: volunteers.json
+3. start de server: json-server --watch volunteers.json
+
+
