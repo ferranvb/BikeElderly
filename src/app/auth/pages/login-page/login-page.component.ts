@@ -1,8 +1,9 @@
 import { CommonModule } from '@angular/common';
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
 import { AuthService } from '../../services/auth.service';
 import { Route, Router, RouterModule } from '@angular/router';
 import { CardModule } from 'primeng/card';
+import { User } from '../../interface/user';
 
 @Component({
   selector: 'app-login-page',
@@ -16,6 +17,8 @@ import { CardModule } from 'primeng/card';
 })
 export class LoginPageComponent {
 
+  private user?: User;
+
   constructor(private authService:AuthService, private router: Router) {}
 
   onLogin(): void {
@@ -26,4 +29,12 @@ export class LoginPageComponent {
 
      
   }
+
+  // @Input()
+  // set id(userId: number) {
+  //   this.user = this.authService.getUser(userId)
+  //     .subscribe( user => {
+
+  //     });
+  // }
  }

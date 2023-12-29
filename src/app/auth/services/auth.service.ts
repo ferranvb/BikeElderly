@@ -8,7 +8,6 @@ import { Observable, tap } from 'rxjs';
   providedIn: 'root'
 })
 export class AuthService {
-
   private baseUrl = environment.baseUrl;  
   private user?: User ;
 
@@ -27,6 +26,15 @@ export class AuthService {
         tap( user =>  this.user = user),
         tap ( user => localStorage.setItem('token', user.id.toString() ))
       );
-  } 
+  }
+  
+  getUser(userId: number):  Observable<User> {
+    return this.http.get<User>(`${this.baseUrl}/users/1`)
+      .pipe(
+        tap( user =>  this.user = user),
+        tap ( user => localStorage.setItem('token', user.id.toString() ))
+      );
+  }
+  
 
 }

@@ -30,30 +30,30 @@ export class MenuComponent implements OnInit {
         {
             label: 'Inici',
             icon: 'pi pi-fw pi-home',
-            "routerLink": "./home",
+            "routerLink": "./panell",
         },
         {
             label: 'Cites',
             icon: 'pi pi-fw pi-calendar',
             items: [
-                {label: 'Llistat Cites', icon: 'pi pi-fw pi-list', "routerLink": "./appointments-list" },
-                {label: 'Nova Cita', icon: 'pi pi-fw pi-calendar-plus', "routerLink": "./appointment-registration"}
+                {label: 'Llistat Cites', icon: 'pi pi-fw pi-list', "routerLink": "./panell/appointments-list" },
+                {label: 'Nova Cita', icon: 'pi pi-fw pi-calendar-plus', "routerLink": "./panell/appointment-registration"}
             ]
         },
         {
             label: 'Voluntaris',
             icon: 'pi pi-fw pi-id-card',
             items: [
-                {label: 'Llistat Voluntaris', icon: 'pi pi-fw pi-users', "routerLink": "./volunteers-list"},
-                {label: 'Nou Voluntari', icon: 'pi pi-fw pi-user-plus', "routerLink": "./volunteer-registration"}
+                {label: 'Llistat Voluntaris', icon: 'pi pi-fw pi-users', "routerLink": "./panell/volunteers-list"},
+                {label: 'Nou Voluntari', icon: 'pi pi-fw pi-user-plus', "routerLink": "./panell/volunteer-registration"}
             ]
         },
         {
           label: 'Usuaris',
           icon: 'pi pi-fw pi-server',
           items: [
-              {label: 'Llistat Usuaris', icon: 'pi pi-fw pi-users',"routerLink": "./users-list"},
-              {label: 'Nou Usuari', icon: 'pi pi-fw pi-user-plus',"routerLink": "./user-registration"}
+              {label: 'Llistat Usuaris', icon: 'pi pi-fw pi-users',"routerLink": "./panell/users-list"},
+              {label: 'Nou Usuari', icon: 'pi pi-fw pi-user-plus',"routerLink": "./panell/user-registration"}
           ]
       },
       {
