@@ -13,7 +13,7 @@ export class AuthService {
 
   constructor(private http: HttpClient) { }
 
-  getCurrenrUser(): User|undefined {
+  getCurrentUser(): User|undefined {
     if ( !this.user) return undefined;
 
     return structuredClone(this.user);
@@ -35,6 +35,13 @@ export class AuthService {
         tap ( user => localStorage.setItem('token', user.id.toString() ))
       );
   }
+
+  // public isAuthenticated(): boolean {
+  //   const token = localStorage.getItem('token');
+  //   // Check whether the token is expired and return
+  //   // true or false
+  //   return !this.jwtHelper.isTokenExpired(token);
+  // }
   
 
 }

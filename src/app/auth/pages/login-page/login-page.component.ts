@@ -24,7 +24,7 @@ export class LoginPageComponent {
   onLogin(): void {
     this.authService.login('johndoe@gmail.com', '12345a')
       .subscribe( user => {
-        this.router.navigate(['/users-list']);
+        this.router.navigate(['/panell']);
       });
 
      
