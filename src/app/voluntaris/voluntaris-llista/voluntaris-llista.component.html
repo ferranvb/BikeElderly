@@ -16,7 +16,7 @@
         <ng-template pTemplate="body" let-voluntari>
             <tr>
                 <!-- <td>{{ cita.id }}</td> -->
-                <td>{{ voluntari.id_voluntari }}</td>
+                <td>{{ voluntari.dni }}</td>
                 <td>{{ voluntari.nom }}</td>
                 <td>{{ voluntari.cognom1 }}</td>
                 <td>{{ voluntari.cognom2 }}</td>
@@ -25,4 +25,10 @@
             </tr>
         </ng-template>
     </p-table>
+</div>
+
+<div  class="form-check" >
+    <div *ngFor="let item of voluntarisList">
+      <div> {{ item.nom }}</div>
+    </div>
 </div>

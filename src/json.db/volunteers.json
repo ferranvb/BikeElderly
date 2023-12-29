@@ -1,0 +1,47 @@
+{	
+	"users": [
+		{
+			"id":1,
+			"user": "John Doe",
+			"email": "johndoe@gmail.com"
+		},
+		{
+			"id":2,
+			"user": "Ferran Vidal",
+			"email": "ferranvb@gmail.com"
+		}
+	]
+,
+	"volunteers": [
+  {
+	"id_voluntari": 27,
+	"dni":"78580254M",
+	"nom": "Ferran", 
+	"cognom1": "Vidal", 
+	"cognom2": "Bort", 
+	"data_naixement": "24.02.1972", 
+	"telefon_contacte": "636992000", 
+	"url_foto":"",
+	"email": "ferranvb@gmail.com", 
+	"associacio": "", 
+	"actiu": "true", 
+	"rol": ""
+  },
+  {
+	"id_voluntari": 28,
+	"dni":"12345678M",
+	"nom": "Ferran", 
+	"nom": "Ferran2", 
+	"cognom1": "Vidal2", 
+	"cognom2": "Bort2", 
+	"data_naixement": "22.02.1972", 
+	"telefon_contacte": "636992000", 
+	"url_foto":"",
+	"email": "ferran2vb@gmail.com", 
+	"associacio": "", 
+	"actiu": "true", 
+	"rol": ""
+  }
+  ]
+  
+}

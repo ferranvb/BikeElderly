@@ -1,3 +1,4 @@
+<div class="p-5 pt-0">
 <h2>Alta voluntari</h2>
 
 <form [formGroup]="profileForm">
@@ -58,20 +59,29 @@
 </div>
 <br>
 <div formGroupName="address">
-    <h2>Addreça</h2>
+    <h4>Addreça</h4>
+    <div class="field">
     <span class="p-float-label">
-        <input id="street" pInputText type="text" formControlName="street"   class="p-inputtext-sm">
+        <input id="street" pInputText type="text" formControlName="street" [style]="{'width':'50%'}" >
         <label for="street">Adreça</label> 
     </span>
-  
-    <span class="p-float-label">
-        <input id="city" pInputText type="text" formControlName="city">
-        <label for="city">Ciutat </label>
-    </span>
-    <span class="p-float-label">
-        <input id="zip" pInputText type="text" formControlName="state">
-        <label for="zip">Codi Postal </label>       
-    </span>
+    </div>
+
+    <div class="formgroup-inline">
+        <div class="field">
+            <span class="p-float-label">
+            <input id="city" pInputText type="text" formControlName="city">
+            <label for="city">Ciutat </label>
+            </span>
+        </div>
+        
+        <div class="field">
+            <span class="p-float-label">
+                <input id="zip" pInputText type="text" formControlName="state">
+                <label for="zip">Codi Postal </label>       
+            </span>
+        </div>
+    </div>
   </div>
 
 
@@ -81,3 +91,5 @@
     [disabled]="!profileForm.valid" (click)="addVolunteer()"></button>
 </div>
 </form>
+
+</div>

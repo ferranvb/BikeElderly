@@ -1,11 +1,11 @@
 import { CommonModule } from '@angular/common';
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import { Ivoluntari } from '../shared/ivoluntari';
 import { VoluntarisService } from '../voluntaris.service';
 import { TableModule } from 'primeng/table';
 import { ButtonModule } from 'primeng/button';
 import { TagModule } from 'primeng/tag';
-import { RouterLink, RouterOutlet } from '@angular/router';
+import { Router, RouterLink, RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'app-voluntaris-llista',
@@ -17,21 +17,28 @@ import { RouterLink, RouterOutlet } from '@angular/router';
   styleUrl: './voluntaris-llista.component.css',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class VoluntarisLlistaComponent {
+export class VoluntarisLlistaComponent implements OnInit {
 
-  private _voluntarisList?: Ivoluntari[];
+  public voluntarisList: Ivoluntari[] = [];
   
-
-  constructor(private service: VoluntarisService) { }
-
-  public get voluntarisList(): Ivoluntari[] {
-    this._voluntarisList = this.service.llistaVoluntaris;
-    return this._voluntarisList;
+  constructor(private service: VoluntarisService, private router: Router) { 
+  
   }
 
+  ngOnInit(): void {
+    this.service.getVolunteers().subscribe(
+      (voluntaris) => {
+        console.log("Data: " + voluntaris);
+        this.voluntarisList = voluntaris;
+      }
+    )
+    
+    // .subscribe((comments) => {
+    //   this.comments = comments;
+    // });
+  }
 
-  // public get citesList(): Array<ICita> {
-  //   this._citesList = this.service.citesListAux;
-  //   return this._citesList;
-  // }
+  
+  
+
  }

@@ -16,15 +16,12 @@ import { SidebarModule } from 'primeng/sidebar';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 
-export class HeaderComponent implements OnInit {
+export class HeaderComponent {
 
   selectedItem?: string;
   visible!: boolean;
   sidebarVisible: boolean = false;
 
-  ngOnInit(): void {
-    throw new Error('Method not implemented.');
-  }
 
   public toggleMenu(){}
 

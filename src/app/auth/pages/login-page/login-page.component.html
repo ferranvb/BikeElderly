@@ -1,0 +1,15 @@
+
+<p-card header="Accès a l'aplicació" [style]="{ width: '400px' }">
+
+    <div class="field col-12">
+            <input id="user" type="text" class="text-base text-color surface-overlay p-2 border-1 border-solid surface-border border-round appearance-none outline-none focus:border-primary w-full"
+                    placeholder="user">
+            </div>
+        <div class="field col-12">
+            <input id="password" type="password" class="text-base text-color surface-overlay p-2 border-1 border-solid surface-border border-round appearance-none outline-none focus:border-primary w-full"
+                    placeholder="password">
+        </div>
+        <button type="button" (click)="onLogin()"
+                class="bg-primary border-primary-500  align-items-center p-2 border-1 border-solid surface-border border-round appearance-none outline-none focus:border-primary w-full">Entrar</button>
+</p-card>
+ 

@@ -1,0 +1,39 @@
+{
+  "volunteers": [
+  {
+	"id_voluntari": 27,
+	"nom": "Ferran", 
+	"cognom1": "Vidal", 
+	"cognom2": "Bort", 
+	"data_naixement": "24.02.1972", 
+	"telefon_contacte": "636992000", 
+	"email": "ferranvb@gmail.com", 
+	"associacio": "", 
+	"actiu": "true", 
+	"rol": "", 
+	"address": {
+		"street": "c/Felipe de Paz n.5", 
+		"city": "Barcelona", 
+		"zip": ""
+	}
+  },
+  {
+	"id_voluntari": 28,
+	"nom": "Ferran2", 
+	"cognom1": "Vidal2", 
+	"cognom2": "Bort2", 
+	"data_naixement": "22.02.1972", 
+	"telefon_contacte": "636992000", 
+	"email": "ferran2vb@gmail.com", 
+	"associacio": "", 
+	"actiu": "true", 
+	"rol": "", 
+	"address": {
+		"street": "c/Felipe de Paz n.5", 
+		"city": "Amposta", 
+		"zip": "43870"
+	}
+  }
+  ]
+  
+}

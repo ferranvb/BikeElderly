@@ -1,6 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { ChangeDetectionStrategy, Component } from '@angular/core';
-import { CitesServiceService } from '../cites-service.service';
+import { CitesServiceService } from '../cites.service';
 
 import { TableModule } from 'primeng/table';
 import { ButtonModule } from 'primeng/button';
