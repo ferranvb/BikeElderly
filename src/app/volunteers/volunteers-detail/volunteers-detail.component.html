@@ -1,0 +1,28 @@
+@defer(on timer(500ms)) {  
+  <p-panel>
+    <ng-template pTemplate="header">
+      <div class="flex align-items-center w-full" >
+        <div class="top-0 left-0 px-100 py-1 font-bold">
+          <h1>{{ volunteer?.nom }} {{volunteer?.cognom1}} {{ volunteer?.cognom2}}</h1>
+          </div>
+          <div class="top-0 left-100 px-4 py-1 font-bold">
+          <a [routerLink]="'/layout/volunteers/'"> tornar </a>
+          </div>
+      </div>
+  </ng-template> 
+    
+    
+  <div class="col">
+       <!-- <h2>Nom: {{ volunteer?.nom }} </h2>
+
+       <h2> Cognom1:  {{ volunteer?.cognom1}} </h2>
+       
+       <h2> Cognom2:  {{ volunteer?.cognom2}} </h2> -->
+
+       <h2> Correu electrònic: {{ volunteer?.email }}</h2>
+       <h2> Telèfon contacte: {{ volunteer?.telefon_contacte }}</h2>
+      </div>
+</p-panel>
+} @placeholder() {
+  <h2>...carregant</h2>
+}

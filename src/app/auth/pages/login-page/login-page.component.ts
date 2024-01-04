@@ -4,12 +4,15 @@ import { AuthService } from '../../services/auth.service';
 import { Route, Router, RouterModule } from '@angular/router';
 import { CardModule } from 'primeng/card';
 import { User } from '../../interface/user';
+import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
+import { InputTextModule } from 'primeng/inputtext';
+import { ButtonModule } from 'primeng/button';
 
 @Component({
   selector: 'app-login-page',
   standalone: true,
   imports: [
-    CommonModule, RouterModule,CardModule
+    CommonModule, RouterModule,CardModule,ReactiveFormsModule,InputTextModule,ButtonModule 
   ],
   templateUrl: './login-page.component.html',
   styleUrl: './login-page.component.css',
@@ -21,11 +24,24 @@ export class LoginPageComponent {
 
   constructor(private authService:AuthService, private router: Router) {}
 
+  loginForm = new FormGroup({
+    user: new FormControl('',[Validators.required]),
+    password:new FormControl('',[Validators.required]),
+  });
+
   onLogin(): void {
-    this.authService.login('johndoe@gmail.com', '12345a')
+    console.log('Data login' , this.loginForm.value.user);
+    this.authService.login(this.loginForm.value.user!, this.loginForm.value.password!)
       .subscribe( user => {
-        this.router.navigate(['/panell']);
+        this.user = user;
+        //this.router.navigate(['/panell']);
       });
+
+      if (this.authService.getCurrentUser() ){
+        this.router.navigate(['/panell']);
+      } else {
+        this.router.navigate(['/error']);
+      }
 
      
   }

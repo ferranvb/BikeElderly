@@ -1,4 +1,4 @@
-export interface ICita {
+export interface iAppointment {
     id?: string;
     dia?: string;
     hora_inici?: string;

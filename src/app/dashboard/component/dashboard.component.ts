@@ -5,13 +5,13 @@ import { CardModule } from 'primeng/card';
 import { ButtonModule } from 'primeng/button';
 
 @Component({
-  selector: 'app-panell-resum',
+  selector: 'dashboard-component',
   standalone: true,
   imports: [
     CommonModule,CardModule, ButtonModule
   ],
-  templateUrl: './panell-resum.component.html',
-  styleUrl: './panell-resum.component.css',
+  templateUrl: './dashboard.component.html',
+  styleUrl: './dashboard.component.css',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class PanellResumComponent { }
+export class DashboardComponent { }

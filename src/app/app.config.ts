@@ -3,9 +3,18 @@ import {provideRouter, withComponentInputBinding, withViewTransitions} from '@an
 
 import {routes} from './app.routes';
 import {provideAnimations} from "@angular/platform-browser/animations";
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, provideHttpClient, withFetch, withInterceptorsFromDi } from '@angular/common/http';
+import { MessageService } from 'primeng/api';
 
 export const appConfig: ApplicationConfig = {
-  providers: [provideAnimations(), provideRouter(routes, withViewTransitions(), withComponentInputBinding()),
-    importProvidersFrom(HttpClientModule)]
+  providers: [
+    provideAnimations(), 
+    provideRouter(routes, withViewTransitions(), withComponentInputBinding()),
+    provideHttpClient(
+      withFetch(),
+    ),
+    // provideHttpClient(withInterceptorsFromDi()),
+ 
+    MessageService]
 };
+

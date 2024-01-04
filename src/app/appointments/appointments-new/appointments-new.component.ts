@@ -5,16 +5,16 @@ import { CalendarModule } from 'primeng/calendar';
 import { InputTextModule } from 'primeng/inputtext';
 
 @Component({
-  selector: 'app-alta-cita',
+  selector: 'appointments-new',
   standalone: true,
   imports: [
     CommonModule,ReactiveFormsModule,CalendarModule,InputTextModule
   ],
-  templateUrl: './alta-cita.component.html',
-  styleUrl: './alta-cita.component.css',
+  templateUrl: './appointments-new.component.html',
+  styleUrl: './appointments-new.component.css',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class AltaCitaComponent implements OnInit{ 
+export class AppointmentsNewComponent implements OnInit{ 
 
   formCita = new FormControl('');
   public myForm!: FormGroup;

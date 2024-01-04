@@ -1,8 +1,14 @@
 <div class="p-5 pt-0">
 <h2>Alta voluntari</h2>
 
-<form [formGroup]="profileForm">
+<form [formGroup]="volunteerForm" (ngSubmit)="onSubmit()">
     <div class="formgroup-inline">
+        <div class="field grid">
+            <span class="p-float-label">
+                <input id="dni" pInputText type="text" formControlName="dni" class="p-inputtext-sm">
+                <label for="dni">dni * </label>
+            </span>
+        </div>    
     <div class="field grid">
         <span class="p-float-label">
             <input id="nom" pInputText type="text" formControlName="nom" class="p-inputtext-sm">
@@ -38,7 +44,16 @@
 <div class="formgroup-inline">
     <div class="field grid">
         <span class="p-float-label">
-            <input id="telefon_contacte*" pInputText type="text" formControlName="telefon_contacte"   class="p-inputtext-sm">
+            <input id="urlFotoe*" pInputText type="text" formControlName="urlFoto"   class="p-inputtext-sm">
+            <label for="urlFoto">foto *</label>    
+        </span>
+    </div>
+</div>
+<br>
+<div class="formgroup-inline">
+    <div class="field grid">
+        <span class="p-float-label">
+            <input id="telefon_contacte*" pInputText type="text" formControlName="telefon_contacte?"   class="p-inputtext-sm">
             <label for="telefon_contacte">Telèfon contacte *</label>    
         </span>
     </div>
@@ -51,9 +66,25 @@
     </div>
 </div>
 <br>
-<div class="formgroup-inline">
+<div class="field grid">
     <span class="p-float-label">
-          <p-dropdown formControlName="rol" [options]="cities" optionLabel="rol" inputId="float-label"></p-dropdown> 
+        <input id="associacio*" pInputText type="text" formControlName="associacio"   class="p-inputtext-sm">
+        <label for="associacio">associacio *</label>    
+    </span>
+</div>
+<div class="field grid">
+    <span class="p-float-label">
+        <p-checkbox formControlName="actiu"></p-checkbox>
+        <label for="actiu">actiu *</label>    
+    </span>
+</div>
+
+
+
+
+<!-- <div class="formgroup-inline">
+    <span class="p-float-label">
+          <p-dropdown formControlName="rol" [options]="cities" optionLabel="rol?" inputId="float-label"></p-dropdown> 
           <label for="float-label">Tria rol</label>
      </span>
 </div>
@@ -62,7 +93,7 @@
     <h4>Addreça</h4>
     <div class="field">
     <span class="p-float-label">
-        <input id="street" pInputText type="text" formControlName="street" [style]="{'width':'50%'}" >
+        <input id="street" pInputText type="text" formControlName="street?" [style]="{'width':'50%'}" >
         <label for="street">Adreça</label> 
     </span>
     </div>
@@ -82,13 +113,13 @@
             </span>
         </div>
     </div>
-  </div>
+  </div> -->
 
 
 <br>
 <div class="formgroup-inline">
-    <button pButton pRipple label="Submit" class="p-button-success"
-    [disabled]="!profileForm.valid" (click)="addVolunteer()"></button>
+    <button pButton pRipple type="submit"  label="Submit" class="p-button-success"
+     ></button>
 </div>
 </form>
 

@@ -3,15 +3,15 @@ import { Component } from '@angular/core';
 
 import { RouterLink, RouterOutlet } from '@angular/router';
 
-import { VoluntarisLlistaComponent } from './voluntaris/voluntaris-llista/voluntaris-llista.component';
 import { LayoutComponent } from './shared/layout/layout.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [CommonModule,RouterLink, RouterOutlet, LayoutComponent,VoluntarisLlistaComponent],
+  imports: [CommonModule,RouterLink, RouterOutlet, LayoutComponent],
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  styleUrls: ['./app.component.css'],
+  
 })
 export class AppComponent {
   title = 'CareElderly';

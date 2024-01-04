@@ -1,34 +1,35 @@
 import { CommonModule } from '@angular/common';
 import { ChangeDetectionStrategy, Component } from '@angular/core';
-import { CitesServiceService } from '../cites.service';
+
 
 import { TableModule } from 'primeng/table';
 import { ButtonModule } from 'primeng/button';
 import { TagModule } from 'primeng/tag';
 
 
-import { ICita } from '../ICita';
 import { RouterLink, RouterOutlet } from '@angular/router';
+import { iAppointment } from '../interface/iAppointment';
+import { AppointmentsService } from '../appointments.service';
 
 @Component({
-  selector: 'cites-llista-cites',
+  selector: 'appointments-list',
   standalone: true,
   imports: [
     CommonModule,TableModule,ButtonModule,TagModule, RouterLink, RouterOutlet
   ],
-  templateUrl: './llista-cites.component.html',
-  styleUrl: './llista-cites.component.css',
+  templateUrl: './appointments-list.component.html',
+  styleUrl: './appointments-list.component.css',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class LlistaCitesComponent {
+export class AppointmentListComponent {
 
-  private _citesList?: ICita[];
+  private _appointmentList?: iAppointment[];
   
-  constructor(private service: CitesServiceService) { }
+  constructor(private appointmentService: AppointmentsService) { }
 
-  public get citesList(): Array<ICita> {
-    this._citesList = this.service.citesListAux;
-    return this._citesList;
+  public get appointmentList(): Array<iAppointment> {
+    this._appointmentList = this.appointmentService.appointmentListAux;
+    return this._appointmentList;
   }
  
   // getSeverity(status!: any) { 

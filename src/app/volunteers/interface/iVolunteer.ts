@@ -1,7 +1,7 @@
 
-export interface Ivoluntari {
+export interface iVolunteer {
 
-    id_voluntari?: number,
+    id?: number,
     dni?: string,
     nom?: string,
     cognom1?: string,
@@ -10,6 +10,6 @@ export interface Ivoluntari {
     urlFoto?  : string,
     telefon_contacte? : string,
     email?: string,
-    associacio? : number,
+    associacio? : string,
     actiu? : boolean,
 }

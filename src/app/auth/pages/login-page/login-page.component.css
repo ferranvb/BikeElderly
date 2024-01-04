@@ -1,3 +1,7 @@
 :host {
   display: block;
 }
+
+.p-card .p-card-body {
+  background-color: rgb(224, 96, 11) !important;
+}

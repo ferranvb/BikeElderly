@@ -1,15 +1,16 @@
 import { Injectable } from '@angular/core';
-import { ICita } from './ICita';
+import { iAppointment } from './interface/iAppointment';
+
 
 @Injectable({
   providedIn: 'root'
 })
-export class CitesServiceService {
+export class AppointmentsService {
 
-  public citesListAux: Array<ICita>;
+  public appointmentListAux!: Array<iAppointment>;
 
   constructor() { 
-    this.citesListAux = Array({
+    this.appointmentListAux = Array({
      "id": "123",
       "dia": "2023-12-14",
       "hora_inici": "12:30",

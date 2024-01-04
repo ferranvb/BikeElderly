@@ -10,7 +10,7 @@ import { ContentComponent } from './content/content.component';
   selector: 'shared-layout',
   standalone: true,
   imports: [
-    CommonModule,HeaderComponent,FooterComponent,MenuComponent,ContentComponent
+    CommonModule,HeaderComponent,FooterComponent,MenuComponent,ContentComponent,RouterLink,RouterOutlet
   ],
   templateUrl: './layout.component.html',
   styleUrl: './layout.component.css',

@@ -1,7 +1,14 @@
 <div class="card">
-    <h2>Voluntaris</h2>
-           
-    <p-table [value]="voluntarisList" styleClass="p-datatable-striped" [tableStyle]="{ 'min-width': '50rem' }">
+    
+    @defer(on timer(1000ms)) {
+    <div class="flex flex-column md:flex-row">
+        
+        <h2>Voluntaris</h2>        
+        <p-button type="button" class="btn btn-primary-outline pull-right" [routerLink]="'/layout/volunteers/new'"><i class="fa fa-plus"></i> Add</p-button>    
+        
+    </div>    
+       
+    <p-table [value]="volunteersList" styleClass="p-datatable-striped" [tableStyle]="{ 'min-width': '50rem' }">
         <ng-template pTemplate="header">
             <tr>
                 <!-- <th pSortableColumn="id" style="width:20%">Id<p-sortIcon field="id"></p-sortIcon></th> -->
@@ -21,14 +28,12 @@
                 <td>{{ voluntari.cognom1 }}</td>
                 <td>{{ voluntari.cognom2 }}</td>
                 <td>{{ voluntari.telefon_contacte }}</td>
-                <td><button pButton pRipple label="Submit" class="p-button-success"></button></td>
+                <td><a [routerLink]="[voluntari.id]"> Detall </a></td>
+                <!-- <td><button pButton pRipple label="Submit" [routerLink]="['/login']" class="p-button-success"></button></td> -->
             </tr>
         </ng-template>
     </p-table>
-</div>
-
-<div  class="form-check" >
-    <div *ngFor="let item of voluntarisList">
-      <div> {{ item.nom }}</div>
-    </div>
+} @placeholder {
+    <h2>...carregant</h2>
+}
 </div>
