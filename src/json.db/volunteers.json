@@ -20,22 +20,8 @@
       "cognom2": "Bort",
       "data_naixement": "24.02.1972",
       "telefon_contacte": "636992000",
-      "url_foto": "",
+      "url_foto": "assets/images/no-foto.jpg",
       "email": "ferranvb@gmail.com",
-      "associacio": "",
-      "actiu": "true",
-      "rol": ""
-    },
-    {
-      "id": 28,
-      "dni": "12345678M",
-      "nom": "Ferran2",
-      "cognom1": "Vidal2",
-      "cognom2": "Bort2",
-      "data_naixement": "22.02.1972",
-      "telefon_contacte": "636992000",
-      "url_foto": "",
-      "email": "ferran2vb@gmail.com",
       "associacio": "",
       "actiu": "true",
       "rol": ""
@@ -53,6 +39,38 @@
       "associacio": "",
       "actiu": "true",
       "rol": ""
+    },
+    {
+      "dni": "41736832D",
+      "nom": "Elijah",
+      "cognom1": "Roberts",
+      "cognom2": "West",
+      "data_naixement": "28.02.2005",
+      "urlFoto": "",
+      "telefon_contacte": "(413)-521-8190",
+      "email": "elijah.roberts@example.com",
+      "associacio": "Porirua",
+      "actiu": [
+        "true"
+      ],
+      "url_foto": "https://randomuser.me/api/portraits/men/6.jpg",
+      "id": 32
+    },
+    {
+      "dni": "14712980A",
+      "nom": "Karen",
+      "cognom1": "Montgomery",
+      "cognom2": "Pearse",
+      "data_naixement": "18.09.2001",
+      "urlFoto": "",
+      "telefon_contacte": "071-722-5939",
+      "email": "karen.montgomery@example.com",
+      "associacio": "Athy",
+      "actiu": [
+        "true"
+      ],
+      "url_foto": "https://randomuser.me/api/portraits/women/7.jpg",
+      "id": 33
     }
   ]
 }

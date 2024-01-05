@@ -99,6 +99,10 @@ export class VolunteerListComponent implements OnInit {
     });
 }
 
+goDetail(id: number) {
+  let idAux: string = '/layout/volunteers/'+ id.toString();;
+  this.router.navigate([idAux]);
+}
 
   // http.get('/images/dog.jpg', {responseType: 'arraybuffer'}).subscribe(buffer => {
   //   console.log('The image is ' + buffer.length + ' bytes large');

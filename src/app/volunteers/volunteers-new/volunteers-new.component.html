@@ -1,7 +1,17 @@
-<div class="p-5 pt-0">
-<h2>Alta voluntari</h2>
+<div class="px-4 pt-0">
+<div class="flex align-items-center w-full bg-no-repeat bg-center border-orange-500 border-1 border-round px-0 pt-0" >
+    <div class="flex-grow-1 flex align-items-left justify-content-left  font-bold ml-0 px-4 py-0">
+      <h2>Alta voluntari</h2>
+    </div>
+    <div class="flex-grow-1 flex align-items-right justify-content-end font-bold mr-4">
+        <a [routerLink]="'/layout/volunteers/'"> 
+            <!-- <p-image src="assets/images/undo-48.jpg" alt="Image" width="20"></p-image> -->
+            tornar
+        </a>
+    </div>
+</div>
 
-<form [formGroup]="volunteerForm" (ngSubmit)="onSubmit()">
+<form [formGroup]="volunteerForm" class="px-2 py-4">
     <div class="formgroup-inline">
         <div class="field grid">
             <span class="p-float-label">
@@ -44,16 +54,18 @@
 <div class="formgroup-inline">
     <div class="field grid">
         <span class="p-float-label">
-            <input id="urlFotoe*" pInputText type="text" formControlName="urlFoto"   class="p-inputtext-sm">
-            <label for="urlFoto">foto *</label>    
+            <p-image src="assets/images/no-foto.jpg" alt="Image" width="50"></p-image>
+
+            
         </span>
     </div>
+
 </div>
 <br>
 <div class="formgroup-inline">
     <div class="field grid">
         <span class="p-float-label">
-            <input id="telefon_contacte*" pInputText type="text" formControlName="telefon_contacte?"   class="p-inputtext-sm">
+            <input id="telefon_contacte" pInputText type="text" formControlName="telefon_contacte"   class="p-inputtext-sm">
             <label for="telefon_contacte">Telèfon contacte *</label>    
         </span>
     </div>
@@ -73,10 +85,9 @@
     </span>
 </div>
 <div class="field grid">
-    <span class="p-float-label">
-        <p-checkbox formControlName="actiu"></p-checkbox>
-        <label for="actiu">actiu *</label>    
-    </span>
+    <label for="actiu" class="px-2">actiu *</label>
+    <p-checkbox formControlName="actiu" value="true" inputId="actiu" class="mr-10"></p-checkbox>
+   
 </div>
 
 
@@ -118,7 +129,7 @@
 
 <br>
 <div class="formgroup-inline">
-    <button pButton pRipple type="submit"  label="Submit" class="p-button-success"
+    <button pButton pRipple (click)="addVolunteer()"  label="Submit" class="p-button-success"
      ></button>
 </div>
 </form>

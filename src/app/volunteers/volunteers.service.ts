@@ -88,8 +88,10 @@ export class VolunteersService {
     const url = `${this.urlServer}/volunteers`;
     const body=JSON.stringify(volunteer!);
     console.log(body)
+    console.log('URL', url);
     return this.http.post<iVolunteer>(url, body, this.httpOptions).pipe(
       tap((newVolunteer: iVolunteer) => this.log(`added volunteer w/ id=${newVolunteer.id}`)),
+      tap((newVolunteer: iVolunteer) => console.log(`added volunteer`, body)),
       catchError(this.handleError<iVolunteer>('addVolunteer'))
     );
   }
@@ -99,6 +101,7 @@ export class VolunteersService {
     const id = typeof volunteer === 'number' ? volunteer : volunteer.id;
     // const url = `${this.urlServer}/${id}`;
     const url = `${this.urlServer}/volunteers/${id}`;
+
 
     return this.http.delete<iVolunteer>(url, this.httpOptions).pipe(
       tap(_ => this.log(`deleted volunteer id=${id}`)),

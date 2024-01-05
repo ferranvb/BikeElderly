@@ -7,6 +7,8 @@ import { ButtonModule } from 'primeng/button';
 import { CheckboxModule } from 'primeng/checkbox';
 import { iVolunteer } from '../interface/iVolunteer';
 import { VolunteersService } from '../volunteers.service';
+import { ImageModule } from 'primeng/image';
+import { RouterLink } from '@angular/router';
 
 interface City {
   name: string;
@@ -18,7 +20,8 @@ interface City {
   selector: 'voluntaris-alta',
   standalone: true,
   imports: [
-    CommonModule,ReactiveFormsModule,InputTextModule,DropdownModule,ButtonModule,CheckboxModule
+    CommonModule,RouterLink,
+    ReactiveFormsModule,InputTextModule,DropdownModule,ButtonModule,CheckboxModule,ImageModule
   ],
   templateUrl: './volunteers-new.component.html',
   styleUrl: './volunteers-new.component.css',
@@ -54,7 +57,7 @@ export class VolunteersNewComponent implements OnInit {
     telefon_contacte: ['',[Validators.required]],
     email: ['',[Validators.required]],
     associacio: [''],
-    actiu: [true, Validators.required],
+    actiu: [false,[Validators.requiredTrue]],
 
     // actiu: new FormControl(''),
     // rol: new FormControl(''),
@@ -67,11 +70,9 @@ export class VolunteersNewComponent implements OnInit {
 
   )
 
-  onSubmit() {
-    this.addVolunteer(this.volunteerForm.value);
-  }
-
-  addVolunteer(volunteer: iVolunteer): void {
+  addVolunteer(): void {
+    let volunteer: iVolunteer = this.volunteerForm.value;
+    volunteer.url_foto = "assets/images/no-foto.jpg";
 
     this.volunteersService.addVolunteer(volunteer);
   }
