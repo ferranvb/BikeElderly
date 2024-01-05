@@ -16,11 +16,15 @@ export class VolunteersService {
   
   private urlServer = environment.baseUrl;
   private http = inject(HttpClient);
-  httpOptions = {
+
+  private httpOptions = {
     headers: new HttpHeaders({ 'Content-Type': 'application/json' })
   };
   private messageService = inject(MessageService);
 
+  public editVolunteer:boolean = false;
+  public volunteerSelected!: iVolunteer;
+  
   constructor() {
    }
   
@@ -112,7 +116,12 @@ export class VolunteersService {
 
   /** PUT: update the volunteer on the server */
   updateVolunteer(volunteer: iVolunteer): Observable<any> {
-    return this.http.put(this.urlServer, volunteer, this.httpOptions).pipe(
+    //console.log("updateVolunteer(...) ",volunteer);
+    
+    const url = `${this.urlServer}/volunteers/${volunteer.id}`;
+    const body=JSON.stringify(volunteer!);
+
+    return this.http.put(url, volunteer, this.httpOptions).pipe(
       tap(_ => this.log(`updated volunteer id=${volunteer.id}`)),
       catchError(this.handleError<any>('updateVolunteer'))
     );

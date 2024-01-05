@@ -97,6 +97,20 @@
       ],
       "url_foto": "assets/images/no-foto.jpg",
       "id": 35
+    },
+    {
+      "dni": "78580256M",
+      "nom": "Mariano",
+      "cognom1": "Vidal",
+      "cognom2": "Bort",
+      "data_naixement": "24.02.1972",
+      "urlFoto": "",
+      "telefon_contacte": "636992000",
+      "email": "ferranvb@gmail.com",
+      "associacio": "Montbike",
+      "actiu": true,
+      "id": 36,
+      "url_foto": "assets/images/no-foto.jpg"
     }
   ]
 }

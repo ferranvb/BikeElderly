@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { ChangeDetectionStrategy, Component, OnInit, inject } from '@angular/core';
+import { ChangeDetectionStrategy, Component, Input, OnInit, inject } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { InputTextModule } from 'primeng/inputtext';
 import { DropdownModule } from 'primeng/dropdown';
@@ -29,21 +29,32 @@ interface City {
 })
 export class VolunteersNewComponent implements OnInit {
 
-  cities!: City[];
+  @Input() 
+  editForm: boolean = false;
+
+  @Input() 
+  volunteer!: iVolunteer;
+
 
   private volunteersService = inject(VolunteersService);
   private fb = inject(FormBuilder);
+
+  
   
   ngOnInit(): void {
-    
-      this.cities = [
-          { name: 'Administrador', code: 'ADMIN' },
-          { name: 'Voluntari', code: 'RM' },
-          { name: 'Usuari', code: 'LDN' },
-          { name: 'Gestor', code: 'IST' },
-          { name: 'Altres', code: 'PRS' }
-      ];
+    this.editForm = this.volunteersService.editVolunteer;
 
+    // if ( this.editForm ) {
+      this.volunteerForm.patchValue(this.volunteersService.volunteerSelected);
+    // }
+
+  }
+
+  ngOnChanges() {
+    this.editForm = this.volunteersService.editVolunteer;
+    if ( this.editForm ) {
+      this.volunteerForm.patchValue(this.volunteersService.volunteerSelected);
+    }
   }
 
   volunteerForm = this.fb.nonNullable.group(
@@ -78,6 +89,23 @@ export class VolunteersNewComponent implements OnInit {
       .subscribe({
         next: (res) => {
           console.log(res);
+          //this.submitted = true;
+        },
+        error: (e) => console.error(e)
+      });;
+  }
+
+  editVolunteer(): void {
+    let volunteer: iVolunteer = this.volunteerForm.value;
+    volunteer.id = this.volunteersService.volunteerSelected.id;
+    if ( volunteer.url_foto == null ) {
+      volunteer.url_foto = "assets/images/no-foto.jpg";
+    }
+    console.log("volunteer ", volunteer);
+    this.volunteersService.updateVolunteer( volunteer)
+      .subscribe({
+        next: (res) => {
+         // console.log("editVolunteer() ",res);
           //this.submitted = true;
         },
         error: (e) => console.error(e)

@@ -1,4 +1,3 @@
-@defer(on timer(500ms)) {  
   <p-panel>
     <ng-template pTemplate="header">
       <div class="flex align-items-center w-full bg-no-repeat bg-center border-orange-500 border-1 border-round px-0 pt-0" >
@@ -15,27 +14,10 @@
             </a>
         </div>
     </div>
+    </ng-template>
+ @defer(on timer(500ms)) {  
 
 
-
-
-
-
-      <!-- <div class="flex align-items-center w-full" >
-          <div class="top-0 left-0 px-100 py-1 font-bold">
-            <h1>{{ volunteer?.nom }} {{volunteer?.cognom1}} {{ volunteer?.cognom2}}</h1>
-          </div>
-          <div class="top-0 ml-50 px-4 py-1 font-bold">
-            
-              <p-avatar image={{volunteer?.url_foto}} styleClass="ml-" size="large" shape="circle"></p-avatar>
-            
-          </div>
-          <div class="top-0 ml-50 px-4 py-1 font-bold">
-            <a [routerLink]="'/layout/volunteers/'"> tornar </a>
-          </div>
-      </div> -->
-  </ng-template> 
-  
   <h3> Dni: <span class="text-orange-400" >{{ volunteer?.dni }}</span></h3>
   
   <h3> Nom complet: <span class="text-orange-400" >{{ volunteer?.nom }} {{ volunteer?.cognom1 }} {{ volunteer?.cognom2 }}</span></h3>
@@ -43,9 +25,18 @@
   <h3> Correu electrònic:<span class="text-orange-400"> {{ volunteer?.email }}</span></h3>
   
   <h3> Telèfon contacte:<span class="text-orange-400"> {{ volunteer?.telefon_contacte }}</span></h3>
-   
+
+  <h3> Actiu: 
+    @if ( volunteer?.actiu ) {
+      <p-image src="assets/images/green-dot.svg" alt="Image" width="10" class="ml-4"></p-image>
+  } @else {
+      <p-image src="assets/images/red-dot.svg" alt="Image" width="10"  class="ml-4"></p-image>    
+  }
+  </h3>
+
+} @placeholder() {
+  <shared-spining></shared-spining>>
+}
    
 </p-panel>
-} @placeholder() {
-  <h2>...carregant</h2>
-}
+

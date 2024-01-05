@@ -129,8 +129,11 @@
 
 <br>
 <div class="formgroup-inline">
-    <button pButton pRipple (click)="addVolunteer()"  label="Submit" class="p-button-success"
-     ></button>
+    @if ( editForm) {
+        <button pButton pRipple (click)="editVolunteer()"  label="Edita" class="p-button-primary"></button>
+    } @else {
+    <button pButton pRipple (click)="addVolunteer()"  label="Afegeix" class="p-button-success"></button>
+    }
 </div>
 </form>
 

@@ -13,6 +13,7 @@ import { AvatarModule } from 'primeng/avatar';
 import { ImageModule } from 'primeng/image';
 
 import { ConfirmationService, MessageService, ConfirmEventType, LazyLoadEvent } from 'primeng/api';
+import { SpiningComponent } from 'src/app/shared/components/spining/spining.component';
 
 @Component({
   selector: 'volunteers-list',
@@ -20,7 +21,7 @@ import { ConfirmationService, MessageService, ConfirmEventType, LazyLoadEvent } 
   imports: [
     CommonModule,TableModule,ButtonModule,ToastModule,ConfirmDialogModule,
     TagModule, RouterLink, RouterOutlet,HttpClientModule,
-    AvatarModule,ImageModule
+    AvatarModule,ImageModule,SpiningComponent
   ],
   providers: [ConfirmationService, MessageService],
   templateUrl: './volunteers-list.component.html',
@@ -105,6 +106,15 @@ export class VolunteerListComponent implements OnInit {
 goDetail(volunteer: iVolunteer) {
   if ( volunteer){
     let idAux: string = '/layout/volunteers/'+ volunteer.id?.toString();
+    this.router.navigate([idAux]);
+  }
+}
+
+goEdit(volunteer: iVolunteer) {
+  if ( volunteer){
+    this.volunteersService.volunteerSelected = volunteer;
+    this.volunteersService.editVolunteer = true;
+    let idAux: string = '/layout/volunteers/new';
     this.router.navigate([idAux]);
   }
 }

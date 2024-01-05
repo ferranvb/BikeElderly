@@ -6,13 +6,15 @@ import { iVolunteer } from '../interface/iVolunteer';
 
 import { PanelModule } from 'primeng/panel';
 import { AvatarModule } from 'primeng/avatar';
+import { ImageModule } from 'primeng/image';
+import { SpiningComponent } from 'src/app/shared/components/spining/spining.component';
 
 
 @Component({
   selector: 'app-volunteer-detail',
   standalone: true,
   imports: [
-    CommonModule,RouterLink,PanelModule,AvatarModule
+    CommonModule,RouterLink,PanelModule,AvatarModule,ImageModule,SpiningComponent
   ],
   templateUrl: './volunteers-detail.component.html',
   styleUrl: './volunteers-detail.component.css',
@@ -21,11 +23,15 @@ import { AvatarModule } from 'primeng/avatar';
 export class VolunteersDetailComponent implements OnInit {
   
   private volunteersService = inject(VolunteersService);
-  //private router = inject(Router);
   private route = inject(ActivatedRoute);
   public volunteer?: iVolunteer; 
-  loaded: boolean = false;
   
+  @Input() viewMode = false;
+
+  @Input() currentVolunteer: iVolunteer = {
+    actiu: true
+  };
+
   ngOnInit(): void {
     const id = this.route.snapshot.paramMap.get('id');
     
@@ -41,7 +47,6 @@ export class VolunteersDetailComponent implements OnInit {
       .subscribe ( (data: iVolunteer) => {
         this.volunteer = data;        
       });
-     this.loaded = true;    
   }
 
 }
