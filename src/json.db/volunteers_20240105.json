@@ -23,7 +23,7 @@
       "url_foto": "assets/images/no-foto.jpg",
       "email": "ferranvb@gmail.com",
       "associacio": "",
-      "actiu": true,
+      "actiu": "true",
       "rol": ""
     },
     {
@@ -34,10 +34,10 @@
       "cognom2": "",
       "data_naixement": "08.03.1992",
       "telefon_contacte": "(272) 790-0888",
-      "url_foto": "https://randomuser.me/api/portraits/thumb/women/45.jpg",
+      "url_foto": "https://randomuser.me/api/portraits/men/75.jpg",
       "email": "jennie.nichols@example.com",
       "associacio": "",
-      "actiu": false,
+      "actiu": "true",
       "rol": ""
     },
     {
@@ -50,7 +50,9 @@
       "telefon_contacte": "(413)-521-8190",
       "email": "elijah.roberts@example.com",
       "associacio": "Porirua",
-      "actiu": false,
+      "actiu": [
+        "true"
+      ],
       "url_foto": "https://randomuser.me/api/portraits/men/6.jpg",
       "id": 32
     },
@@ -64,7 +66,9 @@
       "telefon_contacte": "071-722-5939",
       "email": "karen.montgomery@example.com",
       "associacio": "Athy",
-      "actiu": true,
+      "actiu": [
+        "true"
+      ],
       "url_foto": "https://randomuser.me/api/portraits/women/7.jpg",
       "id": 33
     },
@@ -78,7 +82,9 @@
       "telefon_contacte": "656474232",
       "email": "mllanbrich@gmaill.com",
       "associacio": "Montbike",
-      "actiu": true,
+      "actiu": [
+        "true"
+      ],
       "url_foto": "assets/images/no-foto.jpg",
       "id": 34
     },

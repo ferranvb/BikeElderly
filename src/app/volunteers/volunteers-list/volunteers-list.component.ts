@@ -8,8 +8,9 @@ import { ConfirmDialogModule } from 'primeng/confirmdialog';
 import { ToastModule } from 'primeng/toast';
 import { Router, RouterLink, RouterOutlet } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
-import  jsonData from '../../../json.db/volunteers.json';
 import { iVolunteer } from '../interface/iVolunteer';
+import { AvatarModule } from 'primeng/avatar';
+import { ImageModule } from 'primeng/image';
 
 import { ConfirmationService, MessageService, ConfirmEventType, LazyLoadEvent } from 'primeng/api';
 
@@ -17,7 +18,9 @@ import { ConfirmationService, MessageService, ConfirmEventType, LazyLoadEvent } 
   selector: 'volunteers-list',
   standalone: true,
   imports: [
-    CommonModule,TableModule,ButtonModule,ToastModule,ConfirmDialogModule,TagModule, RouterLink, RouterOutlet,HttpClientModule,
+    CommonModule,TableModule,ButtonModule,ToastModule,ConfirmDialogModule,
+    TagModule, RouterLink, RouterOutlet,HttpClientModule,
+    AvatarModule,ImageModule
   ],
   providers: [ConfirmationService, MessageService],
   templateUrl: './volunteers-list.component.html',
