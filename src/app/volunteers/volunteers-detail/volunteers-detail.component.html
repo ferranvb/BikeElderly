@@ -17,7 +17,8 @@
     </ng-template>
  @defer(on timer(500ms)) {  
 
-
+  <div class="grid">
+    <div class="col">
   <h3> Dni: <span class="text-orange-400" >{{ volunteer?.dni }}</span></h3>
   
   <h3> Nom complet: <span class="text-orange-400" >{{ volunteer?.nom }} {{ volunteer?.cognom1 }} {{ volunteer?.cognom2 }}</span></h3>
@@ -33,6 +34,12 @@
       <p-image src="assets/images/red-dot.svg" alt="Image" width="10"  class="ml-4"></p-image>    
   }
   </h3>
+  </div>
+  <div class="col text-align-right  justify-content-end font-bold mr-4 border-round-xl">
+    <p-image src="{{ volunteer?.url_foto }}" alt="Image" width="150" class="text-align-right justify-content-end border-circle"></p-image>
+  </div>
+  </div>
+
 
 } @placeholder() {
   <shared-spining></shared-spining>>

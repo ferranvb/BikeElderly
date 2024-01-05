@@ -1,6 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
-import { RouterLink } from '@angular/router';
+import { RouterLink, RouterOutlet } from '@angular/router';
 import { MenuItem } from 'primeng/api/menuitem';
 
 import { TieredMenuModule } from 'primeng/tieredmenu';
@@ -11,7 +11,7 @@ import { TieredMenuModule } from 'primeng/tieredmenu';
   selector: 'shared-menu',
   standalone: true,
   imports: [
-    CommonModule,TieredMenuModule 
+    CommonModule,TieredMenuModule,RouterLink,RouterOutlet
   ],
   templateUrl: './menu.component.html',
   styleUrl: './menu.component.css',

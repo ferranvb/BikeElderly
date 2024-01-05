@@ -4,6 +4,8 @@ import { AuthGuardService as AuthGuard } from './auth/services/auth-guard.servic
 import { ErrorComponent } from './shared/error/error.component';
 import { DashboardComponent } from './dashboard/component/dashboard.component';
 import { LayoutComponent } from './shared/layout/layout.component';
+import { VolunteerListComponent } from './volunteers/volunteers-list/volunteers-list.component';
+import { VolunteersNewComponent } from './volunteers/volunteers-new/volunteers-new.component';
 
 
 const resolvedChildATitle: ResolveFn<string> = () => Promise.resolve('llistat');
@@ -11,15 +13,23 @@ const resolvedChildATitle: ResolveFn<string> = () => Promise.resolve('llistat');
 export const routes: Routes = [
   { 'path' : 'login', 'title' : 'Login Page', component: LoginPageComponent},
   { 'path' : 'error', 'title' : 'Error Page', component: ErrorComponent},
-  { 'path' : 'layout', 
+  { 'path' : 'app', 
     'title' : 'App', 
-    // component: LayoutComponent
+    component: LayoutComponent,
     loadChildren: () => import('./shared/layout/layout.routes').then(m=>m.LAYOUT_ROUTE)
-  },
-  { 'path': '', 
-    'redirectTo': 'layout', 
-    pathMatch: 'full'
-  }
+  } 
+  //   children : [{
+  //     path: 'volunteer',
+  //     component: VolunteerListComponent
+  //   },
+  //   {
+  //     path: 'volunteer/new',
+  //     component: VolunteersNewComponent 
+  //   }
+  //   ]
+
+  // },
+  // { path: '', redirectTo: 'app',pathMatch: 'full'},
   ] 
 
 

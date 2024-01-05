@@ -5,10 +5,11 @@ import { InputTextModule } from 'primeng/inputtext';
 import { DropdownModule } from 'primeng/dropdown';
 import { ButtonModule } from 'primeng/button';
 import { CheckboxModule } from 'primeng/checkbox';
+import { FileUploadModule, UploadEvent } from 'primeng/fileupload';
 import { iVolunteer } from '../interface/iVolunteer';
 import { VolunteersService } from '../volunteers.service';
 import { ImageModule } from 'primeng/image';
-import { RouterLink } from '@angular/router';
+import { Router, RouterLink } from '@angular/router';
 
 interface City {
   name: string;
@@ -21,7 +22,7 @@ interface City {
   standalone: true,
   imports: [
     CommonModule,RouterLink,
-    ReactiveFormsModule,InputTextModule,DropdownModule,ButtonModule,CheckboxModule,ImageModule
+    ReactiveFormsModule,InputTextModule,DropdownModule,ButtonModule,CheckboxModule,ImageModule,FileUploadModule
   ],
   templateUrl: './volunteers-new.component.html',
   styleUrl: './volunteers-new.component.css',
@@ -37,6 +38,7 @@ export class VolunteersNewComponent implements OnInit {
 
 
   private volunteersService = inject(VolunteersService);
+  private router = inject(Router);
   private fb = inject(FormBuilder);
 
   
@@ -64,7 +66,7 @@ export class VolunteersNewComponent implements OnInit {
     cognom1: ['',[Validators.required]],
     cognom2: [('')],
     data_naixement: [('')],
-    urlFoto: [''],
+    url_foto: [''],
     telefon_contacte: ['',[Validators.required]],
     email: ['',[Validators.required]],
     associacio: [''],
@@ -79,7 +81,12 @@ export class VolunteersNewComponent implements OnInit {
     // }),
   }
 
-  )
+  );
+
+  // onBasicUploadAuto(event: UploadEvent) {
+  //   console.log(event);
+  //   // this.messageService.add({ severity: 'info', summary: 'Success', detail: 'File Uploaded with Auto Mode' });
+  // }
 
   addVolunteer(): void {
     let volunteer: iVolunteer = this.volunteerForm.value;
@@ -90,9 +97,10 @@ export class VolunteersNewComponent implements OnInit {
         next: (res) => {
           console.log(res);
           //this.submitted = true;
+          this.router.navigate(['/layout/volunteers/', res.id]);
         },
         error: (e) => console.error(e)
-      });;
+      });
   }
 
   editVolunteer(): void {
@@ -107,9 +115,12 @@ export class VolunteersNewComponent implements OnInit {
         next: (res) => {
          // console.log("editVolunteer() ",res);
           //this.submitted = true;
+          this.volunteersService.editVolunteer = false;
+          this.router.navigate(['/layout/volunteers']);
         },
         error: (e) => console.error(e)
       });;
+    
   }
 
 }

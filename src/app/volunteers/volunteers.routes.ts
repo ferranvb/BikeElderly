@@ -1,5 +1,6 @@
-import { Routes } from "@angular/router";
-import { VolunteersNewComponent } from './volunteers-new/volunteers-new.component';
+import { RouterModule, Routes } from "@angular/router";
+import { ModuleWithProviders } from "@angular/core";
+import { routes } from "../app.routes";
 
 
 export const VOLUNTEERS_ROUTE: Routes = [
@@ -22,3 +23,4 @@ export const VOLUNTEERS_ROUTE: Routes = [
     loadComponent: () => import('./volunteers-new/volunteers-new.component').then(m=>m.VolunteersNewComponent)
   },
 ]
+

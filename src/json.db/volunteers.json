@@ -27,18 +27,18 @@
       "rol": ""
     },
     {
-      "id": 29,
       "dni": "12345678M",
       "nom": "Jennie",
       "cognom1": "Nichols",
-      "cognom2": "",
+      "cognom2": "Martz",
       "data_naixement": "08.03.1992",
+      "urlFoto": "",
       "telefon_contacte": "(272) 790-0888",
-      "url_foto": "https://randomuser.me/api/portraits/thumb/women/45.jpg",
       "email": "jennie.nichols@example.com",
       "associacio": "",
       "actiu": false,
-      "rol": ""
+      "id": 29,
+      "url_foto": "assets/images/no-foto.jpg"
     },
     {
       "dni": "41736832D",
@@ -69,48 +69,63 @@
       "id": 33
     },
     {
-      "dni": "12345678a",
-      "nom": "Marc",
-      "cognom1": "Llambrich",
-      "cognom2": "Mur",
-      "data_naixement": "15.02.2000",
-      "urlFoto": "",
-      "telefon_contacte": "656474232",
-      "email": "mllanbrich@gmaill.com",
-      "associacio": "Montbike",
-      "actiu": true,
-      "url_foto": "assets/images/no-foto.jpg",
-      "id": 34
-    },
-    {
       "dni": "46978412F",
       "nom": "Nathaniël",
       "cognom1": "Kuypers",
       "cognom2": "Wetstraat",
       "data_naixement": "29.12.1999",
-      "urlFoto": "",
+      "urlFoto": "https://randomuser.me/api/portraits/men/77.jpg",
       "telefon_contacte": "(032) 3849348",
       "email": "nathaniel.kuypers@example.com",
       "associacio": "Montbike",
       "actiu": [
         "true"
       ],
-      "url_foto": "assets/images/no-foto.jpg",
+      "url_foto": "https://randomuser.me/api/portraits/men/77.jpg",
       "id": 35
     },
     {
-      "dni": "78580256M",
-      "nom": "Mariano",
-      "cognom1": "Vidal",
-      "cognom2": "Bort",
-      "data_naixement": "24.02.1972",
-      "urlFoto": "",
-      "telefon_contacte": "636992000",
-      "email": "ferranvb@gmail.com",
+      "dni": "11510480S",
+      "nom": "Josefa",
+      "cognom1": "LOPEZ",
+      "cognom2": "DEL POZO",
+      "data_naixement": "18/03/1955",
+      "urlFoto": "https://randomuser.me/api/portraits/women/30.jpg",
+      "telefon_contacte": "681249224",
+      "email": "josefalopez@scientist.com",
       "associacio": "Montbike",
       "actiu": true,
       "id": 36,
-      "url_foto": "assets/images/no-foto.jpg"
+      "url_foto": "https://randomuser.me/api/portraits/women/30.jpg"
+    },
+    {
+      "dni": "84510763T",
+      "nom": "MARIA MILAGROS",
+      "cognom1": "ROSADO",
+      "cognom2": "FRAILE",
+      "data_naixement": "29/05/1963",
+      "urlFoto": "",
+      "telefon_contacte": "727086432",
+      "email": "mariamilagros_63@lycos.es",
+      "associacio": "Montbike",
+      "actiu": [
+        "true"
+      ],
+      "id": 37,
+      "url_foto": "https://randomuser.me/api/portraits/women/84.jpg"
+    },
+    {
+      "dni": "68691540Q",
+      "nom": "BIEL",
+      "cognom1": "GUERRERO",
+      "cognom2": "NOGUERA",
+      "data_naixement": "25/06/1947",
+      "url_foto": "https://randomuser.me/api/portraits/men/63.jpg",
+      "telefon_contacte": "642508451",
+      "email": "biel_47@earthling.net",
+      "associacio": "MONTBIKE",
+      "actiu": [],
+      "id": 38
     }
   ]
 }
