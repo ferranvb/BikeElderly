@@ -61,7 +61,7 @@ export class VolunteerListComponent implements OnInit {
   }
 
   btnClick() {
-    this.router.navigateByUrl('/login');
+    this.router.navigateByUrl('login');
   };
 
 
@@ -105,7 +105,7 @@ export class VolunteerListComponent implements OnInit {
 
 goDetail(volunteer: iVolunteer) {
   if ( volunteer){
-    let idAux: string = '/layout/volunteers/'+ volunteer.id?.toString();
+    let idAux: string = '/app/volunteers/'+ volunteer.id?.toString();
     this.router.navigate([idAux]);
   }
 }
@@ -114,7 +114,7 @@ goEdit(volunteer: iVolunteer) {
   if ( volunteer){
     this.volunteersService.volunteerSelected = volunteer;
     this.volunteersService.editVolunteer = true;
-    let idAux: string = '/layout/volunteers/new';
+    let idAux: string = '/app/volunteers/new';
     this.router.navigate([idAux]);
   }
 }

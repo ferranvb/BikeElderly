@@ -30,7 +30,7 @@ export class MenuComponent implements OnInit {
         {
             label: 'Inici',
             icon: 'pi pi-fw pi-home',
-            "routerLink": "./dashboard",
+            "routerLink": "dashboard",
         },
         {
             label: 'Cites',
@@ -44,16 +44,16 @@ export class MenuComponent implements OnInit {
             label: 'Voluntaris',
             icon: 'pi pi-fw pi-id-card',
             items: [
-                {label: 'Llistat Voluntaris', icon: 'pi pi-fw pi-users', "routerLink": "./dashboard/volunteers"},
-                {label: 'Nou Voluntari', icon: 'pi pi-fw pi-user-plus', "routerLink": "./dashboard/volunteer/new"}
+                {label: 'Llistat Voluntaris', icon: 'pi pi-fw pi-users', "routerLink": "./volunteers"},
+                {label: 'Nou Voluntari', icon: 'pi pi-fw pi-user-plus', "routerLink": "./volunteers/new"}
             ]
         },
         {
           label: 'Usuaris',
           icon: 'pi pi-fw pi-server',
           items: [
-              {label: 'Llistat Usuaris', icon: 'pi pi-fw pi-users',"routerLink": "./dashboard/clients"},
-              {label: 'Nou Usuari', icon: 'pi pi-fw pi-user-plus',"routerLink": "./dashboard/clients/new"}
+              {label: 'Llistat Usuaris', icon: 'pi pi-fw pi-users',"routerLink": "./clients"},
+              {label: 'Nou Usuari', icon: 'pi pi-fw pi-user-plus',"routerLink": "./clients/new"}
           ]
       },
       {
