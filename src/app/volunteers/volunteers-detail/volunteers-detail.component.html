@@ -1,7 +1,27 @@
 @defer(on timer(500ms)) {  
   <p-panel>
     <ng-template pTemplate="header">
-      <div class="flex align-items-center w-full" >
+      <div class="flex align-items-center w-full bg-no-repeat bg-center border-orange-500 border-1 border-round px-0 pt-0" >
+        <div class="flex-grow-0 flex align-items-left justify-content-left  font-bold ml-0 px-4 py-0">
+          <h2>Voluntari : <span class="text-orange-400">{{ volunteer?.nom }} {{volunteer?.cognom1}} {{ volunteer?.cognom2}}</span></h2>
+        </div>
+        <div class="flex-grow-1 top-0 px-4 py-1 font-bold">
+          <p-avatar image={{volunteer?.url_foto}} styleClass="ml-" size="large" shape="circle"></p-avatar>
+        </div>
+        <div class="flex-grow-1 flex align-items-right justify-content-end font-bold mr-4">
+            <a [routerLink]="'/layout/volunteers/'"> 
+                <!-- <p-image src="assets/images/undo-48.jpg" alt="Image" width="20"></p-image> -->
+                tornar
+            </a>
+        </div>
+    </div>
+
+
+
+
+
+
+      <!-- <div class="flex align-items-center w-full" >
           <div class="top-0 left-0 px-100 py-1 font-bold">
             <h1>{{ volunteer?.nom }} {{volunteer?.cognom1}} {{ volunteer?.cognom2}}</h1>
           </div>
@@ -13,22 +33,16 @@
           <div class="top-0 ml-50 px-4 py-1 font-bold">
             <a [routerLink]="'/layout/volunteers/'"> tornar </a>
           </div>
-      </div>
+      </div> -->
   </ng-template> 
-    
-    
-
-      
-          <h2> Dni: {{ volunteer?.dni }}</h2>
-      
-
-      
-          <h2> Nom complet: {{ volunteer?.nom }} {{ volunteer?.cognom1 }} {{ volunteer?.cognom2 }}</h2>
-      
-
   
-       <h2> Correu electrònic: {{ volunteer?.email }}</h2>
-       <h2> Telèfon contacte: {{ volunteer?.telefon_contacte }}</h2>
+  <h3> Dni: <span class="text-orange-400" >{{ volunteer?.dni }}</span></h3>
+  
+  <h3> Nom complet: <span class="text-orange-400" >{{ volunteer?.nom }} {{ volunteer?.cognom1 }} {{ volunteer?.cognom2 }}</span></h3>
+  
+  <h3> Correu electrònic:<span class="text-orange-400"> {{ volunteer?.email }}</span></h3>
+  
+  <h3> Telèfon contacte:<span class="text-orange-400"> {{ volunteer?.telefon_contacte }}</span></h3>
    
    
 </p-panel>

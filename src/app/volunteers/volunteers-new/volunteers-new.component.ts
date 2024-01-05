@@ -74,13 +74,14 @@ export class VolunteersNewComponent implements OnInit {
     let volunteer: iVolunteer = this.volunteerForm.value;
     volunteer.url_foto = "assets/images/no-foto.jpg";
 
-    this.volunteersService.addVolunteer(volunteer);
+    this.volunteersService.addVolunteer(volunteer)
+      .subscribe({
+        next: (res) => {
+          console.log(res);
+          //this.submitted = true;
+        },
+        error: (e) => console.error(e)
+      });;
   }
 
-  // addVolunteer() {
-  //   console.log('addVolunteer');
-  //   console.log(this.profileForm.value)
-  //   throw new Error('Method not implemented.');
-  //   }
-  
 }

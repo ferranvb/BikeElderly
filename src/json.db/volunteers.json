@@ -71,6 +71,22 @@
       ],
       "url_foto": "https://randomuser.me/api/portraits/women/7.jpg",
       "id": 33
+    },
+    {
+      "dni": "12345678a",
+      "nom": "Marc",
+      "cognom1": "Llambrich",
+      "cognom2": "Mur",
+      "data_naixement": "15.02.2000",
+      "urlFoto": "",
+      "telefon_contacte": "656474232",
+      "email": "mllanbrich@gmaill.com",
+      "associacio": "Montbike",
+      "actiu": [
+        "true"
+      ],
+      "url_foto": "assets/images/no-foto.jpg",
+      "id": 34
     }
   ]
 }
