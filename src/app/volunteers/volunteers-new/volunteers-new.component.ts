@@ -57,7 +57,7 @@ export class VolunteersNewComponent implements OnInit {
     telefon_contacte: ['',[Validators.required]],
     email: ['',[Validators.required]],
     associacio: [''],
-    actiu: [false,[Validators.requiredTrue]],
+    actiu: [false,[Validators.required]],
 
     // actiu: new FormControl(''),
     // rol: new FormControl(''),

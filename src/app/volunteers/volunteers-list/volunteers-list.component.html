@@ -8,7 +8,7 @@
         </div>
         
         <div class="flex-grow-1 flex align-items-right justify-content-end font-bold mr-3 py-3">
-            <p-button type="button" class="btn btn-primary-outline align-items-center" [routerLink]="'/layout/volunteers/new'"><i class="fa fa-plus"></i> Nou</p-button>    
+            <p-button type="button" icon="pi pi-plus" class="btn " label="Nou voluntari" [routerLink]="'/layout/volunteers/new'"></p-button>    
         </div>
     </div>    
     <p-confirmDialog></p-confirmDialog>
@@ -48,8 +48,9 @@
                 </td>
                 
                  <td>
-                    <p-button (click)="goDetail(voluntari.id)" label="Detall" styleClass="p-button-primary mr-2"></p-button>   
-                    <p-button (click)="confirmDelete($event, voluntari )" label="Delete" styleClass="p-button-danger"></p-button>
+                    <p-button icon="pi pi-search" (click)="goDetail(voluntari)" styleClass="p-button-primary mr-2"></p-button>
+                    <p-button (click)="goDetail(voluntari)" icon="pi pi-pencil"  severity="secondary" styleClass="p-button-secondary mr-2"></p-button>   
+                    <p-button icon="pi pi-trash" severity="danger"  (click)="confirmDelete($event, voluntari )" styleClass="p-button-danger"></p-button>
 
                 </td>
                 <!-- <td><button pButton pRipple label="Submit" [routerLink]="['/login']" class="p-button-success"></button></td> -->
