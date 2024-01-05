@@ -7,7 +7,7 @@ export interface iVolunteer {
     cognom1?: string,
     cognom2?: string,
     data_naixement? : string,
-    urlFoto?  : string,
+    url_foto?  : string,
     telefon_contacte? : string,
     email?: string,
     associacio? : string,

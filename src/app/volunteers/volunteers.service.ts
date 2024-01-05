@@ -97,10 +97,12 @@ export class VolunteersService {
   /** DELETE: delete the volunteer from the server */
   deleteVolunteer(volunteer: iVolunteer | number): Observable<iVolunteer> {
     const id = typeof volunteer === 'number' ? volunteer : volunteer.id;
-    const url = `${this.urlServer}/${id}`;
+    // const url = `${this.urlServer}/${id}`;
+    const url = `${this.urlServer}/volunteers/${id}`;
 
     return this.http.delete<iVolunteer>(url, this.httpOptions).pipe(
       tap(_ => this.log(`deleted volunteer id=${id}`)),
+      tap(_ => console.log(`deleted volunteer id=${id}`)),
       catchError(this.handleError<iVolunteer>('deleteVolunteer'))
     );
   }

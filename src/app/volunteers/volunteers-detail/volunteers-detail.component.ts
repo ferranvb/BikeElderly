@@ -5,13 +5,14 @@ import { ActivatedRoute, Router, RouterLink } from '@angular/router';
 import { iVolunteer } from '../interface/iVolunteer';
 
 import { PanelModule } from 'primeng/panel';
+import { AvatarModule } from 'primeng/avatar';
 
 
 @Component({
   selector: 'app-volunteer-detail',
   standalone: true,
   imports: [
-    CommonModule,RouterLink,PanelModule
+    CommonModule,RouterLink,PanelModule,AvatarModule
   ],
   templateUrl: './volunteers-detail.component.html',
   styleUrl: './volunteers-detail.component.css',

@@ -4,26 +4,33 @@ import { VolunteersService } from '../volunteers.service';
 import { TableModule } from 'primeng/table';
 import { ButtonModule } from 'primeng/button';
 import { TagModule } from 'primeng/tag';
+import { ConfirmDialogModule } from 'primeng/confirmdialog';
+import { ToastModule } from 'primeng/toast';
 import { Router, RouterLink, RouterOutlet } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
 import  jsonData from '../../../json.db/volunteers.json';
 import { iVolunteer } from '../interface/iVolunteer';
 
+import { ConfirmationService, MessageService, ConfirmEventType, LazyLoadEvent } from 'primeng/api';
+
 @Component({
   selector: 'volunteers-list',
   standalone: true,
   imports: [
-    CommonModule,TableModule,ButtonModule,TagModule, RouterLink, RouterOutlet,HttpClientModule,
+    CommonModule,TableModule,ButtonModule,ToastModule,ConfirmDialogModule,TagModule, RouterLink, RouterOutlet,HttpClientModule,
   ],
+  providers: [ConfirmationService, MessageService],
   templateUrl: './volunteers-list.component.html',
   styleUrl: './volunteers-list.component.css',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class VolunteerListComponent implements OnInit {
 
-  public volunteersList!: iVolunteer[]; 
+  public volunteersList!: iVolunteer[];
+  public selectedVolunteer?: iVolunteer;
 
-
+  private confirmationService = inject(ConfirmationService);
+  private messageService = inject(MessageService);
   private volunteersService = inject(VolunteersService);
   private router = inject(Router);
 
@@ -52,6 +59,46 @@ export class VolunteerListComponent implements OnInit {
   btnClick() {
     this.router.navigateByUrl('/login');
   };
+
+
+  confirmDelete(event: Event, volunteer: iVolunteer) {
+    this.confirmationService.confirm({
+        target: event.target as EventTarget,
+        message: `Estàs segur d´esborrar aquest voluntari?`,
+        header: 'Confirmació eborrat voluntari',
+        icon: 'pi pi-info-circle',
+        acceptButtonStyleClass:"p-button-danger p-button-text",
+        rejectButtonStyleClass:"p-button-text p-button-text",
+        acceptIcon:"none",
+        rejectIcon:"none",
+
+        accept: () => {
+            let messageAux ='';
+            if (volunteer) {
+              console.log("Volunteer", volunteer.nom);
+              this.volunteersService.deleteVolunteer(volunteer).subscribe();
+            }
+            //   {
+            //     next: data => {
+            //         console.log('Delete successful');
+            //         messageAux = 'Delete successful';
+            //     },
+            //     error: error => {
+            //         console.log('There was an error!', error);
+            //         messageAux = error.message;
+            //         console.error('There was an error!', error);
+            //     }
+            // } 
+
+            // );
+            this.messageService.add({ severity: 'info', summary: 'Confirmat', detail: 'Voluntari esborrat' });
+        },
+        reject: () => {
+            this.messageService.add({ severity: 'error', summary: 'Rejected', detail: 'You have rejected' });
+        }
+    });
+}
+
 
   // http.get('/images/dog.jpg', {responseType: 'arraybuffer'}).subscribe(buffer => {
   //   console.log('The image is ' + buffer.length + ' bytes large');
