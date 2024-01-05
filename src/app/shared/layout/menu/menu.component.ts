@@ -31,34 +31,42 @@ export class MenuComponent implements OnInit {
             label: 'Inici',
             icon: 'pi pi-fw pi-home',
             "routerLink": "dashboard",
+            routerLinkActiveOptions: { exact: true }
         },
         {
             label: 'Cites',
             icon: 'pi pi-fw pi-calendar',
-            items: [
-                {label: 'Llistat Cites', icon: 'pi pi-fw pi-list', "routerLink": "./dashboard/appointments" },
-                {label: 'Nova Cita', icon: 'pi pi-fw pi-calendar-plus', "routerLink": "./dashboard/appointment/new"}
-            ]
+            "routerLink": "dashboard",
+            routerLinkActiveOptions: { exact: true }
+            // items: [
+            //     {label: 'Llistat Cites', icon: 'pi pi-fw pi-list', "routerLink": "./dashboard/appointments" },
+            //     {label: 'Nova Cita', icon: 'pi pi-fw pi-calendar-plus', "routerLink": "./dashboard/appointment/new"}
+            // ]
         },
         {
             label: 'Voluntaris',
             icon: 'pi pi-fw pi-id-card',
-            items: [
-                {label: 'Llistat Voluntaris', icon: 'pi pi-fw pi-users', "routerLink": "./volunteers"},
-                {label: 'Nou Voluntari', icon: 'pi pi-fw pi-user-plus', "routerLink": "./volunteers/new"}
-            ]
+            "routerLink": "./volunteers",
+            routerLinkActiveOptions: { exact: true }
+            // items: [
+            //     {label: 'Llistat Voluntaris', icon: 'pi pi-fw pi-users', "routerLink": "./volunteers"},
+            //     {label: 'Nou Voluntari', icon: 'pi pi-fw pi-user-plus', "routerLink": "./volunteers/new"}
+            // ]
         },
         {
-          label: 'Usuaris',
+          label: 'Clients',
           icon: 'pi pi-fw pi-server',
-          items: [
-              {label: 'Llistat Usuaris', icon: 'pi pi-fw pi-users',"routerLink": "./clients"},
-              {label: 'Nou Usuari', icon: 'pi pi-fw pi-user-plus',"routerLink": "./clients/new"}
-          ]
+          "routerLink": "./clients",
+          routerLinkActiveOptions: { exact: true }
+          // items: [
+          //     {label: 'Llistat Usuaris', icon: 'pi pi-fw pi-users',"routerLink": "./clients"},
+          //     {label: 'Nou Usuari', icon: 'pi pi-fw pi-user-plus',"routerLink": "./clients/new"}
+          // ]
       },
       {
         label: 'Administració',
         icon: 'pi pi-fw pi-cog',
+        "routerLink": "./admin",
     }
 
     ];

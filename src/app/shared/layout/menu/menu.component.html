@@ -2,10 +2,20 @@
     <!-- <input type="text" pInputText placeholder="Search">
     <button pButton label="Logout" icon="pi pi-power-off"></button> -->
 <!-- </p-menubar> -->
-<div class="flex">
+<div class="flex flex-row flex-wrap max-h-flow">
+
+    <!-- <div class="flex flex-row flex-wrap align-items-center justify-content-center">
+        <div class="h-6rem border-round bg-primary font-bold p-3 m-3 flex align-items-center justify-content-center">h-6rem</div>
+        <div class="h-11rem border-round bg-primary font-bold p-3 m-3 flex align-items-center justify-content-center">h-11rem</div>
+        <div class="h-20rem border-round bg-primary font-bold p-3 m-3 flex align-items-center justify-content-center">h-20rem</div>
+        <div class="h-24rem border-round bg-primary font-bold p-3 m-3 flex align-items-center justify-content-center">h-24rem</div>
+    </div> -->
     
-        <div class="max-h-full border-round  font-bold p-0 flex align-items-start justify-content-start">
-            <p-tieredMenu [model]="items"  class="text-s"></p-tieredMenu>
+        <div class="h-24rem border-round font-bold p-0 flex align-items-start justify-content-start">
+            <p-tieredMenu [model]="items"  class="text-xl" styleClass="menu-bike"></p-tieredMenu>
+        </div>
+        <div class="absolute bottom-0 left-0 border-round p-4 font-bold " style="min-width: 120px; min-height: 70px">
+            <p>2024</p>
         </div>
  
 </div>
