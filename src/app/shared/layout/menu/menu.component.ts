@@ -66,7 +66,7 @@ export class MenuComponent implements OnInit {
       {
         label: 'Administració',
         icon: 'pi pi-fw pi-cog',
-        "routerLink": "./admin",
+        "routerLink": "./organizations",
     }
 
     ];

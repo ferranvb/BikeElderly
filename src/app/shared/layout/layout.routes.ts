@@ -19,7 +19,12 @@ export const LAYOUT_ROUTE: Routes = [
      { 'path' : 'clients', 
        'title' : 'Clients', 
        loadChildren: () => import('../../clients/clients.routes').then(m=>m.CLIENTS_ROUTE)
+     },
+     { 'path' : 'organizations', 
+       'title' : 'organizations', 
+       loadChildren: () => import('../../organizations/organizations.routes').then(m=>m.ORGANIZATIONS_ROUTE)
      }
+
 ]
 
 // export const LAYOUT_ROUTE: Routes = [ 

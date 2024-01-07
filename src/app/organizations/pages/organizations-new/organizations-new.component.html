@@ -1,0 +1,72 @@
+<div class="px-4 pt-0">
+    <div class="flex align-items-center w-full bg-no-repeat bg-center border-orange-500 border-1 border-round px-0 pt-0" >
+        <div class="flex-grow-1 flex align-items-left justify-content-left  font-bold ml-0 px-4 py-0">
+          <h2>Alta Organizació</h2>
+        </div>
+        <div class="flex-grow-1 flex align-items-right justify-content-end font-bold mr-4">
+            <a [routerLink]="'/app/volunteers/'"> 
+                <!-- <p-image src="assets/images/undo-48.jpg" alt="Image" width="20"></p-image> -->
+                tornar
+            </a>
+        </div>
+    </div>
+<!-- <div>
+    @for (item of statusOptions; track item) {
+        <li> {{ item }} </li>
+      } @empty {
+        <li> There are no items. </li>
+      }
+
+</div> -->
+
+<form [formGroup]="organizationForm" class="px-2 py-4">
+    <div class="formgroup-inline">
+            <div class="field grid">
+                <span class="p-float-label">
+                    <input id="name" pInputText type="text" formControlName="name" class="p-inputtext-sm">
+                    <label for="name">nom * </label>
+                </span>
+            </div>
+            <div class="field grid">
+                <span class="p-float-label">
+                    <input id="description" pInputText type="text" formControlName="description" class="p-inputtext-sm">
+                    <label for="description">descripció</label>
+                </span>
+            </div>
+    </div>
+    <div class="formgroup-inline">
+        <div class="field grid">
+            <span class="p-float-label">
+                <input id="telefon_contacte1" pInputText type="text" formControlName="telefon_contact" class="p-inputtext-sm">
+                <label for="telefon_contacte1">telèfon contacte * </label>
+            </span>
+        </div>
+        <div class="field grid">
+            <span class="p-float-label">
+                <input id="email" pInputText type="text" formControlName="email" class="p-inputtext-sm">
+                <label for="email">correu electrònic </label>
+            </span>
+        </div>
+    </div>
+    <div class="formgroup-inline">
+        <div class="card flex justify-content-center">
+            <p-dropdown [options]="typeOptions" formControlName="type"  [showClear]="false" placeholder="estat*">
+             </p-dropdown>
+        </div>
+    </div>
+
+    <div class="formgroup-inline">
+        <div class="card flex justify-content-center">
+            <p-dropdown [options]="statusOptions" formControlName="status"  [showClear]="false" placeholder="estat*">
+             </p-dropdown>
+        </div>
+    </div>
+    <br>
+    <div class="formgroup-inline">
+        <!-- @if ( editForm) {
+            <button pButton pRipple (click)="editVolunteer()"  label="Edita" class="p-button-primary"></button>
+        } @else { -->
+        <button pButton pRipple (click)="addOrganization()"  label="Afegeix" class="p-button-primary"></button>
+        <!-- } -->
+    </div>
+    </form>

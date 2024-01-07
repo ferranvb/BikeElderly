@@ -127,5 +127,37 @@
       "actiu": [],
       "id": 38
     }
+  ],
+  "organizations": [
+    {
+      "id": 1,
+      "name": "wwwwwwwd",
+      "description": "ddd",
+      "telefon_contact": "333",
+      "email": "333@fff",
+      "type": "Clients",
+      "status": "Actiu"
+    },
+    {
+      "name": "Montbike",
+      "description": "ddd",
+      "telefon_contacte": "333",
+      "email": "333@fff",
+      "id": 2
+    },
+    {
+      "name": "AVCA",
+      "description": "Associació Veterans Ciclistes Amposta",
+      "telefon_contacte": "333",
+      "email": "333@fff",
+      "id": 4
+    },
+    {
+      "name": "AVCA_juniors",
+      "description": "Associació Veterans Ciclistes Amposta",
+      "telefon_contacte": "333",
+      "email": "333@fff",
+      "id": 5
+    }
   ]
 }
