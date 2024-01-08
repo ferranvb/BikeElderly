@@ -10,6 +10,7 @@ import { iVolunteer } from '../interface/iVolunteer';
 import { VolunteersService } from '../volunteers.service';
 import { ImageModule } from 'primeng/image';
 import { Router, RouterLink } from '@angular/router';
+import { InputTextareaModule } from 'primeng/inputtextarea';
 
 interface City {
   name: string;
@@ -22,7 +23,7 @@ interface City {
   standalone: true,
   imports: [
     CommonModule,RouterLink,
-    ReactiveFormsModule,InputTextModule,DropdownModule,ButtonModule,CheckboxModule,ImageModule,FileUploadModule
+    ReactiveFormsModule,InputTextModule,DropdownModule,ButtonModule,CheckboxModule,ImageModule,FileUploadModule,InputTextareaModule
   ],
   templateUrl: './volunteers-new.component.html',
   styleUrl: './volunteers-new.component.css',

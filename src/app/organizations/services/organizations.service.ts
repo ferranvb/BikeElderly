@@ -64,4 +64,21 @@ export class OrganizationsService {
     );
   }
 
+   /** DELETE: delete the organization from the server */
+   deleteOrganization(organization: Organization | number): Observable<Organization> {
+    const id = typeof organization === 'number' ? organization : organization.id;
+    // const url = `${this.urlServer}/${id}`;
+    const url = `${this.urlServer}/organizations/${id}`;
+
+
+    return this.http.delete<Organization>(url, this.httpOptions).pipe(
+      // tap(_ => this.log(`deleted volunteer id=${id}`)),
+      // tap(_ => console.log(`deleted volunteer id=${id}`)),
+      // catchError(this.handleError<iVolunteer>('deleteVolunteer'))
+
+      //TODO manca control errors
+    );
+  }
+
+
 }

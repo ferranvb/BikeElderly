@@ -4,7 +4,7 @@
           <h2>Alta Organizació</h2>
         </div>
         <div class="flex-grow-1 flex align-items-right justify-content-end font-bold mr-4">
-            <a [routerLink]="'/app/volunteers/'"> 
+            <a [routerLink]="'/app/organizations'"> 
                 <!-- <p-image src="assets/images/undo-48.jpg" alt="Image" width="20"></p-image> -->
                 tornar
             </a>
@@ -20,45 +20,47 @@
 </div> -->
 
 <form [formGroup]="organizationForm" class="px-2 py-4">
-    <div class="formgroup-inline">
+    <div class="formgroup-inline px-0 py-3">
             <div class="field grid">
                 <span class="p-float-label">
-                    <input id="name" pInputText type="text" formControlName="name" class="p-inputtext-sm">
+                    <input id="name" pInputText type="text" formControlName="name" style="width: 400px;">
                     <label for="name">nom * </label>
-                </span>
-            </div>
-            <div class="field grid">
-                <span class="p-float-label">
-                    <input id="description" pInputText type="text" formControlName="description" class="p-inputtext-sm">
-                    <label for="description">descripció</label>
                 </span>
             </div>
     </div>
     <div class="formgroup-inline">
+            <div class="field grid">
+                <span class="p-float-label">
+                    <textarea id="description" rows="3" cols="70" pInputTextarea formControlName="description"></textarea>
+                    <label for="description">descripció</label>
+                </span>
+            </div>
+    </div>
+    <div class="formgroup-inline px-0 py-3">
         <div class="field grid">
             <span class="p-float-label">
-                <input id="telefon_contacte1" pInputText type="text" formControlName="telefon_contact" class="p-inputtext-sm">
+                <input id="telefon_contacte1" pInputText type="text" formControlName="telefon_contact">
                 <label for="telefon_contacte1">telèfon contacte * </label>
             </span>
         </div>
-        <div class="field grid">
+        <div class="field grid ml-4">
             <span class="p-float-label">
-                <input id="email" pInputText type="text" formControlName="email" class="p-inputtext-sm">
+                <input id="email" pInputText type="text" formControlName="email"  style="width: 300px;">
                 <label for="email">correu electrònic </label>
             </span>
         </div>
     </div>
     <div class="formgroup-inline">
-        <div class="card flex justify-content-center">
-            <p-dropdown [options]="typeOptions" formControlName="type"  [showClear]="false" placeholder="estat*">
+        <div class="p-float-label">
+            <p-dropdown [options]="typeOptions" id="type" formControlName="type"  [showClear]="false" placeholder="tipus*">
              </p-dropdown>
+             <label for="type" class="px-0">tipus</label>
         </div>
-    </div>
-
-    <div class="formgroup-inline">
-        <div class="card flex justify-content-center">
-            <p-dropdown [options]="statusOptions" formControlName="status"  [showClear]="false" placeholder="estat*">
+        
+        <div class="p-float-label ml-6 px-10">
+            <p-dropdown [options]="statusOptions" id="status" formControlName="status"  [showClear]="false" placeholder="estat*" >
              </p-dropdown>
+             <label for="status" class="px-0">estat</label>
         </div>
     </div>
     <br>

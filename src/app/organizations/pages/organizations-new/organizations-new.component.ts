@@ -9,13 +9,14 @@ import { InputTextModule } from 'primeng/inputtext';
 import { DropdownModule } from 'primeng/dropdown';
 import { OrganizationType } from 'src/app/shared/enums/organization-type.enum';
 import { Organization } from '../../model/organization';
+import { InputTextareaModule } from 'primeng/inputtextarea';
 
 @Component({
   selector: 'app-organizations-new',
   standalone: true,
   imports: [
     CommonModule,ReactiveFormsModule,RouterLink,RouterOutlet,
-    InputTextModule,ButtonModule,DropdownModule
+    InputTextModule,ButtonModule,DropdownModule,InputTextareaModule
   ],
   templateUrl: './organizations-new.component.html',
   styleUrl: './organizations-new.component.css',
