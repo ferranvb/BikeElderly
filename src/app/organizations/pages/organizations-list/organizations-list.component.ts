@@ -1,6 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
-import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
+import { ChangeDetectionStrategy, Component, ElementRef, ViewChild, inject } from '@angular/core';
 import { Router, RouterLink, RouterOutlet } from '@angular/router';
 import { ConfirmationService, MessageService } from 'primeng/api';
 import { AvatarModule } from 'primeng/avatar';
@@ -37,6 +37,9 @@ export class OrganizationsListComponent {
   private organizationsService = inject(OrganizationsService);
   private router = inject(Router);
 
+  @ViewChild('organizationTableRef') 
+  input?: ElementRef<HTMLInputElement>;;
+
   constructor() {
    
   }
@@ -70,7 +73,11 @@ export class OrganizationsListComponent {
             let messageAux ='';
             if (organization) {
               console.log("Organització", organization.name);
-              this.organizationsService.deleteOrganization(organization).subscribe();
+              this.organizationsService.deleteOrganization(organization)
+                .subscribe( () => {
+                  this.getOrganizations();
+                  this.ngOnInit(); 
+               });
             }
             
             this.messageService.add({ severity: 'info', summary: 'Confirmat', detail: 'Voluntari esborrat' });

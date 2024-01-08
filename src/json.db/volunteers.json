@@ -130,25 +130,29 @@
   ],
   "organizations": [
     {
-      "name": "Montbike",
-      "description": "ddd",
-      "telefon_contacte": "333",
-      "email": "333@fff",
-      "id": 2
-    },
-    {
-      "name": "AVCA",
-      "description": "Associació Veterans Ciclistes Amposta",
-      "telefon_contacte": "333",
-      "email": "333@fff",
-      "id": 4
-    },
-    {
       "name": "Ames de Casa",
       "description": "funciona per les Ames de Casa",
       "telefon_contacte": "636887799",
       "email": "ames@amposta.cat",
+      "status": "Actiu",
       "id": 6
+    },
+    {
+      "name": "Associació Veterans Ciclistes",
+      "description": "",
+      "telefon_contacte": "977707015",
+      "email": "avc@gmail.com",
+      "status": "Inactiu",
+      "id": 7
+    },
+    {
+      "name": "Batukada",
+      "description": "Associació de batukades",
+      "telefon_contacte": "65879450",
+      "email": "batuka@amposta.cat",
+      "status": "Actiu",
+      "type": "Voluntaris",
+      "id": 12
     }
   ]
 }

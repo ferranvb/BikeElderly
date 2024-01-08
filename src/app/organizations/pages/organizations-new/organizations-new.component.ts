@@ -41,8 +41,8 @@ export class OrganizationsNewComponent {
       description: [''],
       telefon_contact: ['',[Validators.required]],
       email: ['',[Validators.required]],
-      type: [OrganizationType],
-      status: [Status],
+      type: [null],
+      status: [null],
     }
   )
 
@@ -54,8 +54,13 @@ export class OrganizationsNewComponent {
       organization.description =  this.organizationForm.value.description;
       organization.telefon_contacte =  this.organizationForm.value.telefon_contact;
       organization.email =  this.organizationForm.value.email;
-      organization.type =  this.organizationForm.value.type?.CLIENTS;
-      organization.status =  this.organizationForm.value.status?.ACTIVE;
+      organization.status = this.organizationForm.value.status!;
+      organization.type = this.organizationForm.value.type!;
+      // organization.type =  this.organizationForm.value.type?.CLIENTS;
+      // statusAux : string = this.organizationForm.value.status?.
+      // organization.status =  Status;
+      console.log("Valors total",this.organizationForm.value);
+      console.log("Valors status",this.organizationForm.value.status);
 
 
 

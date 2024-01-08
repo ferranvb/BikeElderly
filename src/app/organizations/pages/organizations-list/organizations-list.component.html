@@ -13,7 +13,7 @@
 
     <p-confirmDialog></p-confirmDialog>
     @defer(on timer(300ms)) {   
-    <p-table [value]="organizationList" [lazy]="true"
+    <p-table [value]="organizationList" [lazy]="true" #organizationTableRef
                 styleClass="p-datatable-striped py-4" [tableStyle]="{ 'min-width': '50rem' }">
         <ng-template pTemplate="header">
             <tr>
@@ -37,7 +37,7 @@
                 <td>{{ organization.email }}</td>
                 <td>{{ organization.type }}</td>
                 <td>
-                   @if ( organization.status ) {
+                   @if ( organization.status ==='Actiu' ) {
                         <p-image src="assets/images/green-dot.svg" alt="Image" width="15"></p-image>
                     } @else {
                         <p-image src="assets/images/red-dot.svg" alt="Image" width="15"></p-image>    
