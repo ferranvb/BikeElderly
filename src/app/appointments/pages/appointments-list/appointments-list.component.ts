@@ -8,8 +8,8 @@ import { TagModule } from 'primeng/tag';
 
 
 import { RouterLink, RouterOutlet } from '@angular/router';
-import { iAppointment } from '../interface/iAppointment';
-import { AppointmentsService } from '../appointments.service';
+import { iAppointment } from '../../interface/iAppointment';
+import { AppointmentsService } from '../../appointments.service';
 
 @Component({
   selector: 'appointments-list',

@@ -1,9 +1,15 @@
-<div class="card">
-    <h2>Cites</h2>
-    <a class="px-3 py-2 flex items-center text-xs uppercase font-bold leading-snug text-white hover:opacity-75"
-              routerLink="llistat">
-              Alta
+<div class="px-4 pt-0">
+    <div class="flex align-items-center w-full bg-no-repeat bg-center border-100 border-1 border-round px-0 pt-0" >
+        <div class="flex-grow-1 flex align-items-left justify-content-left  font-bold ml-0 px-4 py-0">
+          <h2>Llistat de Cites</h2>
+        </div>
+        <div class="flex-grow-1 flex align-items-right justify-content-end font-bold mr-4">
+            <a [routerLink]="'/app/appointment/new'"> 
+                <!-- <p-image src="assets/images/undo-48.jpg" alt="Image" width="20"></p-image> -->
+                Nou
             </a>
+        </div>
+    </div>
 
     <p-table [value]="appointmentList" styleClass="p-datatable-striped" [tableStyle]="{ 'min-width': '50rem' }">
         <ng-template pTemplate="header">

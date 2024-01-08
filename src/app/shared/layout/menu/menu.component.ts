@@ -36,7 +36,7 @@ export class MenuComponent implements OnInit {
         {
             label: 'Cites',
             icon: 'pi pi-fw pi-calendar',
-            "routerLink": "dashboard",
+            "routerLink": "./appointments",
             routerLinkActiveOptions: { exact: true }
             // items: [
             //     {label: 'Llistat Cites', icon: 'pi pi-fw pi-list', "routerLink": "./dashboard/appointments" },
