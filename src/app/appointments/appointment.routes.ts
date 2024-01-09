@@ -11,7 +11,7 @@ export const APPOINTMENTS_ROUTE: Routes = [
     loadComponent: () => import('./pages/apopintments-list-panel/apopintments-list-panel.component').then(m=>m.ApopintmentsListPanelComponent)
   },
   {
-    'path': 'alta', 
+    'path': 'new', 
     'title': 'Alta Voluntaris', 
     loadComponent: () => import('./pages/appointments-new/appointments-new.component').then(m=>m.AppointmentsNewComponent)
   },

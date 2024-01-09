@@ -1,6 +1,6 @@
 <div class="px-4 pt-0">
     <!-- <div class="flex align-items-center w-full bg-no-repeat bg-center border-100 border-1 border-round px-0 pt-0" > -->
-        <date-prety></date-prety>
+        <date-prety [dateAux]="date"></date-prety>
         <!-- <div class="grid grid-nogutter"> -->
         
         <!-- <div class="row">
@@ -24,10 +24,10 @@
         
     <!-- </div> -->
    
-    <!-- <form>
+    <form>
         <input type="date" [(ngModel)]="dateAux2" [ngModelOptions]="{standalone: true}"/> 
         <button type="submit" (click)="creaData()">Data</button>   
-    </form> -->
+    </form>
       
     <!-- <date-prety [dateAux]="input"></date-prety>    -->
         
@@ -39,7 +39,7 @@
             </h2>
         </div> -->
         <div class="flex-grow-1 flex align-items-right justify-content-end font-bold mr-4 mt-0">
-            <a [routerLink]="'/app/appointment/new'"> 
+            <a [routerLink]="'/app/appointments/new'"> 
                 <!-- <p-image src="assets/images/undo-48.jpg" alt="Image" width="20"></p-image> -->
                 Nou
             </a>

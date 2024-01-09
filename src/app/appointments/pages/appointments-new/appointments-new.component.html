@@ -1,21 +1,31 @@
-<form [formGroup]="myForm" (onSubmit)="doSomething()">
-    <input formControlName="email" pInputText
-    placeholder="email"
-    />
-    <br />
-    <br />
-    <input type="password" pInputText formControlName="password" 
-    placeholder="password"/>
-    <br />
-    <br />
-    <p-calendar formControlName="dia" placeholder="dia"
-    dateFormat="dd.mm.yy"></p-calendar>
-    <br />
-    <br />
-    <p-calendar formControlName="hora"
-    selectionMode="range" [timeOnly]="true"
-    placeholder="hora"></p-calendar>
-    <br />
-    <br />
-    <button type="submit">Registrarme</button>
-  </form>
+<div class="px-4 pt-0">
+  <div class="grid">
+    <div class="col">
+      <form [formGroup]="myForm" (onSubmit)="doSomething()">
+          <input formControlName="email" pInputText
+          placeholder="email"
+          />
+          <br />
+          <br />
+          <input type="password" pInputText formControlName="password" 
+          placeholder="password"/>
+          <br />
+          <br />
+          <p-calendar formControlName="dia" placeholder="dia"
+          dateFormat="dd.mm.yy"></p-calendar>
+          <br />
+          <br />
+          <p-calendar formControlName="hora"
+          selectionMode="range" [timeOnly]="true"
+          placeholder="hora"></p-calendar>
+          <br />
+          <br />
+          <button type="submit">Registrarme</button>
+        </form>
+    </div>
+    <div class="col">
+      <date-prety [dateAux]="date"></date-prety>
+      <appointment-panel></appointment-panel>
+    </div>
+  </div>
+</div>

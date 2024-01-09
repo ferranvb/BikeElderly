@@ -3,18 +3,22 @@ import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { CalendarModule } from 'primeng/calendar';
 import { InputTextModule } from 'primeng/inputtext';
+import { DatePretyComponent } from '../../components/date-prety/date-prety.component';
+import { AppointmentPanelComponent } from '../../components/appointment-panel/appointment-panel.component';
 
 @Component({
   selector: 'appointments-new',
   standalone: true,
   imports: [
-    CommonModule,ReactiveFormsModule,CalendarModule,InputTextModule
+    CommonModule,ReactiveFormsModule,CalendarModule,InputTextModule,DatePretyComponent,AppointmentPanelComponent
   ],
   templateUrl: './appointments-new.component.html',
   styleUrl: './appointments-new.component.css',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class AppointmentsNewComponent implements OnInit{ 
+
+  public date: Date = new Date();
 
   formCita = new FormControl('');
   public myForm!: FormGroup;

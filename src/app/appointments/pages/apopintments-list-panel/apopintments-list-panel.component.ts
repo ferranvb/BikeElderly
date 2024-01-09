@@ -20,7 +20,7 @@ export class ApopintmentsListPanelComponent implements OnInit {
 
   dateToday: Date = new Date();
 
-  date?:Date = new Date();
+  date?:Date;
   dateAux2?:Date;
   
 
