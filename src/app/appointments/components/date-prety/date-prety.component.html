@@ -1,0 +1,55 @@
+
+<div class="grid border-1 border-round-top-md border-50 w-min mt-0 p-0 m-0">
+    <div class="col-12 py-0">
+        <div class="w-max  bg-red-400 border-round-top-md ml-0 px-5 py-0">
+            <div class="text-left white-alpha-10 px-0 font">
+                {{ dateAux | date: 'EEEE'}}
+            </div>
+        </div>
+    </div>
+   
+    <div class="col-6 p-0 m-0 w-min">
+        <div class="w-min">
+            <div class="text-orange-400 text-5xl p-0 ml-2  border-round-sm  font-medium align-content-start">
+                {{ dateAux | date: 'dd'}}
+            </div>
+        </div>
+    </div>
+    <div class="col-6 pl-4">
+        <div class="text-left px-0  font-semibold">
+            {{ dateAux | date: 'MMMM'}} <br />
+            {{ dateAux | date: 'YYYY'}}
+        </div>
+    </div>      
+</div>
+<!-- <div class="grid nested-grid">
+    <div class="col">
+        <div class="w-auto">
+            <div class="text-orange-400 text-6xl pt-0 mt-0  border-round-sm  font-bold align-content-start">
+                {{ dateAux | date: 'dd'}}
+            </div>
+        </div>
+        <div class="col">
+            <div class="grid grid-nogutter w-auto">
+                <div class="col-12 ml-0 px-0">
+                    <div class="text-left px-2  font-bold">
+                        {{ dateAux | date: 'MMMM'}}
+                    </div>
+                </div>
+                <div class="col-12 ml-0 w-auto">
+                    <div class="text-left px-2 font-bold">{{ dateAux | date: 'YYYY'}}</div>
+                </div>
+            </div>
+         </div>
+</div> -->
+
+
+    <!-- <div class="row">
+            <div class="col-12 ml-0 bg-red-800 w-full">
+                <div class="text-left white-alpha-10 px-2 font-bold">
+                    {{ dateAux | date: 'EEEE'}}
+                </div>
+            </div>
+        </div>
+    </div> -->
+    

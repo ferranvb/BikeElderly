@@ -1,10 +1,9 @@
 <div class="px-4 pt-0">
-    <div class="flex align-items-center w-full bg-no-repeat bg-center border-100 border-1 border-round px-0 pt-0" >
-        <div class="grid grid-nogutter">
-            <!-- <div class="row">
-                {{ dateToday | date: 'EEEE'}}
-            </div>     -->
-        <div class="row">
+    <!-- <div class="flex align-items-center w-full bg-no-repeat bg-center border-100 border-1 border-round px-0 pt-0" > -->
+        <date-prety></date-prety>
+        <!-- <div class="grid grid-nogutter"> -->
+        
+        <!-- <div class="row">
             <div class="grid grid-nogutter nested-grid surface-50 border-round-2xl border-noround-left border-noround-bottom">
                 <div class="col ">
                     <span class="text-orange-500 text-6xl px-2">{{ dateToday | date: 'dd'}}</span>
@@ -20,12 +19,17 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div> -->
         
         
-    </div>
-        
-        
+    <!-- </div> -->
+   
+    <!-- <form>
+        <input type="date" [(ngModel)]="dateAux2" [ngModelOptions]="{standalone: true}"/> 
+        <button type="submit" (click)="creaData()">Data</button>   
+    </form> -->
+      
+    <!-- <date-prety [dateAux]="input"></date-prety>    -->
         
         <!-- <div class="flex-grow-1 flex align-items-left justify-content-left  ml-0 px-4 py-0">
 
@@ -40,6 +44,6 @@
                 Nou
             </a>
         </div>
-    </div>
+    <!-- </div> -->
     <appointment-panel></appointment-panel>
 </div>
