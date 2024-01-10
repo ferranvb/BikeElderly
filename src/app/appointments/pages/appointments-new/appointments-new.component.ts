@@ -6,7 +6,7 @@ import { InputTextModule } from 'primeng/inputtext';
 import { DatePretyComponent } from '../../components/date-prety/date-prety.component';
 import { AppointmentPanelComponent } from '../../components/appointment-panel/appointment-panel.component';
 import { DropdownModule } from 'primeng/dropdown';
-import { iVolunteer } from 'src/app/volunteers/interface/iVolunteer';
+import { iVolunteer } from 'src/app/volunteers/model/iVolunteer';
 import { VolunteersService } from '../../../volunteers/volunteers.service';
 interface Good {
   id: number;

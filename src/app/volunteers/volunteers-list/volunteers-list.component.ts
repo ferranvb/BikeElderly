@@ -8,7 +8,7 @@ import { ConfirmDialogModule } from 'primeng/confirmdialog';
 import { ToastModule } from 'primeng/toast';
 import { Router, RouterLink, RouterOutlet } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
-import { iVolunteer } from '../interface/iVolunteer';
+import { iVolunteer } from '../model/iVolunteer';
 import { AvatarModule } from 'primeng/avatar';
 import { ImageModule } from 'primeng/image';
 

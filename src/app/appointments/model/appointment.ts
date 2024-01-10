@@ -1,5 +1,5 @@
 import { Client } from "src/app/clients/model/client";
-import { iVolunteer } from "src/app/volunteers/interface/iVolunteer";
+import { iVolunteer } from "src/app/volunteers/model/iVolunteer";
 
 export class Appointment {
 

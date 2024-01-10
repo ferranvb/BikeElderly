@@ -2,7 +2,7 @@ import { CommonModule, JsonPipe } from '@angular/common';
 import { ChangeDetectionStrategy, Component, Input, OnInit, inject } from '@angular/core';
 import { VolunteersService } from '../volunteers.service';
 import { ActivatedRoute, Router, RouterLink } from '@angular/router';
-import { iVolunteer } from '../interface/iVolunteer';
+import { iVolunteer } from '../model/iVolunteer';
 
 import { PanelModule } from 'primeng/panel';
 import { AvatarModule } from 'primeng/avatar';

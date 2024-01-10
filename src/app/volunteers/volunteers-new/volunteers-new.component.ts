@@ -6,7 +6,7 @@ import { DropdownModule } from 'primeng/dropdown';
 import { ButtonModule } from 'primeng/button';
 import { CheckboxModule } from 'primeng/checkbox';
 import { FileUploadModule, UploadEvent } from 'primeng/fileupload';
-import { iVolunteer } from '../interface/iVolunteer';
+import { iVolunteer } from '../model/iVolunteer';
 import { VolunteersService } from '../volunteers.service';
 import { ImageModule } from 'primeng/image';
 import { Router, RouterLink } from '@angular/router';

@@ -4,7 +4,7 @@ import { Observable } from 'rxjs/internal/Observable';
 import { environment } from 'src/environments/environment';
 import { catchError, map, of, tap } from 'rxjs';
 import { Message, MessageService } from 'primeng/api';
-import { iVolunteer } from './interface/iVolunteer';
+import { iVolunteer } from './model/iVolunteer';
 
 @Injectable({
   providedIn: 'root'
