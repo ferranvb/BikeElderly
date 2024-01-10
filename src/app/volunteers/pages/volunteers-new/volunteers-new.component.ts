@@ -11,6 +11,8 @@ import { ImageModule } from 'primeng/image';
 import { Router, RouterLink } from '@angular/router';
 import { InputTextareaModule } from 'primeng/inputtextarea';
 import { Volunteer } from '../../model/volunteer';
+import { IOrganization } from 'src/app/organizations/model/iOrganization';
+import { FieldsetModule } from 'primeng/fieldset'
 
 interface City {
   name: string;
@@ -23,7 +25,9 @@ interface City {
   standalone: true,
   imports: [
     CommonModule,RouterLink,
-    ReactiveFormsModule,InputTextModule,DropdownModule,ButtonModule,CheckboxModule,ImageModule,FileUploadModule,InputTextareaModule
+    ReactiveFormsModule,InputTextModule,DropdownModule,ButtonModule,CheckboxModule,ImageModule,FileUploadModule,InputTextareaModule,
+    FieldsetModule 
+
   ],
   templateUrl: './volunteers-new.component.html',
   styleUrl: './volunteers-new.component.css',
@@ -36,6 +40,8 @@ export class VolunteersNewComponent implements OnInit {
 
   @Input() 
   volunteer!: Volunteer;
+
+  org!:IOrganization;
 
 
   private volunteersService = inject(VolunteersService);
@@ -70,7 +76,11 @@ export class VolunteersNewComponent implements OnInit {
     url_foto: [''],
     telefon_contacte: ['',[Validators.required]],
     email: ['',[Validators.required]],
-    associacio: [''],
+    adreca: [''],
+    codi_postal: [''],
+    poblacio: [''],
+    provincia: [''],
+    organitzacio: [this.org],
     actiu: [false,[Validators.required]],
 
     // actiu: new FormControl(''),

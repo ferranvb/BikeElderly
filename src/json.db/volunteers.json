@@ -144,52 +144,17 @@
       "id": 39
     },
     {
-      "dni": "14712980A",
-      "nom": "Karen",
-      "cognom1": "Montgomery",
-      "cognom2": "Pearse",
-      "data_naixement": "18.09.2001",
-      "urlFoto": "",
-      "telefon_contacte": "071-722-5939",
-      "email": "karen.montgomery@example.com",
-      "associacio": "Athy",
-      "actiu": [
-        "true"
-      ],
-      "url_foto": "https://randomuser.me/api/portraits/women/7.jpg",
+      "dni": "457869S",
+      "nom": "Daniel",
+      "cognom1": "Rubio",
+      "cognom2": "Mendiz",
+      "data_naixement": "25.03.2000",
+      "url_foto": "assets/images/no-foto.jpg",
+      "telefon_contacte": "977707057",
+      "email": "drubio@amposta.cat",
+      "associacio": "Montbike",
+      "actiu": false,
       "id": 40
-    },
-    {
-      "dni": "14712980A",
-      "nom": "Karen",
-      "cognom1": "Montgomery",
-      "cognom2": "Pearse",
-      "data_naixement": "18.09.2001",
-      "urlFoto": "",
-      "telefon_contacte": "071-722-5939",
-      "email": "karen.montgomery@example.com",
-      "associacio": "Athy",
-      "actiu": [
-        "true"
-      ],
-      "url_foto": "https://randomuser.me/api/portraits/women/7.jpg",
-      "id": 41
-    },
-    {
-      "dni": "14712980A",
-      "nom": "Karen",
-      "cognom1": "Montgomery",
-      "cognom2": "Pearse",
-      "data_naixement": "18.09.2001",
-      "urlFoto": "",
-      "telefon_contacte": "071-722-5939",
-      "email": "karen.montgomery@example.com",
-      "associacio": "Athy",
-      "actiu": [
-        "true"
-      ],
-      "url_foto": "https://randomuser.me/api/portraits/women/7.jpg",
-      "id": 42
     }
   ],
   "organizations": [

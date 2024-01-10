@@ -10,15 +10,12 @@
         </a>
     </div>
 </div>
-
+<div class="grid">
+<div class="col" >
 <form [formGroup]="volunteerForm" class="px-2 py-4">
+    <p-fieldset legend="Dades Personals">
     <div class="formgroup-inline">
-        <div class="field grid">
-            <span class="p-float-label">
-                <input id="dni" pInputText type="text" formControlName="dni" class="p-inputtext-sm">
-                <label for="dni">dni * </label>
-            </span>
-        </div>    
+          
     <div class="field grid">
         <span class="p-float-label">
             <input id="nom" pInputText type="text" formControlName="nom" class="p-inputtext-sm">
@@ -45,27 +42,26 @@
 <div class="formgroup-inline">
     <div class="field grid">
         <span class="p-float-label">
+            <input id="dni" pInputText type="text" formControlName="dni" class="p-inputtext-sm">
+            <label for="dni">dni * </label>
+        </span>
+    </div>  
+    <div class="field grid">
+        <span class="p-float-label">
             <input id="data_naixement" pInputText type="text" formControlName="data_naixement"   class="p-inputtext-sm">
             <label for="data_naixement">Data naixement </label>    
         </span>
     </div>
 </div>
 <br>
-<div class="formgroup-inline">
-    <div class="field grid">
+
+    <!-- <div class="field grid">
         <span class="p-float-label">
             <p-image src="assets/images/no-foto.jpg" alt="Image" width="50"></p-image>
 
             
         </span>
-    </div>
-    
-    <!-- <p-fileUpload mode="basic" name="demo[]" url="https://www.primefaces.org/cdn/api/upload.php" 
-            accept="image/*"  (onUpload)="onBasicUploadAuto($event)" 
-            [auto]="true" chooseLabel="Browse"></p-fileUpload> -->
-
-
-</div>
+    </div> -->
 <br>
 <div class="formgroup-inline">
     <div class="field grid">
@@ -82,6 +78,42 @@
         </span>
     </div>
 </div>
+</p-fieldset>
+<br>
+<p-fieldset legend="Dades Contacte" >
+<br>
+<div class="formgroup-inline">
+    <div class="field grid">
+        <span class="p-float-label">
+            <input id="adreca" pInputText type="text" formControlName="adreca"   class="p-inputtext-sm">
+            <label for="adreca">adreça *</label>    
+        </span>
+    </div>
+
+    <div class="field grid">
+        <span class="p-float-label">
+            <input id="codi_postal" pInputText type="text" formControlName="codi_postal"   class="p-inputtext-sm">
+            <label for="codi_postal">codi postal </label>    
+        </span>
+    </div>
+</div>
+<br>
+<div class="formgroup-inline">
+    <div class="field grid">
+        <span class="p-float-label">
+            <input id="poblacio" pInputText type="text" formControlName="poblacio"   class="p-inputtext-sm">
+            <label for="poblacio">poblacio</label>    
+        </span>
+    </div>
+
+    <div class="field grid">
+        <span class="p-float-label">
+            <input id="provincial" pInputText type="text" formControlName="provincia"   class="p-inputtext-sm">
+            <label for="provincia">provincia</label>    
+        </span>
+    </div>
+</div>
+</p-fieldset>
 <br>
 <div class="field grid">
     <span class="p-float-label">
@@ -141,5 +173,11 @@
     }
 </div>
 </form>
-
+</div>
+<div class="col  px-2 py-5">
+    <p-fieldset legend="Fotografia" >
+        <p-image src="assets/images/no-foto.jpg" alt="Image" width="125"></p-image>
+    </p-fieldset>
+</div>
+</div>
 </div>
