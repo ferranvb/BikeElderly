@@ -1,31 +1,63 @@
 <div class="px-4 pt-0">
+ 
   <div class="grid">
     <div class="col">
-      <form [formGroup]="myForm" (onSubmit)="doSomething()">
-          <input formControlName="email" pInputText
-          placeholder="email"
-          />
+      <h1>Nova Cita</h1>
+      <form [formGroup]="formAppointment" >
+        <label for="day" class="mr-3">Dia</label>
+        <p-calendar id="day" formControlName="day" placeholder="dia" dateFormat="dd.mm.yy" (onSelect)="setDateAppointment()"></p-calendar>
           <br />
           <br />
-          <input type="password" pInputText formControlName="password" 
-          placeholder="password"/>
+          <label for="good" class="mr-3">Útl</label>
+          <p-dropdown id="good" formControlName="good" [options]="listGoods" optionLabel="name" ></p-dropdown>
           <br />
           <br />
-          <p-calendar formControlName="dia" placeholder="dia"
-          dateFormat="dd.mm.yy"></p-calendar>
+          <label for="startTime" class="mr-3">Hora Inici</label>
+          <p-calendar id="startTime" formControlName="startTime" placeholder="hora inici"
+          [timeOnly]="true"></p-calendar>
           <br />
           <br />
-          <p-calendar formControlName="hora"
-          selectionMode="range" [timeOnly]="true"
-          placeholder="hora"></p-calendar>
+          <label for="endTime" class="mr-3">Hora Final</label>
+          <p-calendar id="endTime" formControlName="endTime" selectionMode="single" [timeOnly]="true" placeholder="hora final"></p-calendar>
           <br />
           <br />
-          <button type="submit">Registrarme</button>
+          <label for="volunteer" class="mr-3">Voluntari</label>
+          <p-dropdown id="volunteer" formControlName="volunteer" [options]="listVolunteers"  [showClear]="true"
+              autoWidth="false" [style]="{'width':'50%'}">
+              <ng-template  let-volunteer pTemplate="selectedItem">
+                <div class="flex align-items-center gap-2" *ngIf="volunteer">
+                  <div>{{volunteer.cognom1}} {{volunteer.cognom2}}, {{volunteer.nom}}</div>
+                </div>
+            </ng-template>  
+            <ng-template let-volunteer pTemplate="item">
+              
+                  <div>{{volunteer.cognom1}} {{volunteer.cognom2}}, {{volunteer.nom}}</div>
+              
+          </ng-template>
+
+          </p-dropdown>
+          <br />
+          <br />
+          <p-button type="submit" (click)="addAppointment()">Registrarme</p-button>
+          <p-button type="submit" (click)="resetAppointment()" class="ml-3">Neteja</p-button>
         </form>
     </div>
     <div class="col">
-      <date-prety [dateAux]="date"></date-prety>
-      <appointment-panel></appointment-panel>
+      @if ( date) {
+        <date-prety [dateAux]="date"></date-prety>
+        <appointment-panel></appointment-panel>
+      } @else {
+        <h3>tria data</h3>
+      }
     </div>
   </div>
 </div>
+
+
+
+
+<!-- <div class="card flex justify-content-center">
+  <form [formGroup]="formGroup">
+      <p-dropdown formControlName="selectedCity" [options]="cities" optionLabel="name" placeholder="Select a City"></p-dropdown>
+  </form>
+</div> -->

@@ -126,6 +126,70 @@
       "associacio": "MONTBIKE",
       "actiu": [],
       "id": 38
+    },
+    {
+      "dni": "14712980A",
+      "nom": "Karen",
+      "cognom1": "Montgomery",
+      "cognom2": "Pearse",
+      "data_naixement": "18.09.2001",
+      "urlFoto": "",
+      "telefon_contacte": "071-722-5939",
+      "email": "karen.montgomery@example.com",
+      "associacio": "Athy",
+      "actiu": [
+        "true"
+      ],
+      "url_foto": "https://randomuser.me/api/portraits/women/7.jpg",
+      "id": 39
+    },
+    {
+      "dni": "14712980A",
+      "nom": "Karen",
+      "cognom1": "Montgomery",
+      "cognom2": "Pearse",
+      "data_naixement": "18.09.2001",
+      "urlFoto": "",
+      "telefon_contacte": "071-722-5939",
+      "email": "karen.montgomery@example.com",
+      "associacio": "Athy",
+      "actiu": [
+        "true"
+      ],
+      "url_foto": "https://randomuser.me/api/portraits/women/7.jpg",
+      "id": 40
+    },
+    {
+      "dni": "14712980A",
+      "nom": "Karen",
+      "cognom1": "Montgomery",
+      "cognom2": "Pearse",
+      "data_naixement": "18.09.2001",
+      "urlFoto": "",
+      "telefon_contacte": "071-722-5939",
+      "email": "karen.montgomery@example.com",
+      "associacio": "Athy",
+      "actiu": [
+        "true"
+      ],
+      "url_foto": "https://randomuser.me/api/portraits/women/7.jpg",
+      "id": 41
+    },
+    {
+      "dni": "14712980A",
+      "nom": "Karen",
+      "cognom1": "Montgomery",
+      "cognom2": "Pearse",
+      "data_naixement": "18.09.2001",
+      "urlFoto": "",
+      "telefon_contacte": "071-722-5939",
+      "email": "karen.montgomery@example.com",
+      "associacio": "Athy",
+      "actiu": [
+        "true"
+      ],
+      "url_foto": "https://randomuser.me/api/portraits/women/7.jpg",
+      "id": 42
     }
   ],
   "organizations": [
