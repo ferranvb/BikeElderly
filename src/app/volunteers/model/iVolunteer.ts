@@ -1,5 +1,5 @@
 
-export interface iVolunteer {
+export interface IVolunteer {
 
     id?: number,
     dni?: string,

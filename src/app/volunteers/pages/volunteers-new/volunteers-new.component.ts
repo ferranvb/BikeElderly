@@ -6,11 +6,11 @@ import { DropdownModule } from 'primeng/dropdown';
 import { ButtonModule } from 'primeng/button';
 import { CheckboxModule } from 'primeng/checkbox';
 import { FileUploadModule, UploadEvent } from 'primeng/fileupload';
-import { iVolunteer } from '../model/iVolunteer';
-import { VolunteersService } from '../volunteers.service';
+import { VolunteersService } from '../../services/volunteers.service';
 import { ImageModule } from 'primeng/image';
 import { Router, RouterLink } from '@angular/router';
 import { InputTextareaModule } from 'primeng/inputtextarea';
+import { Volunteer } from '../../model/volunteer';
 
 interface City {
   name: string;
@@ -35,7 +35,7 @@ export class VolunteersNewComponent implements OnInit {
   editForm: boolean = false;
 
   @Input() 
-  volunteer!: iVolunteer;
+  volunteer!: Volunteer;
 
 
   private volunteersService = inject(VolunteersService);
@@ -66,7 +66,7 @@ export class VolunteersNewComponent implements OnInit {
     nom : ['',[Validators.required]],
     cognom1: ['',[Validators.required]],
     cognom2: [('')],
-    data_naixement: [('')],
+    data_naixement: [''],
     url_foto: [''],
     telefon_contacte: ['',[Validators.required]],
     email: ['',[Validators.required]],
@@ -90,7 +90,7 @@ export class VolunteersNewComponent implements OnInit {
   // }
 
   addVolunteer(): void {
-    let volunteer: iVolunteer = this.volunteerForm.value;
+    let volunteer: Volunteer = this.volunteerForm.value;
     volunteer.url_foto = "assets/images/no-foto.jpg";
 
     this.volunteersService.addVolunteer(volunteer)
@@ -105,7 +105,7 @@ export class VolunteersNewComponent implements OnInit {
   }
 
   editVolunteer(): void {
-    let volunteer: iVolunteer = this.volunteerForm.value;
+    let volunteer: Volunteer = this.volunteerForm.value;
     volunteer.id = this.volunteersService.volunteerSelected.id;
     if ( volunteer.url_foto == null ) {
       volunteer.url_foto = "assets/images/no-foto.jpg";

@@ -6,8 +6,8 @@ import { InputTextModule } from 'primeng/inputtext';
 import { DatePretyComponent } from '../../components/date-prety/date-prety.component';
 import { AppointmentPanelComponent } from '../../components/appointment-panel/appointment-panel.component';
 import { DropdownModule } from 'primeng/dropdown';
-import { iVolunteer } from 'src/app/volunteers/model/iVolunteer';
-import { VolunteersService } from '../../../volunteers/volunteers.service';
+import { VolunteersService } from '../../../volunteers/services/volunteers.service';
+import { IVolunteer } from 'src/app/volunteers/model/iVolunteer';
 interface Good {
   id: number;
   name: string;
@@ -38,8 +38,8 @@ export class AppointmentsNewComponent implements OnInit{
     "name": 'Bici Cargo 2'
     }
   ];
-  public listVolunteers: iVolunteer[] = [];
-  public selectedVolunteer?: iVolunteer;
+  public listVolunteers: IVolunteer[] = [];
+  public selectedVolunteer?: IVolunteer;
   
   public formAppointment!: FormGroup;
 
@@ -56,9 +56,9 @@ export class AppointmentsNewComponent implements OnInit{
       volunteer:  new FormControl(null),
     })
 
-    this.volunteersService.getVolunteers()
-      .subscribe( res => this.listVolunteers = res
-        
+    this.volunteersService.getVolunteersMin()
+      .subscribe( res => 
+          this.listVolunteers = res
         );
     console.log(this.listVolunteers);
 

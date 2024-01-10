@@ -4,8 +4,8 @@ import { AuthGuardService as AuthGuard } from './auth/services/auth-guard.servic
 import { ErrorComponent } from './shared/error/error.component';
 import { DashboardComponent } from './dashboard/component/dashboard.component';
 import { LayoutComponent } from './shared/layout/layout.component';
-import { VolunteerListComponent } from './volunteers/volunteers-list/volunteers-list.component';
-import { VolunteersNewComponent } from './volunteers/volunteers-new/volunteers-new.component';
+import { VolunteerListComponent } from './volunteers/pages/volunteers-list/volunteers-list.component';
+import { VolunteersNewComponent } from './volunteers/pages/volunteers-new/volunteers-new.component';
 
 
 const resolvedChildATitle: ResolveFn<string> = () => Promise.resolve('llistat');

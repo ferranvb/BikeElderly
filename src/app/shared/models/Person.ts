@@ -5,7 +5,7 @@ export class Person {
   nom?: string;
   cognom1?: string;
   cognom2?: string;
-  data_naixement? : Date;
+  data_naixement? : string;
   url_foto?  : string;
   telefon_contacte? : string;
   email?: string;

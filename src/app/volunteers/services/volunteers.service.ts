@@ -4,7 +4,8 @@ import { Observable } from 'rxjs/internal/Observable';
 import { environment } from 'src/environments/environment';
 import { catchError, map, of, tap } from 'rxjs';
 import { Message, MessageService } from 'primeng/api';
-import { iVolunteer } from './model/iVolunteer';
+import { Volunteer } from '../model/volunteer';
+import { IVolunteer } from '../model/iVolunteer';
 
 @Injectable({
   providedIn: 'root'
@@ -23,7 +24,7 @@ export class VolunteersService {
   private messageService = inject(MessageService);
 
   public editVolunteer:boolean = false;
-  public volunteerSelected!: iVolunteer;
+  public volunteerSelected!: Volunteer;
   
   constructor() {
    }
@@ -33,91 +34,90 @@ export class VolunteersService {
   // }
 
    /** GET volunteers from the server */
-   getVolunteers(): Observable<iVolunteer[]> {
-    const urlGetVolunteers: string =this.urlServer + '/volunteers';
-    console.log(urlGetVolunteers); 
-    const iVolunteerAux = this.http.get<iVolunteer[]>(urlGetVolunteers);
+   getVolunteers(): Observable<Volunteer[]> {
+    const url: string =this.urlServer + '/volunteers';
+    
+    const iVolunteerAux = this.http.get<Volunteer[]>(url);
     return iVolunteerAux;
-      // .pipe(
-      //   tap(response => console.log(response)),
-      //   // tap(_ => this.log('fetched volunteers')),
-      //   catchError(this.handleError<Ivoluntari[]>('getVolunteers', []))
-      // );
+
+    //TODO manca control errors
+  }
+
+  getVolunteersMin(): Observable<IVolunteer[]> {
+    const url: string =this.urlServer + '/volunteers';
+    
+    return this.http.get<IVolunteer[]>(url);
+    
+    //TODO manca control errors
   }
 
 
   /** GET volunteer by id. Return `undefined` when id not found */
-  getVolunteerNo404<Data>(id: number): Observable<iVolunteer> {
-    // const url = `${this.urlServer}/?id=${id}`;
-    const url = 'http://localhost:3000/volunteers/?id_voluntari=28';
+  // getVolunteerNo404<Data>(id: number): Observable<iVolunteer> {
+  
+  //   const url = 'http://localhost:3000/volunteers/?id_voluntari=28';
 
-    return this.http.get<iVolunteer[]>(url)
-      .pipe(
-        map(volunteer => volunteer[0]), // returns a {0|1} element array
-        tap(h => {
-          const outcome = h ? `fetched` : `did not find`;
-          this.log(`${outcome} volunteer id=${id}`);
-        }),
-        catchError(this.handleError<iVolunteer>(`getVolunteer id=${id}`))
-      );
-  }
+  //   return this.http.get<iVolunteer[]>(url)
+  //     .pipe(
+  //       map(volunteer => volunteer[0]), // returns a {0|1} element array
+  //       tap(h => {
+  //         const outcome = h ? `fetched` : `did not find`;
+  //         this.log(`${outcome} volunteer id=${id}`);
+  //       }),
+  //       catchError(this.handleError<iVolunteer>(`getVolunteer id=${id}`))
+  //     );
+  // }
 
   /** GET volunteer by id. Will 404 if id not found */
-  getVolunteerId(id: number): Observable<iVolunteer> {
-
+  getVolunteerId(id: number): Observable<Volunteer> {
     const url = `${this.urlServer}/volunteers/${id}`;
   
-    return this.http.get(url)
-        .pipe (
-          
-        catchError(this.handleError<iVolunteer>(`getVolunteer id=${id}`))
-    );
+    return this.http.get<Volunteer>(url);
+    
+    //TODO manca control errors
   }
   /* GET volunteer whose name contains search term */
-  searchVolunteer(term: string): Observable<iVolunteer[]> {
+  searchVolunteer(term: string): Observable<Volunteer[]> {
     if (!term.trim()) {
       // if not search term, return empty hero array.
       return of([]);
     }
-    return this.http.get<iVolunteer[]>(`${this.urlServer}/?name=${term}`).pipe(
+    return this.http.get<Volunteer[]>(`${this.urlServer}/?name=${term}`).pipe(
       tap(x => x.length ?
          this.log(`found volunteers matching "${term}"`) :
          this.log(`no volunteers matching "${term}"`)),
-      catchError(this.handleError<iVolunteer[]>('searchVolunteers', []))
+      catchError(this.handleError<Volunteer[]>('searchVolunteers', []))
     );
   }
 
   /** POST: add a new volunteer to the server */  
-  addVolunteer(volunteer: iVolunteer): Observable<iVolunteer> {
+  addVolunteer(volunteer: Volunteer): Observable<Volunteer> {
     const url = `${this.urlServer}/volunteers`;
     const body=JSON.stringify(volunteer!);
     console.log(body)
     console.log('URL', url);
-    return this.http.post<iVolunteer>(url, body, this.httpOptions).pipe(
-      tap((newVolunteer: iVolunteer) => this.log(`added volunteer w/ id=${newVolunteer.id}`)),
-      tap((newVolunteer: iVolunteer) => console.log(`added volunteer`, body)),
-      catchError(this.handleError<iVolunteer>('addVolunteer'))
+    return this.http.post<Volunteer>(url, body, this.httpOptions).pipe(
+      tap((newVolunteer: Volunteer) => this.log(`added volunteer w/ id=${newVolunteer.id}`)),
+      tap((newVolunteer: Volunteer) => console.log(`added volunteer`, body)),
+      catchError(this.handleError<Volunteer>('addVolunteer'))
     );
   }
 
   /** DELETE: delete the volunteer from the server */
-  deleteVolunteer(volunteer: iVolunteer | number): Observable<iVolunteer> {
+  deleteVolunteer(volunteer: Volunteer | number): Observable<Volunteer> {
     const id = typeof volunteer === 'number' ? volunteer : volunteer.id;
-    // const url = `${this.urlServer}/${id}`;
     const url = `${this.urlServer}/volunteers/${id}`;
 
 
-    return this.http.delete<iVolunteer>(url, this.httpOptions).pipe(
+    return this.http.delete<Volunteer>(url, this.httpOptions).pipe(
       tap(_ => this.log(`deleted volunteer id=${id}`)),
       tap(_ => console.log(`deleted volunteer id=${id}`)),
-      catchError(this.handleError<iVolunteer>('deleteVolunteer'))
+      catchError(this.handleError<Volunteer>('deleteVolunteer'))
     );
   }
 
   /** PUT: update the volunteer on the server */
-  updateVolunteer(volunteer: iVolunteer): Observable<any> {
-    //console.log("updateVolunteer(...) ",volunteer);
-    
+  updateVolunteer(volunteer: Volunteer): Observable<any> {
     const url = `${this.urlServer}/volunteers/${volunteer.id}`;
     const body=JSON.stringify(volunteer!);
 

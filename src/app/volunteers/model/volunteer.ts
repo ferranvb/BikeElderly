@@ -10,7 +10,7 @@ export class Volunteer extends Person{
     super();
   }
 
-  getNomComplet() {
+  getNomComplet?() {
     return this.nom + ' ' + this.cognom1 + ' ' + this.cognom2;
   }
 

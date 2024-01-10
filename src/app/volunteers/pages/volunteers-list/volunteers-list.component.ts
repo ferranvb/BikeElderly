@@ -1,6 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { ChangeDetectionStrategy, Component, OnInit, inject } from '@angular/core';
-import { VolunteersService } from '../volunteers.service';
+import { VolunteersService } from '../../services/volunteers.service';
 import { TableModule } from 'primeng/table';
 import { ButtonModule } from 'primeng/button';
 import { TagModule } from 'primeng/tag';
@@ -8,12 +8,12 @@ import { ConfirmDialogModule } from 'primeng/confirmdialog';
 import { ToastModule } from 'primeng/toast';
 import { Router, RouterLink, RouterOutlet } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
-import { iVolunteer } from '../model/iVolunteer';
 import { AvatarModule } from 'primeng/avatar';
 import { ImageModule } from 'primeng/image';
 
 import { ConfirmationService, MessageService, ConfirmEventType, LazyLoadEvent } from 'primeng/api';
 import { SpiningComponent } from 'src/app/shared/components/spining/spining.component';
+import { Volunteer } from '../../model/volunteer';
 
 @Component({
   selector: 'volunteers-list',
@@ -30,8 +30,8 @@ import { SpiningComponent } from 'src/app/shared/components/spining/spining.comp
 })
 export class VolunteerListComponent implements OnInit {
 
-  public volunteersList!: iVolunteer[];
-  public selectedVolunteer?: iVolunteer;
+  public volunteersList!: Volunteer[];
+  public selectedVolunteer?: Volunteer;
 
   private confirmationService = inject(ConfirmationService);
   private messageService = inject(MessageService);
@@ -46,11 +46,6 @@ export class VolunteerListComponent implements OnInit {
     this.getVolunteers();
   }
   
-  // getV() : Ivoluntari[] {
-  //   return this.volunteersService.getVolunteers()
-  //     .subscribe(response => {return response.;});
-  // }
-
   getVolunteers(): void {
     this.volunteersService.getVolunteers()
     // .subscribe(response => console.log('data',response));
@@ -65,7 +60,7 @@ export class VolunteerListComponent implements OnInit {
   };
 
 
-  confirmDelete(event: Event, volunteer: iVolunteer) {
+  confirmDelete(event: Event, volunteer: Volunteer) {
     this.confirmationService.confirm({
         target: event.target as EventTarget,
         message: `Estàs segur d´esborrar aquest voluntari?`,
@@ -103,14 +98,14 @@ export class VolunteerListComponent implements OnInit {
     });
 }
 
-goDetail(volunteer: iVolunteer) {
+goDetail(volunteer: Volunteer) {
   if ( volunteer){
     let idAux: string = '/app/volunteers/'+ volunteer.id?.toString();
     this.router.navigate([idAux]);
   }
 }
 
-goEdit(volunteer: iVolunteer) {
+goEdit(volunteer: Volunteer) {
   if ( volunteer){
     this.volunteersService.volunteerSelected = volunteer;
     this.volunteersService.editVolunteer = true;
