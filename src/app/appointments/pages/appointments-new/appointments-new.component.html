@@ -22,8 +22,9 @@
           <br />
           <br />
           <label for="volunteer" class="mr-3">Voluntari</label>
-          <p-autoComplete formControlName="volunteer" 
-                    [dropdown]="true" [suggestions]="listVolunteersMinSelection" 
+          <p-autoComplete formControlName="volunteer" [minLength]="3" [showClear]="true"
+                    [dropdown]="false" [suggestions]="listVolunteersMinSelection" 
+                    (onClear)="getListVolunteersMinSelection()"
                     (completeMethod)="searchVolunteer($event)" field="full_name"></p-autoComplete>
           
           

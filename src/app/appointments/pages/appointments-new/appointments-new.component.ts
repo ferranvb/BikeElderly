@@ -95,10 +95,10 @@ export class AppointmentsNewComponent implements OnInit{
     //   console.log("listVolunteersMinSelection.length === 0");
     //    this.getListVolunteersMinSelection();
     // } 
-    if ( query.length === 0) {
-      console.log("query.length zero");
-      this.getListVolunteersMinSelection();
-   } 
+  //   if ( query.length === 0) {
+  //     console.log("query.length zero");
+  //     this.getListVolunteersMinSelection();
+  //  } 
   }
 
   public setDateAppointment():void {
