@@ -8,9 +8,15 @@ import { AppointmentPanelComponent } from '../../components/appointment-panel/ap
 import { DropdownModule } from 'primeng/dropdown';
 import { VolunteersService } from '../../../volunteers/services/volunteers.service';
 import { IVolunteer } from 'src/app/volunteers/model/iVolunteer';
+import { AutoCompleteModule } from 'primeng/autocomplete';
 interface Good {
   id: number;
   name: string;
+}
+
+interface AutoCompleteCompleteEvent {
+  originalEvent: Event;
+  query: string;
 }
 
 @Component({
@@ -18,7 +24,8 @@ interface Good {
   standalone: true,
   imports: [
     CommonModule,ReactiveFormsModule,CalendarModule,InputTextModule,
-    DropdownModule,DatePretyComponent,AppointmentPanelComponent
+    DropdownModule,DatePretyComponent,AppointmentPanelComponent,
+    AutoCompleteModule
   ],
   templateUrl: './appointments-new.component.html',
   styleUrl: './appointments-new.component.css',
@@ -38,7 +45,7 @@ export class AppointmentsNewComponent implements OnInit{
     "name": 'Bici Cargo 2'
     }
   ];
-  public listVolunteers: IVolunteer[] = [];
+  public listVolunteersMinSelection: IVolunteer[] = [];
   public selectedVolunteer?: IVolunteer;
   
   public formAppointment!: FormGroup;
@@ -56,12 +63,42 @@ export class AppointmentsNewComponent implements OnInit{
       volunteer:  new FormControl(null),
     })
 
-    this.volunteersService.getVolunteersMin()
-      .subscribe( res => 
-          this.listVolunteers = res
-        );
-    console.log(this.listVolunteers);
+    this.getListVolunteersMinSelection();
+  }
 
+  getListVolunteersMinSelection() {
+    this.volunteersService.getVolunteersMin()
+    .subscribe( res => 
+        this.listVolunteersMinSelection = res
+      );
+  }
+
+  searchVolunteer(event: AutoCompleteCompleteEvent) {
+    let filtered: any[] = [];
+    let query = event.query;
+    console.log ("Query", query);
+
+
+    // for (let i = 0; i < (this.listVolunteersMinSelection as any[]).length; i++) {
+    //     let volunteer = (this.listVolunteersMinSelection as any[])[i];
+    //     if (volunteer.full_name.toLowerCase().indexOf(query.toLowerCase()) == 0) {
+    //         filtered.push(volunteer);
+    //     }
+    // }
+    this.listVolunteersMinSelection =
+      this.listVolunteersMinSelection.filter(volunteer =>
+      volunteer.full_name.toLowerCase().includes(query.toLowerCase()));
+    
+    console.log("Filtered",this.listVolunteersMinSelection);
+
+    // if (this.listVolunteersMinSelection.length === 0 ) {
+    //   console.log("listVolunteersMinSelection.length === 0");
+    //    this.getListVolunteersMinSelection();
+    // } 
+    if ( query.length === 0) {
+      console.log("query.length zero");
+      this.getListVolunteersMinSelection();
+   } 
   }
 
   public setDateAppointment():void {

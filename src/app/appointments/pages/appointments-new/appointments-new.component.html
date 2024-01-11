@@ -22,7 +22,13 @@
           <br />
           <br />
           <label for="volunteer" class="mr-3">Voluntari</label>
-          <p-dropdown id="volunteer" formControlName="volunteer" [options]="listVolunteers"  [showClear]="true"
+          <p-autoComplete formControlName="volunteer" 
+                    [dropdown]="true" [suggestions]="listVolunteersMinSelection" 
+                    (completeMethod)="searchVolunteer($event)" field="full_name"></p-autoComplete>
+          
+          
+          
+          <!-- <p-dropdown id="volunteer" formControlName="volunteer" [options]="listVolunteers"  [showClear]="true"
               autoWidth="false" [style]="{'width':'50%'}">
               <ng-template  let-volunteer pTemplate="selectedItem">
                 <div class="flex align-items-center gap-2" *ngIf="volunteer">
@@ -32,10 +38,9 @@
             <ng-template let-volunteer pTemplate="item">
               
                   <div>{{volunteer.cognom1}} {{volunteer.cognom2}}, {{volunteer.nom}}</div>
-              
           </ng-template>
 
-          </p-dropdown>
+          </p-dropdown> -->
           <br />
           <br />
           <p-button type="submit" (click)="addAppointment()">Registrarme</p-button>
@@ -56,8 +61,4 @@
 
 
 
-<!-- <div class="card flex justify-content-center">
-  <form [formGroup]="formGroup">
-      <p-dropdown formControlName="selectedCity" [options]="cities" optionLabel="name" placeholder="Select a City"></p-dropdown>
-  </form>
-</div> -->
+
