@@ -14,6 +14,7 @@ import { ImageModule } from 'primeng/image';
 import { ConfirmationService, MessageService, ConfirmEventType, LazyLoadEvent } from 'primeng/api';
 import { SpiningComponent } from 'src/app/shared/components/spining/spining.component';
 import { Volunteer } from '../../model/volunteer';
+import { IVolunteer } from '../../model/iVolunteer';
 
 @Component({
   selector: 'volunteers-list',
@@ -33,6 +34,9 @@ export class VolunteerListComponent implements OnInit {
   public volunteersList!: Volunteer[];
   public selectedVolunteer?: Volunteer;
 
+  // public volunteersMinList!: IVolunteer[];
+
+
   private confirmationService = inject(ConfirmationService);
   private messageService = inject(MessageService);
   private volunteersService = inject(VolunteersService);
@@ -44,6 +48,7 @@ export class VolunteerListComponent implements OnInit {
 
   ngOnInit(): void {
     this.getVolunteers();
+    // this.getVolunteersMin();
   }
   
   getVolunteers(): void {
@@ -54,6 +59,15 @@ export class VolunteerListComponent implements OnInit {
           this.volunteersList = response;}
         );
   }
+
+  // getVolunteersMin(): void {
+  //   this.volunteersService.getVolunteersMin()
+  //   // .subscribe(response => console.log('data',response));
+  //      .subscribe( (response) => 
+  //       { console.log('responseMin',response);
+  //         this.volunteersMinList = response;}
+  //       );
+  // }
 
   btnClick() {
     this.router.navigateByUrl('login');

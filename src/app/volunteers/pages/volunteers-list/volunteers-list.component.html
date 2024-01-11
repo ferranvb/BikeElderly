@@ -12,6 +12,15 @@
         </div>
     </div>    
     <p-confirmDialog></p-confirmDialog>
+<ul>
+    @for (vol of volunteersMinList; track vol.id) {
+       <li> {{ vol.full_name }} </li>
+      } @empty {
+        Empty list of users
+      }
+</ul>
+
+
     @defer(on timer(300ms)) {   
     <p-table [value]="volunteersList" [lazy]="true"
                 styleClass="p-datatable-striped py-4" [tableStyle]="{ 'min-width': '50rem' }">

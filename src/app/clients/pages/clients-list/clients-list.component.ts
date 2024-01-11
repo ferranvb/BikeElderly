@@ -5,7 +5,7 @@ import { ButtonModule } from 'primeng/button';
 import { TableModule } from 'primeng/table';
 import { TagModule } from 'primeng/tag';
 import { LayoutComponent } from 'src/app/shared/layout/layout.component';
-import { ClientsService } from '../clients.service';
+import { ClientsService } from '../../services/clients.service';
 
 @Component({
   selector: 'clients-list',

@@ -34,22 +34,51 @@ export class VolunteersService {
   // }
 
    /** GET volunteers from the server */
-   getVolunteers(): Observable<Volunteer[]> {
+  getVolunteers(): Observable<Volunteer[]> {
     const url: string =this.urlServer + '/volunteers';
     
-    const iVolunteerAux = this.http.get<Volunteer[]>(url);
-    return iVolunteerAux;
+    return this.http.get<Volunteer[]>(url);
 
     //TODO manca control errors
   }
 
   getVolunteersMin(): Observable<IVolunteer[]> {
-    const url: string =this.urlServer + '/volunteers';
-    
-    return this.http.get<IVolunteer[]>(url);
-    
-    //TODO manca control errors
+    const url: string = this.urlServer + '/volunteers';
+  
+    return this.http.get<Volunteer[]>(url).pipe(
+      map(volunteers => volunteers.map(volunteer => this.mapToIVolunteer(volunteer)))
+    );
   }
+  
+  private mapToIVolunteer(volunteer: Volunteer): IVolunteer {
+    const full_name = `${volunteer.nom} ${volunteer.cognom1} ${volunteer.cognom2}`;
+    return {
+      id: volunteer.id,
+      full_name,
+    };
+  }
+
+
+
+
+
+  // getVolunteersMin(): IVolunteer[] | undefined {
+  //   const url: string =this.urlServer + '/volunteers';
+    
+  //   this.http.get<Volunteer[]>(url)
+  //     .pipe(map(res => {
+  //       console.log(res);
+  //       return res.map
+  //       (res2 =>{
+  //         return{
+  //             id: res2.id,
+  //             full_name: res2.nom + ' ' + res2.cognom1 + ' ' + res2.cognom2
+  //           };
+  //       }); 
+  //     }))
+    
+  //   //TODO manca control errors
+  // }
 
 
   /** GET volunteer by id. Return `undefined` when id not found */

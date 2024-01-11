@@ -155,6 +155,23 @@
       "associacio": "Montbike",
       "actiu": false,
       "id": 40
+    },
+    {
+      "dni": "45784524F",
+      "nom": "Pepet",
+      "cognom1": "Marian",
+      "cognom2": "BIe",
+      "data_naixement": "24.02.1985",
+      "url_foto": "assets/images/no-foto.jpg",
+      "telefon_contacte": "977702728",
+      "email": "sksj@gmail",
+      "adreca": "ssdsdsa",
+      "codi_postal": "43870",
+      "poblacio": "Amposta",
+      "provincia": "Tarragona",
+      "organitzacio": "Montbike2",
+      "actiu": false,
+      "id": 41
     }
   ],
   "organizations": [

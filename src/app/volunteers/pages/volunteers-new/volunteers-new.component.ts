@@ -13,6 +13,7 @@ import { InputTextareaModule } from 'primeng/inputtextarea';
 import { Volunteer } from '../../model/volunteer';
 import { IOrganization } from 'src/app/organizations/model/iOrganization';
 import { FieldsetModule } from 'primeng/fieldset'
+import { IVolunteer } from '../../model/iVolunteer';
 
 interface City {
   name: string;
@@ -42,6 +43,9 @@ export class VolunteersNewComponent implements OnInit {
   volunteer!: Volunteer;
 
   org!:IOrganization;
+
+  public volunteersMinSelectedList!: IVolunteer[];
+  public volunteerSelected?: IVolunteer;
 
 
   private volunteersService = inject(VolunteersService);
@@ -94,6 +98,15 @@ export class VolunteersNewComponent implements OnInit {
 
   );
 
+  getVolunteersMinSelectedList(): void {
+    this.volunteersService.getVolunteersMin()
+    // .subscribe(response => console.log('data',response));
+       .subscribe( (response) => 
+        { 
+          this.volunteersMinSelectedList = response;}
+        );
+  }
+
   // onBasicUploadAuto(event: UploadEvent) {
   //   console.log(event);
   //   // this.messageService.add({ severity: 'info', summary: 'Success', detail: 'File Uploaded with Auto Mode' });
@@ -106,7 +119,7 @@ export class VolunteersNewComponent implements OnInit {
     this.volunteersService.addVolunteer(volunteer)
       .subscribe({
         next: (res) => {
-          console.log(res);
+          console.log("Add this.Volunteer", res);
           //this.submitted = true;
           this.router.navigate(['/layout/volunteers/', res.id]);
         },

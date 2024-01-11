@@ -1,6 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { ChangeDetectionStrategy, Component, inject, type OnInit } from '@angular/core';
-import { ClientsService } from '../clients.service';
+import { ClientsService } from '../../services/clients.service';
 
 @Component({
   selector: 'clients-new',
