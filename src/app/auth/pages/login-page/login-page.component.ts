@@ -31,17 +31,19 @@ export class LoginPageComponent {
 
   onLogin(): void {
     console.log('Data login' , this.loginForm.value.user);
-    this.authService.login(this.loginForm.value.user!, this.loginForm.value.password!)
-      .subscribe( user => {
-        this.user = user;
-        //this.router.navigate(['/panell']);
-      });
 
-      if (this.authService.getCurrentUser() ){
-        this.router.navigate(['/panell']);
-      } else {
-        this.router.navigate(['/error']);
-      }
+    this.router.navigate(['/app']);
+    // this.authService.login(this.loginForm.value.user!, this.loginForm.value.password!)
+    //   .subscribe( user => {
+    //     this.user = user;
+    
+    //   });
+
+    //   if (this.authService.getCurrentUser() ){
+    //     this.router.navigate(['/panell']);
+    //   } else {
+    //     this.router.navigate(['/error']);
+    //   }
 
      
   }
