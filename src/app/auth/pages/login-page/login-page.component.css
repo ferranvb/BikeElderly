@@ -2,6 +2,11 @@
   display: block;
 }
 
-.p-card .p-card-body {
-  background-color: rgb(224, 96, 11) !important;
+@media screen and (min-width: 400px) {  
+  .center-login {
+    width: 400px;
+    margin: 0 auto;
+    margin-top: 150px;
+  }
 }
+

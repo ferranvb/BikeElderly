@@ -1,31 +1,33 @@
-<div class="container text-center ">
-        <div class="row text-center">
-                <div class="col-md-8">
-                        <div class="text-center">
-                                <p-card header="Accès a l'aplicació" [style]="{ width: '400px' }">
-                                        
-                                <form [formGroup]="loginForm">        
-                                <div class="field col-12">
-                                        <input id="user" type="text" formControlName="user"
-                                        class="text-base text-color surface-overlay p-2 border-1 border-solid surface-border border-round appearance-none outline-none focus:border-primary w-full"
-                                                placeholder="user">
-                                        </div>
-                                    <div class="field col-12">
-                                        <input id="password" type="password" formControlName="password"
-                                         class="text-base text-color surface-overlay p-2 border-1 border-solid surface-border border-round appearance-none outline-none focus:border-primary w-full"
-                                                placeholder="password">
-                                    </div>
-                                    <div class="formgroup-inline">
-                                        <button pButton pRipple label="Submit" class="p-button-success"
-                                        [disabled]="!loginForm.valid" (click)="onLogin()"></button>
-                                    </div>
-                                </form>
-                                </p-card>
+<div class="ui-g">
+        <div class="ui-lg-12 ui-md-12 ui-sm-12 center-login">
+        
+        <p-panel header="Accés a l'aplicació" >
+                
+                <form [formGroup]="loginForm">        
+                <div class="field col-12">
+                        <input id="user" type="text" formControlName="user"
+                        class="text-base text-color surface-overlay p-2 border-1 border-solid surface-border border-round appearance-none outline-none focus:border-primary w-full"
+                                placeholder="user">
                         </div>
-                </div>
-        </div>
+                        <div class="field col-12">
+                        <input id="password" type="password" formControlName="password"
+                                class="text-base text-color surface-overlay p-2 border-1 border-solid surface-border border-round appearance-none outline-none focus:border-primary w-full"
+                                placeholder="password">
+                        </div>
+                        <div class="formgroup-inline">
+                        <button pButton pRipple label="Entrar" class="p-button-success"
+                        [disabled]="!loginForm.valid" (click)="onLogin()"></button>
+                        </div>
+                </form>
+        </p-panel>
+</div>         
 </div>
 
+<p-dialog header="Accés erroni" [(visible)]="visible" [modal]="true" [style]="{ width: '50vw' }" [draggable]="false" [resizable]="false">
+        <p class="m-0">
+            Error d'entrada. Usuari o Contrassenya erronis
+        </p>
+    </p-dialog>
 
 
  
