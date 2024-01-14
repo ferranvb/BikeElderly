@@ -200,5 +200,21 @@
       "type": "Voluntaris",
       "id": 12
     }
+  ],
+  "clients": [
+    {
+      "id": 27,
+      "dni": "Z2822930F",
+      "nom": "SUSANA",
+      "cognom1": "MENA",
+      "cognom2": "OLMEDO",
+      "data_naixement": "28/02/1973",
+      "telefon_contacte": "667617517",
+      "url_foto": "assets/images/no-foto.jpg",
+      "email": "susana_73@aol.com",
+      "associacio": "",
+      "actiu": true,
+      "rol": ""
+    }
   ]
 }

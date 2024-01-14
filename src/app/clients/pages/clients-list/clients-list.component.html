@@ -1,6 +1,73 @@
-<shared-layout></shared-layout>
-<div class="card mt-3">
-    <h2>Llista usuari</h2>
+<div class="card px-4">
+    
+    <p-toast></p-toast>
+    <div class="flex align-items-center w-full bg-no-repeat bg-center border-100 border-1 border-round px-0 pt-0" >
+        
+        <div class="flex-grow-1 flex align-items-left justify-content-left  font-bold ml-0 px-4 py-0">
+            <h2>Clients</h2>        
+        </div>
+        
+        <div class="flex-grow-1 flex align-items-right justify-content-end font-bold mr-3 py-3">
+            <p-button type="button" icon="pi pi-plus" class="btn " label="Nou client" [routerLink]="'/app/clients/new'"></p-button>    
+        </div>
+    </div>    
+    <p-confirmDialog></p-confirmDialog>
 
-    <p>user-list works!</p>
+    @defer(on timer(300ms)) {   
+    <p-table [value]="clientsList" [lazy]="true"
+                styleClass="p-datatable-striped py-4" [tableStyle]="{ 'min-width': '50rem' }">
+        <ng-template pTemplate="header">
+            <tr>
+                <!-- <th pSortableColumn="id" style="width:20%">Id<p-sortIcon field="id"></p-sortIcon></th> -->
+                <th>Id</th>
+                <th>Nom</th>
+                <th>Cognom1</th>
+                <th>Cognom2</th>
+                <th>Telèfon</th>
+                <th>Avatar</th>
+                <th>Actiu</th>
+                <th>ACCIÓ</th>
+            </tr>
+        </ng-template>
+        
+        <ng-template pTemplate="body" let-voluntari>
+            <tr>
+                <!-- <td>{{ cita.id }}</td> -->
+                <td>{{ voluntari.id }}</td>
+                <td>{{ voluntari.nom }}</td>
+                <td>{{ voluntari.cognom1 }}</td>
+                <td>{{ voluntari.cognom2 }}</td>
+                <td>{{ voluntari.telefon_contacte }}</td>
+                <td><p-avatar image={{voluntari.url_foto}} styleClass="ml-" size="large" shape="circle"></p-avatar></td>
+                <td>
+                   @if ( voluntari.actiu ) {
+                        <p-image src="assets/images/green-dot.svg" alt="Image" width="15"></p-image>
+                    } @else {
+                        <p-image src="assets/images/red-dot.svg" alt="Image" width="15"></p-image>    
+                    }
+                    
+                </td>
+                
+                 <td>
+                    <p-button icon="pi pi-search" (click)="goDetail(voluntari)" styleClass="p-button-primary mr-2"></p-button>
+                    <p-button (click)="goEdit(voluntari)" 
+                         icon="pi pi-pencil"  severity="secondary" styleClass="p-button-secondary mr-2"></p-button>   
+                    <p-button icon="pi pi-trash" severity="danger"  (click)="confirmDelete($event, voluntari )" styleClass="p-button-danger"></p-button>
+                    
+                </td>
+                <!-- <td><button pButton pRipple label="Submit" [routerLink]="['/login']" class="p-button-success"></button></td> -->
+            </tr>
+        </ng-template>
+        
+    </p-table>
+
+} @placeholder {
+    <shared-spining></shared-spining>
+<!-- <div class="flex justify-content-center align-content-center flex-wrap">
+    <div class="flex align-items-start justify-content-center w-4rem h-4rem font-bold border-round m-2 t-6">
+    <h2>...carregant</h2>
+    <i class="pi pi-spin pi-spinner" style="font-size: 12rem"></i>
+</div>
+</div> -->
+}
 </div>
