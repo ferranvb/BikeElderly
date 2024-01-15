@@ -30,17 +30,17 @@
             </tr>
         </ng-template>
         
-        <ng-template pTemplate="body" let-voluntari>
+        <ng-template pTemplate="body" let-client>
             <tr>
                 <!-- <td>{{ cita.id }}</td> -->
-                <td>{{ voluntari.id }}</td>
-                <td>{{ voluntari.nom }}</td>
-                <td>{{ voluntari.cognom1 }}</td>
-                <td>{{ voluntari.cognom2 }}</td>
-                <td>{{ voluntari.telefon_contacte }}</td>
-                <td><p-avatar image={{voluntari.url_foto}} styleClass="ml-" size="large" shape="circle"></p-avatar></td>
+                <td>{{ client.id }}</td>
+                <td>{{ client.nom }}</td>
+                <td>{{ client.cognom1 }}</td>
+                <td>{{ client.cognom2 }}</td>
+                <td>{{ client.telefon_contacte }}</td>
+                <td><p-avatar image={{client.url_foto}} styleClass="ml-" size="large" shape="circle"></p-avatar></td>
                 <td>
-                   @if ( voluntari.actiu ) {
+                   @if ( client.actiu ) {
                         <p-image src="assets/images/green-dot.svg" alt="Image" width="15"></p-image>
                     } @else {
                         <p-image src="assets/images/red-dot.svg" alt="Image" width="15"></p-image>    
@@ -49,10 +49,11 @@
                 </td>
                 
                  <td>
-                    <p-button icon="pi pi-search" (click)="goDetail(voluntari)" styleClass="p-button-primary mr-2"></p-button>
-                    <p-button (click)="goEdit(voluntari)" 
+                    <p-button icon="pi pi-calendar" (click)="goAppointment(client)" styleClass="p-button-primary mr-2"></p-button>
+                    <p-button icon="pi pi-search" (click)="goDetail(client)" styleClass="p-button-primary mr-2"></p-button>
+                    <p-button (click)="goEdit(client)" 
                          icon="pi pi-pencil"  severity="secondary" styleClass="p-button-secondary mr-2"></p-button>   
-                    <p-button icon="pi pi-trash" severity="danger"  (click)="confirmDelete($event, voluntari )" styleClass="p-button-danger"></p-button>
+                    <p-button icon="pi pi-trash" severity="danger"  (click)="confirmDelete($event, client )" styleClass="p-button-danger"></p-button>
                     
                 </td>
                 <!-- <td><button pButton pRipple label="Submit" [routerLink]="['/login']" class="p-button-success"></button></td> -->

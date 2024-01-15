@@ -15,6 +15,7 @@ import { ImageModule } from 'primeng/image';
 import { ConfirmationService, MessageService, ConfirmEventType, LazyLoadEvent } from 'primeng/api';
 import { SpiningComponent } from 'src/app/shared/components/spining/spining.component';
 import { Client } from '../../model/client';
+import { IClient } from '../../model/iClient';
 
 @Component({
   selector: 'clients-list',
@@ -110,6 +111,13 @@ goDetail(client: Client) {
     let idAux: string = '/app/clients/'+ client.id?.toString();
     this.router.navigate([idAux]);
   }
+}
+
+goAppointment(client: Client) {
+  let clientMin: IClient = this.clientsService.mapToIClient(client);
+  this.clientsService.iClientSelected = clientMin;
+  console.log("Client triat" ,clientMin);
+  this.router.navigate(['./app/appointments/new']);
 }
 
 goEdit(client: Client) {

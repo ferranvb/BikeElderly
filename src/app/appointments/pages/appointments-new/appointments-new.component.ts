@@ -9,6 +9,7 @@ import { DropdownModule } from 'primeng/dropdown';
 import { VolunteersService } from '../../../volunteers/services/volunteers.service';
 import { IVolunteer } from 'src/app/volunteers/model/iVolunteer';
 import { AutoCompleteModule } from 'primeng/autocomplete';
+import { ClientsService } from 'src/app/clients/services/clients.service';
 interface Good {
   id: number;
   name: string;
@@ -51,6 +52,8 @@ export class AppointmentsNewComponent implements OnInit{
   public formAppointment!: FormGroup;
 
   private volunteersService = inject(VolunteersService);
+  public clientsService = inject(ClientsService);
+  
   private fb = inject(FormBuilder);
   constructor() {}
 
@@ -61,7 +64,13 @@ export class AppointmentsNewComponent implements OnInit{
       startTime: new FormControl(null, [Validators.required], []),
       endTime: new FormControl(null, [Validators.required], []),
       volunteer:  new FormControl(null),
+      client: new FormControl('', [Validators.required])
     })
+
+    
+    if ( this.clientsService.iClientSelected!=null ) {
+      this.formAppointment.patchValue({'client': this.clientsService.iClientSelected.full_name});
+    }
 
     this.getListVolunteersMinSelection();
   }

@@ -22,6 +22,7 @@ export class ClientsService {
 
   public editClient:boolean = false;
   public clientSelected!: Client;
+  public iClientSelected!: IClient;
 
   constructor() { }
 
@@ -98,6 +99,13 @@ export class ClientsService {
     // );
   }
 
+  public mapToIClient(client: Client): IClient {
+    const full_name = `${client.nom} ${client.cognom1} ${client.cognom2}`;
+    return {
+      id: client.id,
+      full_name,
+    };
+  }
 
   /**
    * Handle Http operation that failed.

@@ -4,6 +4,10 @@
     <div class="col">
       <h1>Nova Cita</h1>
       <form [formGroup]="formAppointment" >
+        <label for="client" class="mr-3">Client</label>
+        <input id="client" type="text" pInputText formControlName="client"/>
+        <br />
+          <br />
         <label for="day" class="mr-3">Dia</label>
         <p-calendar id="day" formControlName="day" placeholder="dia" dateFormat="dd.mm.yy" (onSelect)="setDateAppointment()"></p-calendar>
           <br />
