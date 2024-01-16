@@ -27,7 +27,7 @@
         <ng-template pTemplate="body" let-appointment>
             <tr>
                 <!-- <td>{{ cita.id }}</td> -->
-                <td>{{ appointment.day }}</td>
+                <td>{{ appointment.day | date:'dd-MM-yyyy' }}</td>
                 <td>{{ appointment.startTime }} - {{ appointment.endTime }}</td>
                 <td>{{ appointment.client?.full_time }}</td>
                 <td>{{ appointment.good }}</td>

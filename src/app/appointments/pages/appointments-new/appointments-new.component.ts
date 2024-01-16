@@ -111,7 +111,10 @@ export class AppointmentsNewComponent implements OnInit{
   }
 
   public setDateAppointment():void {
+    // let dateAux = this.formAppointment.value.day;
+    // this.date = dateAux?.getDate() + "/"  + dateAux?.getMonth() + "/" + dateAux?.get
     this.date = this.formAppointment.value.day;
+    console.log("setDateAppointment", this.date?.toISOString());
   }
 
   public addAppointment():void {

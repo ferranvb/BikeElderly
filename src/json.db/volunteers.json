@@ -203,7 +203,7 @@
   ],
   "clients": [
     {
-      "id": 27,
+      "id": 1,
       "dni": "Z2822930F",
       "nom": "SUSANA",
       "cognom1": "MENA",
@@ -212,6 +212,20 @@
       "telefon_contacte": "667617517",
       "url_foto": "assets/images/no-foto.jpg",
       "email": "susana_73@aol.com",
+      "associacio": "",
+      "actiu": true,
+      "rol": ""
+    },
+    {
+      "id": 2,
+      "dni": "89243753G",
+      "nom": "SAUL",
+      "cognom1": "CASTILLO",
+      "cognom2": "ALARCON",
+      "data_naixement": "13/07/1939",
+      "telefon_contacte": "779268494",
+      "url_foto": "assets/images/no-foto.jpg",
+      "email": "saul_39@witty.com",
       "associacio": "",
       "actiu": true,
       "rol": ""
@@ -251,6 +265,21 @@
         "id": "1",
         "full_name": "SUSANA MENA OLMEDO"
       }
+    },
+    { "day": "Date Wed Jan 17 2024 00:00:00 GMT+0100 (Central European Standard Time)", 
+      "good": { 
+        "id": 2, 
+        "name": "Bici Cargo 2" 
+      }, 
+      "startTime": "Date Tue Jan 16 2024 18:50:32 GMT+0100 (Central European Standard Time)", 
+      "endTime": "Date Tue Jan 16 2024 20:55:44 GMT+0100 (Central European Standard Time)", 
+      "volunteer": 
+        { 
+          "id": "33", 
+          "full_name": "Karen Montgomery Pearse" },
+      "client": {
+      "id": 2,
+      "full_name": "SAUL CASTILLO ALARCON" }
     }
   ]
 }
