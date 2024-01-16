@@ -10,6 +10,7 @@ import { VolunteersService } from '../../../volunteers/services/volunteers.servi
 import { IVolunteer } from 'src/app/volunteers/model/iVolunteer';
 import { AutoCompleteModule } from 'primeng/autocomplete';
 import { ClientsService } from 'src/app/clients/services/clients.service';
+import { Appointment } from '../../model/appointment';
 interface Good {
   id: number;
   name: string;
@@ -35,6 +36,10 @@ interface AutoCompleteCompleteEvent {
 export class AppointmentsNewComponent implements OnInit{ 
 
   public date?: Date;
+
+  private startTimeDefault = new Date();
+  private endTimeDefault = new Date();
+
   
   public listGoods: Good[] = [
     {
@@ -48,6 +53,7 @@ export class AppointmentsNewComponent implements OnInit{
   ];
   public listVolunteersMinSelection: IVolunteer[] = [];
   public selectedVolunteer?: IVolunteer;
+  public clientName?:string = '';
   
   public formAppointment!: FormGroup;
 
@@ -58,18 +64,31 @@ export class AppointmentsNewComponent implements OnInit{
   constructor() {}
 
   ngOnInit() {
+    
+  
+    this.startTimeDefault.setHours(8);
+    this.startTimeDefault.setMinutes(0);
+    this.startTimeDefault.setSeconds(0);
+    this.endTimeDefault.setHours(9);
+    this.endTimeDefault.setMinutes(0);
+    this.endTimeDefault.setSeconds(0);
+  
+
+
+
     this.formAppointment = this.fb.group({
       day: new FormControl('',[Validators.required],[]),
       good: new FormControl(null,[Validators.required],[]),
-      startTime: new FormControl(null, [Validators.required], []),
-      endTime: new FormControl(null, [Validators.required], []),
+      startTime: new FormControl(this.startTimeDefault, [Validators.required], []),
+      endTime: new FormControl(this.endTimeDefault, [Validators.required], []),
       volunteer:  new FormControl(null),
       client: new FormControl('', [Validators.required])
     })
 
     
     if ( this.clientsService.iClientSelected!=null ) {
-      this.formAppointment.patchValue({'client': this.clientsService.iClientSelected.full_name});
+      this.clientName = this.clientsService.iClientSelected.full_name;
+      this.formAppointment.patchValue({'client': this.clientsService.iClientSelected});
     }
 
     this.getListVolunteersMinSelection();
@@ -118,7 +137,28 @@ export class AppointmentsNewComponent implements OnInit{
   }
 
   public addAppointment():void {
-    console.log("addAppointment", this.formAppointment.value);
+    let dayAux: Date = this.formAppointment.get('day')?.value;
+    let startTimeAux: Date = this.formAppointment.get('startTime')?.value;
+    let endTimeAux: Date = this.formAppointment.get('endTime')?.value;
+
+    let appointmentAux: Appointment = new Appointment();
+    
+    console.log("dayAux.getDay()", dayAux.getDate().toString());
+    console.log("dayAux.getMonth()", dayAux.getMonth().toString() +1 );
+    console.log("dayAux.getFullYear()", dayAux.getFullYear().toString());
+
+    appointmentAux.day = dayAux.getDate().toString() + '-' + dayAux.getMonth().toString() + '-' + dayAux.getFullYear().toString();
+    appointmentAux.startTime = startTimeAux.getHours() + ':' + startTimeAux.getMinutes();
+    appointmentAux.endTime = endTimeAux.getHours() + ':' + endTimeAux.getMinutes();
+    appointmentAux.client = this.formAppointment.get('client')?.value;
+    appointmentAux.volunteer = this.formAppointment.get('volunteer')?.value;
+    appointmentAux.good = this.formAppointment.get('good')?.value;
+    appointmentAux.day = this.formAppointment.get('day')?.value;
+    appointmentAux.scheduled = false;
+    appointmentAux.completed = false;
+
+
+    console.log("addAppointment", JSON.stringify(appointmentAux));
   }
 
   resetAppointment(): void {

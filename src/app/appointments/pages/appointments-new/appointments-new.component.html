@@ -3,54 +3,55 @@
   <div class="grid">
     <div class="col">
       <h1>Nova Cita</h1>
-      <form [formGroup]="formAppointment" >
-        <label for="client" class="mr-3">Client</label>
-        <input id="client" type="text" pInputText formControlName="client"/>
-        <br />
-          <br />
-        <label for="day" class="mr-3">Dia</label>
-        <p-calendar id="day" formControlName="day" placeholder="dia" dateFormat="dd.mm.yy" (onSelect)="setDateAppointment()"></p-calendar>
-          <br />
-          <br />
-          <label for="good" class="mr-3">Útl</label>
-          <p-dropdown id="good" formControlName="good" [options]="listGoods" optionLabel="name" ></p-dropdown>
-          <br />
-          <br />
-          <label for="startTime" class="mr-3">Hora Inici</label>
-          <p-calendar id="startTime" formControlName="startTime" placeholder="hora inici"
-          [timeOnly]="true"></p-calendar>
-          <br />
-          <br />
-          <label for="endTime" class="mr-3">Hora Final</label>
-          <p-calendar id="endTime" formControlName="endTime" selectionMode="single" [timeOnly]="true" placeholder="hora final"></p-calendar>
-          <br />
-          <br />
-          <label for="volunteer" class="mr-3">Voluntari</label>
-          <p-autoComplete formControlName="volunteer" [minLength]="3" [showClear]="true"
-                    [dropdown]="false" [suggestions]="listVolunteersMinSelection" 
-                    (onClear)="getListVolunteersMinSelection()"
-                    (completeMethod)="searchVolunteer($event)" field="full_name"></p-autoComplete>
+      @if ( clientName !='') { 
+        <h3>{{ clientName}}</h3>
+        <form [formGroup]="formAppointment" >
           
-          
-          
-          <!-- <p-dropdown id="volunteer" formControlName="volunteer" [options]="listVolunteers"  [showClear]="true"
-              autoWidth="false" [style]="{'width':'50%'}">
-              <ng-template  let-volunteer pTemplate="selectedItem">
-                <div class="flex align-items-center gap-2" *ngIf="volunteer">
-                  <div>{{volunteer.cognom1}} {{volunteer.cognom2}}, {{volunteer.nom}}</div>
-                </div>
-            </ng-template>  
-            <ng-template let-volunteer pTemplate="item">
-              
-                  <div>{{volunteer.cognom1}} {{volunteer.cognom2}}, {{volunteer.nom}}</div>
-          </ng-template>
+          <input id="client" type="text" pInputText formControlName="client" hidden="true"/>
+          <label for="day" class="mr-3">Dia</label>
+          <p-calendar id="day" formControlName="day" placeholder="dia" dateFormat="dd.mm.yy" (onSelect)="setDateAppointment()"></p-calendar>
+            <br />
+            <br />
+            <label for="good" class="mr-3">Útl</label>
+            <p-dropdown id="good" formControlName="good" [options]="listGoods" optionLabel="name" ></p-dropdown>
+            <br />
+            <br />
+            <label for="startTime" class="mr-3">Hora Inici</label>
+            <p-calendar id="startTime" formControlName="startTime" placeholder="hora inici" [stepHour]="1"  [stepMinute]="30" [maxDateCount]="1"
+            [timeOnly]="true"></p-calendar>
+            <br />
+            <br />
+            <label for="endTime" class="mr-3">Hora Final</label>
+            <p-calendar id="endTime" formControlName="endTime" selectionMode="single" [stepHour]="1"  [stepMinute]="30" [timeOnly]="true" placeholder="hora final"></p-calendar>
+            <br />
+            <br />
+            <label for="volunteer" class="mr-3">Voluntari</label>
+            <p-autoComplete formControlName="volunteer" [minLength]="3" [showClear]="true"
+                      [dropdown]="false" [suggestions]="listVolunteersMinSelection" 
+                      (onClear)="getListVolunteersMinSelection()"
+                      (completeMethod)="searchVolunteer($event)" field="full_name"></p-autoComplete>
+            
+            
+            
+            <!-- <p-dropdown id="volunteer" formControlName="volunteer" [options]="listVolunteers"  [showClear]="true"
+                autoWidth="false" [style]="{'width':'50%'}">
+                <ng-template  let-volunteer pTemplate="selectedItem">
+                  <div class="flex align-items-center gap-2" *ngIf="volunteer">
+                    <div>{{volunteer.cognom1}} {{volunteer.cognom2}}, {{volunteer.nom}}</div>
+                  </div>
+              </ng-template>  
+              <ng-template let-volunteer pTemplate="item">
+                
+                    <div>{{volunteer.cognom1}} {{volunteer.cognom2}}, {{volunteer.nom}}</div>
+            </ng-template>
 
-          </p-dropdown> -->
-          <br />
-          <br />
-          <p-button type="submit" (click)="addAppointment()">Registrarme</p-button>
-          <p-button type="submit" (click)="resetAppointment()" class="ml-3">Neteja</p-button>
-        </form>
+            </p-dropdown> -->
+            <br />
+            <br />
+            <p-button type="submit" (click)="addAppointment()">Registrarme</p-button>
+            <p-button type="submit" (click)="resetAppointment()" class="ml-3">Neteja</p-button>
+          </form>
+        } 
     </div>
     <div class="col">
       @if ( date) {
