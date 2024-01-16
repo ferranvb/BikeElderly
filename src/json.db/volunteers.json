@@ -216,5 +216,41 @@
       "actiu": true,
       "rol": ""
     }
+  ],
+  "appointments": [
+    {
+      "day": "18/01/2024",
+      "endTime": "12:00",
+      "good": { 
+        "id": "1", 
+        "name": "Bici Cargo 1" 
+      },
+      "startTime": "11:00",
+      "volunteer": { 
+        "id": "27", 
+        "full_name": "Ferran Vidal Bort" 
+      },
+      "client": {
+        "id": "1",
+        "full_name": "SUSANA MENA OLMEDO"
+      }
+    },
+    {
+      "day": "19/01/2024",
+      "endTime": "10:00",
+      "good": { 
+        "id": "1", 
+        "name": "Bici Cargo 1" 
+      },
+      "startTime": "09:00",
+      "volunteer": { 
+        "id": "29", 
+        "full_name": "Jennie Nichols Martz" 
+      },
+      "client": {
+        "id": "1",
+        "full_name": "SUSANA MENA OLMEDO"
+      }
+    }
   ]
 }

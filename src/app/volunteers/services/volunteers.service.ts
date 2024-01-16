@@ -58,45 +58,6 @@ export class VolunteersService {
     };
   }
 
-
-
-
-
-  // getVolunteersMin(): IVolunteer[] | undefined {
-  //   const url: string =this.urlServer + '/volunteers';
-    
-  //   this.http.get<Volunteer[]>(url)
-  //     .pipe(map(res => {
-  //       console.log(res);
-  //       return res.map
-  //       (res2 =>{
-  //         return{
-  //             id: res2.id,
-  //             full_name: res2.nom + ' ' + res2.cognom1 + ' ' + res2.cognom2
-  //           };
-  //       }); 
-  //     }))
-    
-  //   //TODO manca control errors
-  // }
-
-
-  /** GET volunteer by id. Return `undefined` when id not found */
-  // getVolunteerNo404<Data>(id: number): Observable<iVolunteer> {
-  
-  //   const url = 'http://localhost:3000/volunteers/?id_voluntari=28';
-
-  //   return this.http.get<iVolunteer[]>(url)
-  //     .pipe(
-  //       map(volunteer => volunteer[0]), // returns a {0|1} element array
-  //       tap(h => {
-  //         const outcome = h ? `fetched` : `did not find`;
-  //         this.log(`${outcome} volunteer id=${id}`);
-  //       }),
-  //       catchError(this.handleError<iVolunteer>(`getVolunteer id=${id}`))
-  //     );
-  // }
-
   /** GET volunteer by id. Will 404 if id not found */
   getVolunteerId(id: number): Observable<Volunteer> {
     const url = `${this.urlServer}/volunteers/${id}`;
@@ -187,8 +148,44 @@ export class VolunteersService {
   
 
 
-  }
+}
 
+
+
+  // getVolunteersMin(): IVolunteer[] | undefined {
+  //   const url: string =this.urlServer + '/volunteers';
+    
+  //   this.http.get<Volunteer[]>(url)
+  //     .pipe(map(res => {
+  //       console.log(res);
+  //       return res.map
+  //       (res2 =>{
+  //         return{
+  //             id: res2.id,
+  //             full_name: res2.nom + ' ' + res2.cognom1 + ' ' + res2.cognom2
+  //           };
+  //       }); 
+  //     }))
+    
+  //   //TODO manca control errors
+  // }
+
+
+  /** GET volunteer by id. Return `undefined` when id not found */
+  // getVolunteerNo404<Data>(id: number): Observable<iVolunteer> {
+  
+  //   const url = 'http://localhost:3000/volunteers/?id_voluntari=28';
+
+  //   return this.http.get<iVolunteer[]>(url)
+  //     .pipe(
+  //       map(volunteer => volunteer[0]), // returns a {0|1} element array
+  //       tap(h => {
+  //         const outcome = h ? `fetched` : `did not find`;
+  //         this.log(`${outcome} volunteer id=${id}`);
+  //       }),
+  //       catchError(this.handleError<iVolunteer>(`getVolunteer id=${id}`))
+  //     );
+  // }
 
 
 

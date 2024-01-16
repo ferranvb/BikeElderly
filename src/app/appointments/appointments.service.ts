@@ -1,6 +1,9 @@
 import { Injectable, inject } from '@angular/core';
-import { iAppointment } from './interface/iAppointment';
 import { ClientsService } from '../clients/services/clients.service';
+import { environment } from 'src/environments/environment';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { Appointment } from './model/appointment';
+import { Observable } from 'rxjs';
 
 
 @Injectable({
@@ -8,44 +11,24 @@ import { ClientsService } from '../clients/services/clients.service';
 })
 export class AppointmentsService {
 
-  public appointmentListAux!: Array<iAppointment>;
+  private urlServer = environment.baseUrl;
+  private http = inject(HttpClient);
 
-  constructor() { 
-    // this.appointmentListAux = Array({
-    //  "id": "123",
-    //   "dia": "2023-12-14",
-    //   "hora_inici": "12:30",
-    //   "hora_fi" : "13:30",
-    //   "sollicitant": "Josefa Miralles",
-    //   "estri": "eCargo-groga",
-    //   "voluntari": "Ferran Vidal"},
-    // {
-    //     "id": "125",
-    //      "dia": "2023-12-15",
-    //      "hora_inici": "12:30",
-    //       "hora_fi" : "13:30",
-    //      "sollicitant": "Josefa Miralles",
-    //      "estri": "eCargo-groga",
-    //      "voluntari": "Ferran Vidal"},
-    //  {
-    //         "id": "124",
-    //         "dia": "2023-12-14",
-    //         "hora_inici": "13:30",
-    //         "hora_fi" : "14:30",
-    //         "sollicitant": "Maria Coll",
-    //         "estri": "eCargo-groga",
-    //         "voluntari": "Anna Berme"},
-    // {
-    //       "id": "126",
-    //       "dia": "2023-12-16",
-    //       "hora_inici": "14:30",
-    //       "hora_fi" : "15:30",
-    //       "sollicitant": "Maria Coll",
-    //       "estri": "eCargo-groga",
-    //       "voluntari": ""},     
-    //   );
+  private httpOptions = {
+    headers: new HttpHeaders({ 'Content-Type': 'application/json' })
+  };
 
-  
+  public editAppointment:boolean = false;
+  public appointmentSelected!: Appointment;
+
+  constructor() { }
+
+  getAppointments(): Observable<Appointment[]> {
+    const url: string =this.urlServer + '/appointments';
+    console.log(url);
+    return this.http.get<Appointment[]>(url);
+
+    //TODO manca control errors
   }
 
 }

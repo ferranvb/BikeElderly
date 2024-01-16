@@ -1,5 +1,5 @@
-import { Client } from "src/app/clients/model/client";
-import { iVolunteer } from "src/app/volunteers/model/iVolunteer";
+import { IClient } from "src/app/clients/model/iClient";
+import { IVolunteer } from "src/app/volunteers/model/iVolunteer";
 
 export class Appointment {
 
@@ -8,8 +8,8 @@ export class Appointment {
   startTime?: Date;
   endTime?: Date;
   good?: number;
-  volunteer?: iVolunteer;
-  client?: Client;
+  volunteer?: IVolunteer;
+  client?: IClient;
   scheduled?: boolean;
   completed?: boolean;
 
