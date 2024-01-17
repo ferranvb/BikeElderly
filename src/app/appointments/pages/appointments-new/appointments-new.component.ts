@@ -11,6 +11,9 @@ import { IVolunteer } from 'src/app/volunteers/model/iVolunteer';
 import { AutoCompleteModule } from 'primeng/autocomplete';
 import { ClientsService } from 'src/app/clients/services/clients.service';
 import { Appointment } from '../../model/appointment';
+import { IGood } from 'src/app/goods/model/iGood';
+import { GoodsService } from 'src/app/goods/services/goods.service';
+import { map } from 'rxjs';
 interface Good {
   id: number;
   name: string;
@@ -41,16 +44,8 @@ export class AppointmentsNewComponent implements OnInit{
   private endTimeDefault = new Date();
 
   
-  public listGoods: Good[] = [
-    {
-    "id": 1,
-    "name": 'Bici Cargo 1'
-    },
-    {
-      "id": 2,
-    "name": 'Bici Cargo 2'
-    }
-  ];
+  public listGoodsMin: IGood[] = [];
+  
   public listVolunteersMinSelection: IVolunteer[] = [];
   public selectedVolunteer?: IVolunteer;
   public clientName?:string = '';
@@ -59,6 +54,7 @@ export class AppointmentsNewComponent implements OnInit{
 
   private volunteersService = inject(VolunteersService);
   public clientsService = inject(ClientsService);
+  private goodsService = inject(GoodsService);
   
   private fb = inject(FormBuilder);
   constructor() {}
@@ -92,6 +88,38 @@ export class AppointmentsNewComponent implements OnInit{
     }
 
     this.getListVolunteersMinSelection();
+
+
+    this.getListGoodsMinSelection();
+    // console.log("Llista Goods passat", this.listGoodsMin);
+    // this.getListGoodsMinSelection();
+    // console.log("Llista Goods 2", this.listGoodsMin);
+
+
+  }
+
+
+  getListGoodsMinSelection(): void {
+    
+    const _this = this;
+  
+    this.goodsService.getGoodsMin()
+    .subscribe( data => {
+        console.log("Llista Goods pre data", data);
+        this.listGoodsMin = data;
+        console.log("Llista Goods this", data);
+      }
+      );  
+    this.goodsService.getGoodsMin()
+      .subscribe( data => {
+        console.log("Llista Goods pre data", data);
+        _this.listGoodsMin = data;
+        console.log("Llista Goods _this", data);
+      }
+      );  
+    
+ 
+ 
   }
 
   getListVolunteersMinSelection() {

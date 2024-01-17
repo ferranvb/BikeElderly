@@ -262,6 +262,32 @@
       "good":{"id":2,"name":"Bici Cargo 1"},
       "scheduled":false,
       "completed":false
+    },
+    {
+      "day":"25-01-2024",
+      "startTime":"8:00",
+      "endTime":"9:00",
+      "client":{"id":2,"full_name":"SAUL CASTILLO ALARCON"},
+      "volunteer":{"id":33,"full_name":"Karen Montgomery Pearse"},
+      "good":{"id":2,"full_name":"Eléctrica negra"},
+      "scheduled":false,
+      "completed":false}
+  ],
+  "goods":
+  [
+    {
+      "id": 1,
+      "name" : "Cargo Bike groga",
+      "model": "",
+      "active": true,
+      "url_foto":"string"
+    },
+    {
+      "id": 2,
+      "name" : "Eléctrica negra",
+      "model": "",
+      "active": true,
+      "url_foto":"string"
     }
   ]
 }
