@@ -14,6 +14,7 @@ import { Appointment } from '../../model/appointment';
 import { IGood } from 'src/app/goods/model/iGood';
 import { GoodsService } from 'src/app/goods/services/goods.service';
 import { map } from 'rxjs';
+import { AppointmentsService } from '../../appointments.service';
 interface Good {
   id: number;
   name: string;
@@ -54,6 +55,7 @@ export class AppointmentsNewComponent implements OnInit{
   
   public formAppointment!: FormGroup;
 
+  private appointmentsService = inject(AppointmentsService);
   private volunteersService = inject(VolunteersService);
   public clientsService = inject(ClientsService);
   private goodsService = inject(GoodsService);
@@ -155,7 +157,7 @@ export class AppointmentsNewComponent implements OnInit{
   //  } 
   }
 
-  public setDateAppointment():void {
+  public setStartEndTimeAppointment():void {
     // let dateAux = this.formAppointment.value.day;
     // this.date = dateAux?.getDate() + "/"  + dateAux?.getMonth() + "/" + dateAux?.get
     this.date = this.formAppointment.value.day;
@@ -177,35 +179,36 @@ export class AppointmentsNewComponent implements OnInit{
 
     console.log("Hora Fi",this.endTimeDefault);
 
+    this.formAppointment.patchValue({'startTime': this.startTimeDefault});
+    this.formAppointment.patchValue({'endTime': this.endTimeDefault});
 
-    
     this.showFullForm = true;
+
     
     console.log("setDateAppointment", this.date?.toISOString());
   }
 
   public addAppointment():void {
-    let dayAux: Date = this.formAppointment.get('day')?.value;
-    let startTimeAux: Date = this.formAppointment.get('startTime')?.value;
-    let endTimeAux: Date = this.formAppointment.get('endTime')?.value;
+    // let dayAux: Date = this.formAppointment.get('day')?.value;
+    // let startTimeAux: Date = this.formAppointment.get('startTime')?.value;
+    // let endTimeAux: Date = this.formAppointment.get('endTime')?.value;
 
     let appointmentAux: Appointment = new Appointment();
     
-    console.log("dayAux.getDay()", dayAux.getDate().toString());
-    console.log("dayAux.getMonth()", dayAux.getMonth().toString() +1 );
-    console.log("dayAux.getFullYear()", dayAux.getFullYear().toString());
+    // console.log("dayAux.getDay()", dayAux.getDate().toString());
+    // console.log("dayAux.getMonth()", dayAux.getMonth().toString() +1 );
+    // console.log("dayAux.getFullYear()", dayAux.getFullYear().toString());
 
-    appointmentAux.day = dayAux.getDate().toString() + '-' + dayAux.getMonth().toString() + '-' + dayAux.getFullYear().toString();
-    appointmentAux.startTime = startTimeAux.getHours() + ':' + startTimeAux.getMinutes();
-    appointmentAux.endTime = endTimeAux.getHours() + ':' + endTimeAux.getMinutes();
+    appointmentAux.day = this.formAppointment.get('day')?.value;
+    appointmentAux.startTime = this.formAppointment.get('startTime')?.value;
+    appointmentAux.endTime = this.formAppointment.get('startTime')?.value;
     appointmentAux.client = this.formAppointment.get('client')?.value;
     appointmentAux.volunteer = this.formAppointment.get('volunteer')?.value;
     appointmentAux.good = this.formAppointment.get('good')?.value;
-    appointmentAux.day = this.formAppointment.get('day')?.value;
     appointmentAux.scheduled = false;
     appointmentAux.completed = false;
 
-
+    
     console.log("addAppointment", JSON.stringify(appointmentAux));
   }
 

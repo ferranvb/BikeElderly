@@ -17,7 +17,8 @@
             <tr>
                 <!-- <th pSortableColumn="id" style="width:20%">Id<p-sortIcon field="id"></p-sortIcon></th> -->
                 <th pSortableColumn="dia" style="width:20%">Dia<p-sortIcon field="dia"></p-sortIcon></th>
-                <th>Hora</th>
+                <th>Hora Inici</th>
+                <th>Hora Fi</th>
                 <th>Client</th>
                 <th>Estri</th>
                 <th>Voluntari</th>
@@ -28,7 +29,8 @@
             <tr>
                 <!-- <td>{{ cita.id }}</td> -->
                 <td>{{ appointment.day }}</td>
-                <td>{{ appointment.startTime }} - {{ appointment.endTime }}</td>
+                <td>{{ appointment.startTime  }}</td>
+                <td>{{ appointment.endTime }}</td>
                 <td>{{ appointment.client?.full_name }}</td>
                 <td>{{ appointment.good?.full_name }}</td>
                 <td>{{ appointment.volunteer?.full_name }}</td> 

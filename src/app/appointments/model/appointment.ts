@@ -5,9 +5,9 @@ import { IVolunteer } from "src/app/volunteers/model/iVolunteer";
 export class Appointment {
 
   id?: number;
-  day?: string;
-  startTime?: string;
-  endTime?: string;
+  day?: Date;
+  startTime?: Date;
+  endTime?: Date;
   good?: IGood;
   volunteer?: IVolunteer;
   client?: IClient;

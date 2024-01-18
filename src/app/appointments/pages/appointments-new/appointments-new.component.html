@@ -9,7 +9,7 @@
           
           <input id="client" type="text" pInputText formControlName="client" hidden="true"/>
           <label for="day" class="mr-3">Dia</label>
-          <p-calendar id="day" formControlName="day" placeholder="dia" dateFormat="dd.mm.yy" (onSelect)="setDateAppointment()"></p-calendar>
+          <p-calendar id="day" formControlName="day" placeholder="dia" dateFormat="dd.mm.yy" (onSelect)="setStartEndTimeAppointment()"></p-calendar>
             <br />
             <br />
             <label for="good" class="mr-3">Útl</label>
@@ -30,23 +30,7 @@
             <p-autoComplete formControlName="volunteer" [minLength]="3" [showClear]="true"
                       [dropdown]="false" [suggestions]="listVolunteersMinSelection" 
                       (onClear)="getListVolunteersMinSelection()"
-                      (completeMethod)="searchVolunteer($event)" field="full_name"></p-autoComplete>
-            
-            
-            
-            <!-- <p-dropdown id="volunteer" formControlName="volunteer" [options]="listVolunteers"  [showClear]="true"
-                autoWidth="false" [style]="{'width':'50%'}">
-                <ng-template  let-volunteer pTemplate="selectedItem">
-                  <div class="flex align-items-center gap-2" *ngIf="volunteer">
-                    <div>{{volunteer.cognom1}} {{volunteer.cognom2}}, {{volunteer.nom}}</div>
-                  </div>
-              </ng-template>  
-              <ng-template let-volunteer pTemplate="item">
-                
-                    <div>{{volunteer.cognom1}} {{volunteer.cognom2}}, {{volunteer.nom}}</div>
-            </ng-template>
-
-            </p-dropdown> -->
+                      (completeMethod)="searchVolunteer($event)" field="full_name"></p-autoComplete>          
             <br />
             <br />
             <p-button type="submit" (click)="addAppointment()">Registrarme</p-button>
