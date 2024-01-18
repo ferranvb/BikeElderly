@@ -16,7 +16,8 @@
         <ng-template pTemplate="header">
             <tr>
                 <!-- <th pSortableColumn="id" style="width:20%">Id<p-sortIcon field="id"></p-sortIcon></th> -->
-                <th pSortableColumn="dia" style="width:20%">Dia<p-sortIcon field="dia"></p-sortIcon></th>
+                <th>Id</th>
+                <th pSortableColumn="day" style="width:20%">Dia<p-sortIcon field="day"></p-sortIcon></th>
                 <th>Hora Inici</th>
                 <th>Hora Fi</th>
                 <th>Client</th>
@@ -27,10 +28,10 @@
         </ng-template>
         <ng-template pTemplate="body" let-appointment>
             <tr>
-                <!-- <td>{{ cita.id }}</td> -->
-                <td>{{ appointment.day }}</td>
-                <td>{{ appointment.startTime  }}</td>
-                <td>{{ appointment.endTime }}</td>
+                <td>{{ appointment.id }}</td>
+                <td>{{ appointment.day | date: 'dd-MM-YYYY'}}</td>
+                <td>{{ appointment.startTime | date: 'HH:mm' }}</td>
+                <td>{{ appointment.endTime | date: 'HH:mm' }}</td>
                 <td>{{ appointment.client?.full_name }}</td>
                 <td>{{ appointment.good?.full_name }}</td>
                 <td>{{ appointment.volunteer?.full_name }}</td> 

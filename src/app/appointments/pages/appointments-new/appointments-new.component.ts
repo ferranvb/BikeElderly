@@ -15,6 +15,7 @@ import { IGood } from 'src/app/goods/model/iGood';
 import { GoodsService } from 'src/app/goods/services/goods.service';
 import { map } from 'rxjs';
 import { AppointmentsService } from '../../appointments.service';
+import { Router } from '@angular/router';
 interface Good {
   id: number;
   name: string;
@@ -60,7 +61,9 @@ export class AppointmentsNewComponent implements OnInit{
   public clientsService = inject(ClientsService);
   private goodsService = inject(GoodsService);
   
+  private router = inject(Router);
   private fb = inject(FormBuilder);
+  
   constructor() {}
 
   ngOnInit() {
@@ -161,6 +164,7 @@ export class AppointmentsNewComponent implements OnInit{
     // let dateAux = this.formAppointment.value.day;
     // this.date = dateAux?.getDate() + "/"  + dateAux?.getMonth() + "/" + dateAux?.get
     this.date = this.formAppointment.value.day;
+    console.log("Data setejada" , this.date);
 
     this.startTimeDefault.setFullYear(this.date!.getFullYear());
     this.startTimeDefault.setMonth(this.date!.getMonth());
@@ -189,16 +193,10 @@ export class AppointmentsNewComponent implements OnInit{
   }
 
   public addAppointment():void {
-    // let dayAux: Date = this.formAppointment.get('day')?.value;
-    // let startTimeAux: Date = this.formAppointment.get('startTime')?.value;
-    // let endTimeAux: Date = this.formAppointment.get('endTime')?.value;
+    
 
     let appointmentAux: Appointment = new Appointment();
     
-    // console.log("dayAux.getDay()", dayAux.getDate().toString());
-    // console.log("dayAux.getMonth()", dayAux.getMonth().toString() +1 );
-    // console.log("dayAux.getFullYear()", dayAux.getFullYear().toString());
-
     appointmentAux.day = this.formAppointment.get('day')?.value;
     appointmentAux.startTime = this.formAppointment.get('startTime')?.value;
     appointmentAux.endTime = this.formAppointment.get('startTime')?.value;
@@ -210,6 +208,16 @@ export class AppointmentsNewComponent implements OnInit{
 
     
     console.log("addAppointment", JSON.stringify(appointmentAux));
+
+    this.appointmentsService.addAppointment(appointmentAux)
+      .subscribe( {
+        next: (res) => {
+          console.log("Add this.Volunteer", res);
+          //this.submitted = true;
+          this.router.navigate(['/app/appointments']);
+        },
+        error: (e) => console.error(e)
+      });
   }
 
   resetAppointment(): void {

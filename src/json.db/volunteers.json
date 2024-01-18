@@ -229,36 +229,158 @@
       "associacio": "",
       "actiu": true,
       "rol": ""
+    },
+    {
+      "id": 3,
+      "dni": "00487164R",
+      "nom": "MANUEL",
+      "cognom1": "DEL RIO",
+      "cognom2": "CANO",
+      "data_naixement": "06/07/1998",
+      "telefon_contacte": "710329497",
+      "url_foto": "assets/images/no-foto.jpg",
+      "email": "manuel_98@witty.com",
+      "associacio": "",
+      "actiu": true,
+      "rol": ""
     }
   ],
   "appointments": [
-    
-    {"day":"2024-04-02T08:00:00.000Z","startTime":"2024-04-02T09:00:00.000Z","endTime":"2024-04-02T08:00:00.000Z","client":{"id":1,"full_name":"SUSANA MENA OLMEDO"},"volunteer":{"id":32,"full_name":"Elijah Roberts West"},"good":{"id":2,"full_name":"Eléctrica negra"},"scheduled":false,"completed":false},
-    {"day":"2024-01-31T00:00:00.000Z",
-      "startTime":"2024-01-31T14:00:00.000Z",
-      "endTime":"2024-01-31T16:30:00.000Z",
-      "client":{"id":2,"full_name":"SAUL CASTILLO ALARCON"},
-      "volunteer":{"id":38,"full_name":"BIEL GUERRERO NOGUERA"},
-      "good":{"id":1,"full_name":"Cargo Bike groga"},
-      "scheduled":false,
-      "completed":false}
-    
+    {
+      "id": 11,
+      "day": "2024-04-02T08:00:00.000Z",
+      "startTime": "2024-04-02T09:00:00.000Z",
+      "endTime": "2024-04-02T08:00:00.000Z",
+      "client": {
+        "id": 1,
+        "full_name": "SUSANA MENA OLMEDO"
+      },
+      "volunteer": {
+        "id": 32,
+        "full_name": "Elijah Roberts West"
+      },
+      "good": {
+        "id": 2,
+        "full_name": "Eléctrica negra"
+      },
+      "scheduled": false,
+      "completed": false
+    },
+    {
+      "id": 12,
+      "day": "2024-01-31T00:00:00.000Z",
+      "startTime": "2024-01-31T14:00:00.000Z",
+      "endTime": "2024-01-31T16:30:00.000Z",
+      "client": {
+        "id": 2,
+        "full_name": "SAUL CASTILLO ALARCON"
+      },
+      "volunteer": {
+        "id": 38,
+        "full_name": "BIEL GUERRERO NOGUERA"
+      },
+      "good": {
+        "id": 1,
+        "full_name": "Cargo Bike groga"
+      },
+      "scheduled": false,
+      "completed": false
+    },
+    {
+      "day": "2027-01-12T09:00:00.000Z",
+      "startTime": "2027-01-12T07:00:00.000Z",
+      "endTime": "2027-01-12T08:00:00.000Z",
+      "client": {
+        "id": 1,
+        "full_name": "SUSANA MENA OLMEDO"
+      },
+      "volunteer": {
+        "id": 27,
+        "full_name": "Ferran Vidal Bort"
+      },
+      "good": {
+        "id": 2,
+        "full_name": "Eléctrica negra"
+      },
+      "scheduled": false,
+      "completed": false,
+      "id": 13
+    },
+    {
+      "day": "2024-01-01T09:00:00.000Z",
+      "startTime": "2024-01-01T07:00:00.797Z",
+      "endTime": "2024-01-01T07:00:00.797Z",
+      "client": {
+        "id": 3,
+        "full_name": "MANUEL DEL RIO CANO"
+      },
+      "volunteer": {
+        "id": 32,
+        "full_name": "Elijah Roberts West"
+      },
+      "good": {
+        "id": 2,
+        "full_name": "Eléctrica negra"
+      },
+      "scheduled": false,
+      "completed": false,
+      "id": 14
+    },
+    {
+      "day": "2024-01-02T09:00:00.000Z",
+      "startTime": "2024-01-02T14:00:00.438Z",
+      "endTime": "2024-01-02T14:00:00.438Z",
+      "client": {
+        "id": 3,
+        "full_name": "MANUEL DEL RIO CANO"
+      },
+      "volunteer": {
+        "id": 40,
+        "full_name": "Daniel Rubio Mendiz"
+      },
+      "good": {
+        "id": 2,
+        "full_name": "Eléctrica negra"
+      },
+      "scheduled": false,
+      "completed": false,
+      "id": 15
+    },
+    {
+      "day": "2026-12-28T09:00:00.000Z",
+      "startTime": "2026-12-28T07:00:00.164Z",
+      "endTime": "2026-12-28T07:00:00.164Z",
+      "client": {
+        "id": 3,
+        "full_name": "MANUEL DEL RIO CANO"
+      },
+      "volunteer": {
+        "id": 32,
+        "full_name": "Elijah Roberts West"
+      },
+      "good": {
+        "id": 2,
+        "full_name": "Eléctrica negra"
+      },
+      "scheduled": false,
+      "completed": false,
+      "id": 16
+    }
   ],
-  "goods":
-  [
+  "goods": [
     {
       "id": 1,
-      "name" : "Cargo Bike groga",
+      "name": "Cargo Bike groga",
       "model": "",
       "active": true,
-      "url_foto":"string"
+      "url_foto": "string"
     },
     {
       "id": 2,
-      "name" : "Eléctrica negra",
+      "name": "Eléctrica negra",
       "model": "",
       "active": true,
-      "url_foto":"string"
+      "url_foto": "string"
     }
   ]
 }
