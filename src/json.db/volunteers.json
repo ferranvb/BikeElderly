@@ -271,7 +271,15 @@
       "volunteer":{"id":33,"full_name":"Karen Montgomery Pearse"},
       "good":{"id":2,"full_name":"Eléctrica negra"},
       "scheduled":false,
-      "completed":false}
+      "completed":false},
+      {"day":"19-01-2024",
+        "startTime":"10:0",
+        "endTime":"11:0",
+        "client":{"id":2,"full_name":"SAUL CASTILLO ALARCON"},
+        "volunteer":{"id":32,"full_name":"Elijah Roberts West"},
+        "good":{"id":1,"full_name":"Cargo Bike groga"},
+        "scheduled":false,
+        "completed":false}  
   ],
   "goods":
   [

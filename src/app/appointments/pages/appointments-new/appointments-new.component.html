@@ -16,6 +16,7 @@
             <p-dropdown id="good" formControlName="good" [options]="listGoodsMin" optionLabel="full_name" ></p-dropdown>
             <br />
             <br />
+         @if ( showFullForm ) {  
             <label for="startTime" class="mr-3">Hora Inici</label>
             <p-calendar id="startTime" formControlName="startTime" placeholder="hora inici" [stepHour]="1"  [stepMinute]="30" [maxDateCount]="1"
             [timeOnly]="true"></p-calendar>
@@ -50,6 +51,7 @@
             <br />
             <p-button type="submit" (click)="addAppointment()">Registrarme</p-button>
             <p-button type="submit" (click)="resetAppointment()" class="ml-3">Neteja</p-button>
+          }
           </form>
         } 
     </div>

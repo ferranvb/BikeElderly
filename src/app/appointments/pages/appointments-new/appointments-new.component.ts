@@ -40,6 +40,8 @@ export class AppointmentsNewComponent implements OnInit{
 
   public date?: Date;
 
+  public showFullForm: boolean = false;
+
   private startTimeDefault = new Date();
   private endTimeDefault = new Date();
 
@@ -61,13 +63,9 @@ export class AppointmentsNewComponent implements OnInit{
 
   ngOnInit() {
     
+    this.showFullForm = false;
   
-    this.startTimeDefault.setHours(8);
-    this.startTimeDefault.setMinutes(0);
-    this.startTimeDefault.setSeconds(0);
-    this.endTimeDefault.setHours(9);
-    this.endTimeDefault.setMinutes(0);
-    this.endTimeDefault.setSeconds(0);
+   
   
 
 
@@ -161,6 +159,28 @@ export class AppointmentsNewComponent implements OnInit{
     // let dateAux = this.formAppointment.value.day;
     // this.date = dateAux?.getDate() + "/"  + dateAux?.getMonth() + "/" + dateAux?.get
     this.date = this.formAppointment.value.day;
+
+    this.startTimeDefault.setFullYear(this.date!.getFullYear());
+    this.startTimeDefault.setMonth(this.date!.getMonth());
+    this.startTimeDefault.setDate(this.date!.getDate());
+    this.startTimeDefault.setHours(8);
+    this.startTimeDefault.setMinutes(0);
+    this.startTimeDefault.setSeconds(0);
+
+    console.log("Hora inici",this.startTimeDefault)
+
+    this.endTimeDefault = this.date!;
+    
+    this.endTimeDefault.setHours( this.startTimeDefault.getHours() +2);
+    // this.endTimeDefault.setMinutes(0);
+    // this.endTimeDefault.setSeconds(0);
+
+    console.log("Hora Fi",this.endTimeDefault);
+
+
+    
+    this.showFullForm = true;
+    
     console.log("setDateAppointment", this.date?.toISOString());
   }
 

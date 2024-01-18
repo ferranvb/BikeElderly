@@ -1,9 +1,10 @@
 import { CommonModule } from '@angular/common';
-import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component, OnInit, inject } from '@angular/core';
 import { AppointmentPanelComponent } from '../../components/appointment-panel/appointment-panel.component';
 import { RouterLink } from '@angular/router';
 import { DatePretyComponent } from '../../components/date-prety/date-prety.component';
 import { FormsModule } from '@angular/forms';
+import { AppointmentsService } from '../../appointments.service';
 
 @Component({
   selector: 'app-apopintments-list-panel',
@@ -22,9 +23,24 @@ export class ApopintmentsListPanelComponent implements OnInit {
 
   date?:Date;
   dateAux2?:Date;
+
+  private appointmentsService = inject(AppointmentsService);
   
 
   ngOnInit(): void {
+    
+    const date = new Date();
+    const formattedDate = date.toLocaleDateString("en-US");
+    console.log("Data FER", date); // e.g., 10/16/2023
+
+    console.log("Data FER LOCALE", formattedDate); // e.g., 10/16/2023
+
+
+
+    // this.appointmentsService.getAppointmentsByDate('25-01-2024')
+    //   .subscribe(data => {
+    //     console.log(data);
+    //   });
     
   }
 
