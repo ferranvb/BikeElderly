@@ -5,13 +5,15 @@ import { MenuItem } from 'primeng/api/menuitem';
 
 import { TieredMenuModule } from 'primeng/tieredmenu';
 
+import { ImageModule } from 'primeng/image';
+
 
 
 @Component({
   selector: 'shared-menu',
   standalone: true,
   imports: [
-    CommonModule,TieredMenuModule,RouterLink,RouterOutlet
+    CommonModule,TieredMenuModule,RouterLink,RouterOutlet,ImageModule
   ],
   templateUrl: './menu.component.html',
   styleUrl: './menu.component.css',
@@ -22,6 +24,7 @@ export class MenuComponent implements OnInit {
 
   items!: MenuItem[];
   displayPageName?: string;
+  textPeu: string = "@2024";
 
   constructor() { }
 

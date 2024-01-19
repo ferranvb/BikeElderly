@@ -1,51 +1,46 @@
 <div class="px-4 pt-0">
-    <!-- <div class="flex align-items-center w-full bg-no-repeat bg-center border-100 border-1 border-round px-0 pt-0" > -->
-        <date-prety [dateAux]="date"></date-prety>
-        <!-- <div class="grid grid-nogutter"> -->
-        
-        <!-- <div class="row">
-            <div class="grid grid-nogutter nested-grid surface-50 border-round-2xl border-noround-left border-noround-bottom">
-                <div class="col ">
-                    <span class="text-orange-500 text-6xl px-2">{{ dateToday | date: 'dd'}}</span>
-                </div>
-                <div class="col mr-0 px-0">
-                    <div class="grid py-4">
-                        <div class="row">
-                            <span>{{ dateToday | date: 'MMMM'}}</span>
-                        </div>
-                        <div class="row">
-                            <span class="text-base">{{ dateToday | date: 'YYYY'}}</span>
-                        </div>        
-                    </div>
-                </div>
-            </div>
-        </div> -->
-        
-        
-    <!-- </div> -->
-   
-    <form>
-        <input type="date" [(ngModel)]="dateAux2" [ngModelOptions]="{standalone: true}"/> 
-        <button type="submit" (click)="creaData()">Data</button>   
-    </form>
-      
-    <!-- <date-prety [dateAux]="input"></date-prety>    -->
-        
-        <!-- <div class="flex-grow-1 flex align-items-left justify-content-left  ml-0 px-4 py-0">
-
-            <h2><span class="text-orange-500 text-6xl">{{ dateToday | date: 'dd'}}</span> 
-                {{ dateToday | date: 'MMMM' }} {{ dateToday | date: 'YYYY'}} - 
-                {{ dateToday | date: 'EEEE'}}
-            </h2>
-        </div> -->
-        <div class="flex-grow-1 flex align-items-right justify-content-end font-bold mr-4 mt-0">
-            <a [routerLink]="'/app/appointments/new'"> 
+    <div class="flex align-items-center w-full bg-no-repeat bg-center border-100 border-1 border-round px-0 pt-0" >
+        <div class="flex-grow-1 flex align-items-left justify-content-left  font-bold ml-0 px-4 py-0">
+          <h2>Llistat de Cites</h2>
+        </div>
+        <div class="flex-grow-1 flex align-items-right justify-content-end font-bold mr-4">
+            <a [routerLink]="'/app/appointment/new'"> 
                 <!-- <p-image src="assets/images/undo-48.jpg" alt="Image" width="20"></p-image> -->
                 Nou
             </a>
         </div>
-    <!-- </div> -->
-    @for ( appointmentAux of appointmentsListByDate; track appointmentAux.id ) {
-        <appointment-panel [appointment] = "appointmentAux"></appointment-panel>
-    }
+    </div>
+    
+    <div class="flex mt-2 ">
+        <label for="day" class="px-2">Tria data </label>
+        <p-calendar id="day" [(ngModel)]="dateAux2" placeholder="dia" dateFormat="dd.mm.yy" [showIcon]="true" (onSelect)="creaData()" class="px-3"></p-calendar>  
+    </div>    
+<ng-template [ngIf]="date!=null">
+    <div class="flex row">
+        <div class="col">
+            <div class="flex mt-2 ">
+                <date-prety [dateAux]="date"></date-prety>
+            </div>
+            <!-- @if ( appointmentsListByDate===null || appointmentsListByDate!.length > 0 ) { -->
+            <div class="mt-2 ">
+                @for ( appointmentAux of appointmentsListByDate; track appointmentAux.id ) {
+                    <appointment-panel [appointment] = "appointmentAux"></appointment-panel>
+                }
+            </div>
+        </div>
+        <div class="col">
+            <div class="flex mt-2 ">
+                <date-prety [dateAux]="dateSeg"></date-prety>
+            </div>
+            <!-- @if ( appointmentsListByDate===null || appointmentsListByDate!.length > 0 ) { -->
+            <div class="mt-2 ">
+                @for ( appointmentAux of appointmentsListByDateSeg; track appointmentAux.id ) {
+                    <appointment-panel [appointment] = "appointmentAux"></appointment-panel>
+                }
+            </div>
+        </div>
+    </div>
+</ng-template>
+        
+    <!-- }  -->
 </div>

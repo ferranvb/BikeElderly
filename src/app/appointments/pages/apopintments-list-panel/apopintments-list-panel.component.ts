@@ -6,13 +6,14 @@ import { DatePretyComponent } from '../../components/date-prety/date-prety.compo
 import { FormsModule } from '@angular/forms';
 import { AppointmentsService } from '../../appointments.service';
 import { Appointment } from '../../model/appointment';
+import { CalendarModule } from 'primeng/calendar';
 
 @Component({
   selector: 'app-apopintments-list-panel',
   standalone: true,
   imports: [
     CommonModule,AppointmentPanelComponent, RouterLink, DatePretyComponent,
-    FormsModule
+    FormsModule,CalendarModule
   ],
   templateUrl: './apopintments-list-panel.component.html',
   styleUrl: './apopintments-list-panel.component.css',
@@ -23,32 +24,32 @@ export class ApopintmentsListPanelComponent implements OnInit {
   dateToday: Date = new Date();
 
   date?:Date;
+  dateSeg?:Date;
   dateAux2?:Date;
 
   private appointmentsService = inject(AppointmentsService);
 
   public appointmentsListByDate!: Appointment[];
+  public appointmentsListByDateSeg!: Appointment[];
   
 
   ngOnInit(): void {
     
-    this.date = new Date();
-    
-    this.date.setMilliseconds(0);
-    this.date.setHours(1);
-    this.date.setMinutes(0);
-    this.date.setSeconds(0);
-    console.log("Date ISO ",this.date.toISOString());
-    console.log("Date UTC ",this.date.toUTCString());
-    
-    this.getAppointmentListByDate();
-    
   }
 
   creaData(): void {
-    console.log('DateAux2',this.dateAux2);
-    this.date = this.dateAux2;
-    console.log('Date' ,this.date);
+    
+    this.date! = this.dateAux2!;
+    this.dateSeg! = new Date(this.date.getTime());
+    
+    
+    this.date.setHours(1);
+    
+    this.dateSeg!.setDate(this.dateSeg.getDate()+1);
+    this.dateSeg!.setHours(1);
+        
+    this.getAppointmentListByDate();
+    this.getAppointmentListByDateSeg();
   }
 
 
@@ -67,6 +68,16 @@ export class ApopintmentsListPanelComponent implements OnInit {
           this.appointmentsListByDate = response;}
         );
   }
+
+  getAppointmentListByDateSeg(): void { 
+    this.appointmentsService.getAppointmentsByDate( this.dateSeg!)
+       .subscribe( (response) => 
+        { console.log("getAppointmentList",response);
+          this.appointmentsListByDateSeg = response;}
+        );
+  }
+
+
   
 
   
