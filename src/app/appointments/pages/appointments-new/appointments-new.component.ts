@@ -91,14 +91,7 @@ export class AppointmentsNewComponent implements OnInit{
     }
 
     this.getListVolunteersMinSelection();
-
-
     this.getListGoodsMinSelection();
-    // console.log("Llista Goods passat", this.listGoodsMin);
-    // this.getListGoodsMinSelection();
-    // console.log("Llista Goods 2", this.listGoodsMin);
-
-
   }
 
 
@@ -108,16 +101,12 @@ export class AppointmentsNewComponent implements OnInit{
   
     this.goodsService.getGoodsMin()
     .subscribe( data => {
-        console.log("Llista Goods pre data", data);
         this.listGoodsMin = data;
-        console.log("Llista Goods this", data);
       }
       );  
     this.goodsService.getGoodsMin()
       .subscribe( data => {
-        console.log("Llista Goods pre data", data);
         _this.listGoodsMin = data;
-        console.log("Llista Goods _this", data);
       }
       );  
     
@@ -135,65 +124,40 @@ export class AppointmentsNewComponent implements OnInit{
   searchVolunteer(event: AutoCompleteCompleteEvent) {
     let filtered: any[] = [];
     let query = event.query;
-    console.log ("Query", query);
 
-
-    // for (let i = 0; i < (this.listVolunteersMinSelection as any[]).length; i++) {
-    //     let volunteer = (this.listVolunteersMinSelection as any[])[i];
-    //     if (volunteer.full_name.toLowerCase().indexOf(query.toLowerCase()) == 0) {
-    //         filtered.push(volunteer);
-    //     }
-    // }
     this.listVolunteersMinSelection =
       this.listVolunteersMinSelection.filter(volunteer =>
       volunteer.full_name.toLowerCase().includes(query.toLowerCase()));
-    
-    console.log("Filtered",this.listVolunteersMinSelection);
-
-    // if (this.listVolunteersMinSelection.length === 0 ) {
-    //   console.log("listVolunteersMinSelection.length === 0");
-    //    this.getListVolunteersMinSelection();
-    // } 
-  //   if ( query.length === 0) {
-  //     console.log("query.length zero");
-  //     this.getListVolunteersMinSelection();
-  //  } 
+ 
   }
 
   public setStartEndTimeAppointment():void {
-    // let dateAux = this.formAppointment.value.day;
-    // this.date = dateAux?.getDate() + "/"  + dateAux?.getMonth() + "/" + dateAux?.get
+    
     this.date = this.formAppointment.value.day;
     this.date?.setHours(1);
-    console.log("Data setejada" , this.date);
 
-    // this.startTimeDefault.setFullYear(this.date!.getFullYear());
-    // this.startTimeDefault.setMonth(this.date!.getMonth());
-    // this.startTimeDefault.setDate(this.date!.getDate());
     this.startTimeDefault =  new Date(this.date!.getTime());
     this.startTimeDefault.setHours(8);
-    // this.startTimeDefault.setMinutes(0);
-    // this.startTimeDefault.setSeconds(0);
-
-    console.log("Hora inici",this.startTimeDefault)
 
     this.endTimeDefault = new Date(this.date!.getTime());
     
     this.endTimeDefault.setHours( this.startTimeDefault.getHours() +2);
-    // this.endTimeDefault.setMinutes(0);
-    // this.endTimeDefault.setSeconds(0);
-
-    console.log("Hora Fi",this.endTimeDefault);
-
+    
     this.formAppointment.patchValue({'startTime': this.startTimeDefault});
     this.formAppointment.patchValue({'endTime': this.endTimeDefault});
 
     this.showFullForm = true;
 
-    
-    console.log("setDateAppointment", this.date?.toISOString());
   }
 
+  updateEndDate() {
+    
+    let dateAux:Date = new Date(this.formAppointment.get('startTime')?.value);
+    dateAux.setHours(dateAux.getHours() + 1);
+    
+    this.formAppointment.patchValue({'endTime': dateAux});
+    
+  }
 
   public addAppointment():void {
     
@@ -209,15 +173,10 @@ export class AppointmentsNewComponent implements OnInit{
     appointmentAux.scheduled = false;
     appointmentAux.completed = false;
 
-    
-    console.log("addAppointment", JSON.stringify(appointmentAux));
-
     this.appointmentsService.addAppointment(appointmentAux)
       .subscribe( {
         next: (res) => {
-          console.log("Add this.Volunteer", res);
-          //this.submitted = true;
-          this.router.navigate(['/app/appointments']);
+          this.router.navigate(['/app/appointments/p']);
         },
         error: (e) => console.error(e)
       });

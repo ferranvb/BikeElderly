@@ -18,8 +18,8 @@
             <br />
          @if ( showFullForm ) {  
             <label for="startTime" class="mr-3">Hora Inici</label>
-            <p-calendar id="startTime" formControlName="startTime" placeholder="hora inici" [stepHour]="1"  [stepMinute]="30" [maxDateCount]="1"
-            [timeOnly]="true"></p-calendar>
+            <p-calendar id="startTime" formControlName="startTime" placeholder="hora inici" [stepHour]="1"  [stepMinute]="30" [maxDateCount]="1" (onClickOutside)="updateEndDate()" (onSelect)="updateEndDate()" 
+                       [timeOnly]="true"></p-calendar>
             <br />
             <br />
             <label for="endTime" class="mr-3">Hora Final</label>
