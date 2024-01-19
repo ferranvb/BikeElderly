@@ -1,6 +1,7 @@
 import { CommonModule } from '@angular/common';
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
 import { PanelModule } from 'primeng/panel';
+import { Appointment } from '../../model/appointment';
 
 @Component({
   selector: 'appointment-panel',
@@ -12,4 +13,14 @@ import { PanelModule } from 'primeng/panel';
   styleUrl: './appointment-panel.component.css',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class AppointmentPanelComponent { }
+export class AppointmentPanelComponent {
+
+  @Input() 
+  appointment?: Appointment;
+
+  ngAfterViewInit() {
+    console.log(this.appointment);
+  }
+
+
+ }

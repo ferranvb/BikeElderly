@@ -31,8 +31,8 @@ export class AppointmentsService {
     //TODO manca control errors
   }
 
-  getAppointmentsByDate(date:string):  Observable<Appointment[]> {
-    const url: string =this.urlServer + '/appointments?day=' + date;
+  getAppointmentsByDate(date: Date):  Observable<Appointment[]> {
+    const url: string =this.urlServer + '/appointments?day=' + date.toISOString();
     console.log(url);
     return this.http.get<Appointment[]>(url);
   }

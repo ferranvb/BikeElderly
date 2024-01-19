@@ -5,6 +5,7 @@ import { RouterLink } from '@angular/router';
 import { DatePretyComponent } from '../../components/date-prety/date-prety.component';
 import { FormsModule } from '@angular/forms';
 import { AppointmentsService } from '../../appointments.service';
+import { Appointment } from '../../model/appointment';
 
 @Component({
   selector: 'app-apopintments-list-panel',
@@ -25,22 +26,22 @@ export class ApopintmentsListPanelComponent implements OnInit {
   dateAux2?:Date;
 
   private appointmentsService = inject(AppointmentsService);
+
+  public appointmentsListByDate!: Appointment[];
   
 
   ngOnInit(): void {
     
-    const date = new Date();
-    const formattedDate = date.toLocaleDateString("en-US");
-    console.log("Data FER", date); // e.g., 10/16/2023
-
-    console.log("Data FER LOCALE", formattedDate); // e.g., 10/16/2023
-
-
-
-    // this.appointmentsService.getAppointmentsByDate('25-01-2024')
-    //   .subscribe(data => {
-    //     console.log(data);
-    //   });
+    this.date = new Date();
+    
+    this.date.setMilliseconds(0);
+    this.date.setHours(1);
+    this.date.setMinutes(0);
+    this.date.setSeconds(0);
+    console.log("Date ISO ",this.date.toISOString());
+    console.log("Date UTC ",this.date.toUTCString());
+    
+    this.getAppointmentListByDate();
     
   }
 
@@ -48,6 +49,23 @@ export class ApopintmentsListPanelComponent implements OnInit {
     console.log('DateAux2',this.dateAux2);
     this.date = this.dateAux2;
     console.log('Date' ,this.date);
+  }
+
+
+  getAppointmentList(): void { 
+    this.appointmentsService.getAppointments()
+       .subscribe( (response) => 
+        { console.log("getAppointmentList",response);
+          this.appointmentsListByDate = response;}
+        );
+  }
+
+  getAppointmentListByDate(): void { 
+    this.appointmentsService.getAppointmentsByDate( this.date!)
+       .subscribe( (response) => 
+        { console.log("getAppointmentList",response);
+          this.appointmentsListByDate = response;}
+        );
   }
   
 

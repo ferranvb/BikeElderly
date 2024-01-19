@@ -287,9 +287,9 @@
       "completed": false
     },
     {
-      "day": "2027-01-12T09:00:00.000Z",
-      "startTime": "2027-01-12T07:00:00.000Z",
-      "endTime": "2027-01-12T08:00:00.000Z",
+      "day": "2024-01-19T00:00:00.000Z",
+      "startTime": "2024-01-19T07:00:00.000Z",
+      "endTime": "2027-01-19T08:00:00.000Z",
       "client": {
         "id": 1,
         "full_name": "SUSANA MENA OLMEDO"
@@ -307,7 +307,7 @@
       "id": 13
     },
     {
-      "day": "2024-01-01T09:00:00.000Z",
+      "day": "2024-01-19T00:00:00.000Z",
       "startTime": "2024-01-01T07:00:00.797Z",
       "endTime": "2024-01-01T07:00:00.797Z",
       "client": {
@@ -327,7 +327,7 @@
       "id": 14
     },
     {
-      "day": "2024-01-02T09:00:00.000Z",
+      "day": "2024-01-02T00:00:00.000Z",
       "startTime": "2024-01-02T14:00:00.438Z",
       "endTime": "2024-01-02T14:00:00.438Z",
       "client": {
@@ -347,7 +347,7 @@
       "id": 15
     },
     {
-      "day": "2026-12-28T09:00:00.000Z",
+      "day": "2024-01-19T00:00:00.000Z",
       "startTime": "2026-12-28T07:00:00.164Z",
       "endTime": "2026-12-28T07:00:00.164Z",
       "client": {
@@ -365,6 +365,26 @@
       "scheduled": false,
       "completed": false,
       "id": 16
+    },
+    {
+      "day": "2024-01-02T00:00:00.000Z",
+      "startTime": "2024-01-02T07:00:00.065Z",
+      "endTime": "2024-01-02T07:00:00.065Z",
+      "client": {
+        "id": 3,
+        "full_name": "MANUEL DEL RIO CANO"
+      },
+      "volunteer": {
+        "id": 27,
+        "full_name": "Ferran Vidal Bort"
+      },
+      "good": {
+        "id": 1,
+        "full_name": "Cargo Bike groga"
+      },
+      "scheduled": false,
+      "completed": false,
+      "id": 17
     }
   ],
   "goods": [

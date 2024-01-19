@@ -1,18 +1,19 @@
 <p-panel class="flex align-content-end flex-wrap py-2  px-0 py-0 w-full"  >
     <ng-template pTemplate="header">
-        <div class="align-items-start px-0 py-0">
-            <span class="text-blue-300 text-lg font-semibold px-0 mr-1">08:30</span>
-            - <span class="text-blue-300 text-lg font-semibold px-1">09:30</span>
+        <div class="text-orange-300 text-lg align-items-start px-0 py-0">
+            {{ appointment?.day | date: 'dd.MM.YYYY'}}<br />
+            <span class="text-blue-300 text-lg font-semibold px-0 mr-1">{{ appointment?.startTime | date: 'HH:mm'}}</span>
+            - <span class="text-blue-300 text-lg font-semibold px-1">{{ appointment?.endTime | date: 'HH:mm'}}</span>
         </div>
         <div class="flex-grow-1 flex align-items-right justify-content-end px-0 py-0">
-            <span class="text-right text-yellow-300 text-lg font-semibold px-4 mr-0">Cargo bike</span>
+            <span class="text-right text-yellow-300 text-lg font-semibold px-4 mr-0">{{ appointment?.good?.full_name}}</span>
         </div>
     </ng-template>
 
     <div class="flex-initial flex align-items-start justify-content-start  m-0 px-0 py-0 border-round">
-        Client <span class="text-blue-300 font-semibold ml-3">Jordi Vidal</span></div>
+        Client <span class="text-blue-300 font-semibold ml-3">{{ appointment?.client?.full_name}}</span></div>
     <div class="flex-initial flex align-items-start justify-content-start  m-0 px-0 py-2 border-round">
-        Voluntari <span class="text-blue-300 font-semibold ml-3">Andreu Santacana</span></div>
+        Voluntari <span class="text-blue-300 font-semibold ml-3">{{ appointment?.volunteer?.full_name}}</span></div>
     
     <ng-template pTemplate="footer">
         <!-- <p-button label="Save" icon="pi pi-check"></p-button>
@@ -20,24 +21,3 @@
     </ng-template>
 </p-panel>
 
-<p-panel class="flex align-content-end flex-wrap py-2  px-0 py-0 w-full">
-    <ng-template pTemplate="header">
-        <div class="align-items-start px-0 py-0">
-            <span class="text-blue-300 text-lg font-semibold px-0 mr-1">11:00</span>
-            - <span class="text-blue-300 text-lg font-semibold px-1">12:30</span>
-        </div>
-        <div class="flex-grow-1 flex align-items-right justify-content-end px-0 py-0">
-            <span class="text-right text-yellow-300 text-lg font-semibold px-4 mr-0">Cargo bike 2</span>
-        </div>
-    </ng-template>
-
-    <div class="flex-initial flex align-items-start justify-content-start  m-0 px-0 py-0 border-round">
-        Client <span class="text-blue-300 font-semibold ml-3">Andrea Gil</span></div>
-    <div class="flex-initial flex align-items-start justify-content-start  m-0 px-0 py-2 border-round">
-        Voluntari <span class="text-blue-300 font-semibold ml-3">Mario Puig</span></div>
-    
-    <ng-template pTemplate="footer">
-        <!-- <p-button label="Save" icon="pi pi-check"></p-button>
-        <p-button label="Cancel" icon="pi pi-times" styleClass="p-button-secondary" [style]="{ 'margin-left': '.5em' }"></p-button> -->
-    </ng-template>
-</p-panel>

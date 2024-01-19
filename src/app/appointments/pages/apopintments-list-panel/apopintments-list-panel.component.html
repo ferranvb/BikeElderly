@@ -45,5 +45,7 @@
             </a>
         </div>
     <!-- </div> -->
-    <appointment-panel></appointment-panel>
+    @for ( appointmentAux of appointmentsListByDate; track appointmentAux.id ) {
+        <appointment-panel [appointment] = "appointmentAux"></appointment-panel>
+    }
 </div>
