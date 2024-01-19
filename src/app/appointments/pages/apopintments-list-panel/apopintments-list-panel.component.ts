@@ -64,8 +64,10 @@ export class ApopintmentsListPanelComponent implements OnInit {
   getAppointmentListByDate(): void { 
     this.appointmentsService.getAppointmentsByDate( this.date!)
        .subscribe( (response) => 
-        { console.log("getAppointmentList",response);
-          this.appointmentsListByDate = response;}
+        { 
+          console.log("RESP",response);
+          this.appointmentsListByDate = response;
+        }
         );
   }
 

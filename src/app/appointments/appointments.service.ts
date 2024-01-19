@@ -3,7 +3,7 @@ import { ClientsService } from '../clients/services/clients.service';
 import { environment } from 'src/environments/environment';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Appointment } from './model/appointment';
-import { Observable, tap } from 'rxjs';
+import { Observable, map, tap } from 'rxjs';
 
 
 @Injectable({
@@ -26,7 +26,13 @@ export class AppointmentsService {
   getAppointments(): Observable<Appointment[]> {
     const url: string =this.urlServer + '/appointments';
     console.log(url);
-    return this.http.get<Appointment[]>(url);
+    
+    return this.http.get<Appointment[]>(url)
+      .pipe( 
+        map( appoint=> appoint.sort(
+        (x:Appointment,y:Appointment) => 
+          new Date(x.startTime!).getTime() > new Date(y.startTime!).getTime() ? 1 : -1
+      )));
 
     //TODO manca control errors
   }
@@ -34,7 +40,12 @@ export class AppointmentsService {
   getAppointmentsByDate(date: Date):  Observable<Appointment[]> {
     const url: string =this.urlServer + '/appointments?day=' + date.toISOString();
     console.log(url);
-    return this.http.get<Appointment[]>(url);
+    return this.http.get<Appointment[]>(url)
+        .pipe( 
+          map( appoint=> appoint.sort(
+          (x:Appointment,y:Appointment) => 
+            new Date(x.startTime!).getTime() > new Date(y.startTime!).getTime() ? 1 : -1
+        )));
   }
 
   /** POST: add a new Appointment to the server */  

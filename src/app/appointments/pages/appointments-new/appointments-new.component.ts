@@ -164,18 +164,20 @@ export class AppointmentsNewComponent implements OnInit{
     // let dateAux = this.formAppointment.value.day;
     // this.date = dateAux?.getDate() + "/"  + dateAux?.getMonth() + "/" + dateAux?.get
     this.date = this.formAppointment.value.day;
+    this.date?.setHours(1);
     console.log("Data setejada" , this.date);
 
-    this.startTimeDefault.setFullYear(this.date!.getFullYear());
-    this.startTimeDefault.setMonth(this.date!.getMonth());
-    this.startTimeDefault.setDate(this.date!.getDate());
+    // this.startTimeDefault.setFullYear(this.date!.getFullYear());
+    // this.startTimeDefault.setMonth(this.date!.getMonth());
+    // this.startTimeDefault.setDate(this.date!.getDate());
+    this.startTimeDefault =  new Date(this.date!.getTime());
     this.startTimeDefault.setHours(8);
-    this.startTimeDefault.setMinutes(0);
-    this.startTimeDefault.setSeconds(0);
+    // this.startTimeDefault.setMinutes(0);
+    // this.startTimeDefault.setSeconds(0);
 
     console.log("Hora inici",this.startTimeDefault)
 
-    this.endTimeDefault = this.date!;
+    this.endTimeDefault = new Date(this.date!.getTime());
     
     this.endTimeDefault.setHours( this.startTimeDefault.getHours() +2);
     // this.endTimeDefault.setMinutes(0);
@@ -192,6 +194,7 @@ export class AppointmentsNewComponent implements OnInit{
     console.log("setDateAppointment", this.date?.toISOString());
   }
 
+
   public addAppointment():void {
     
 
@@ -199,7 +202,7 @@ export class AppointmentsNewComponent implements OnInit{
     
     appointmentAux.day = this.formAppointment.get('day')?.value;
     appointmentAux.startTime = this.formAppointment.get('startTime')?.value;
-    appointmentAux.endTime = this.formAppointment.get('startTime')?.value;
+    appointmentAux.endTime = this.formAppointment.get('endTime')?.value;
     appointmentAux.client = this.formAppointment.get('client')?.value;
     appointmentAux.volunteer = this.formAppointment.get('volunteer')?.value;
     appointmentAux.good = this.formAppointment.get('good')?.value;
