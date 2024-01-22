@@ -33,6 +33,14 @@
                       (completeMethod)="searchVolunteer($event)" field="full_name"></p-autoComplete>          
             <br />
             <br />
+            
+              <p-checkbox formControlName="scheduled" inputId="scheduled"></p-checkbox>
+              <label for="scheduled">Cita concertada</label>
+          
+            
+            <br />
+            <br />
+
             <p-button type="submit" (click)="addAppointment()">Registrarme</p-button>
             <p-button type="submit" (click)="resetAppointment()" class="ml-3">Neteja</p-button>
           }

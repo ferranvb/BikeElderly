@@ -16,6 +16,7 @@ import { GoodsService } from 'src/app/goods/services/goods.service';
 import { map } from 'rxjs';
 import { AppointmentsService } from '../../appointments.service';
 import { Router } from '@angular/router';
+import { CheckboxModule } from 'primeng/checkbox';
 interface Good {
   id: number;
   name: string;
@@ -32,7 +33,7 @@ interface AutoCompleteCompleteEvent {
   imports: [
     CommonModule,ReactiveFormsModule,CalendarModule,InputTextModule,
     DropdownModule,DatePretyComponent,AppointmentPanelComponent,
-    AutoCompleteModule
+    AutoCompleteModule,CheckboxModule
   ],
   templateUrl: './appointments-new.component.html',
   styleUrl: './appointments-new.component.css',
@@ -81,7 +82,8 @@ export class AppointmentsNewComponent implements OnInit{
       startTime: new FormControl(this.startTimeDefault, [Validators.required], []),
       endTime: new FormControl(this.endTimeDefault, [Validators.required], []),
       volunteer:  new FormControl(null),
-      client: new FormControl('', [Validators.required])
+      client: new FormControl('', [Validators.required]),
+      scheduled: new FormControl(false, [Validators.required])
     })
 
     
@@ -170,7 +172,7 @@ export class AppointmentsNewComponent implements OnInit{
     appointmentAux.client = this.formAppointment.get('client')?.value;
     appointmentAux.volunteer = this.formAppointment.get('volunteer')?.value;
     appointmentAux.good = this.formAppointment.get('good')?.value;
-    appointmentAux.scheduled = false;
+    appointmentAux.scheduled = this.formAppointment.get('scheduled')?.value;
     appointmentAux.completed = false;
 
     this.appointmentsService.addAppointment(appointmentAux)

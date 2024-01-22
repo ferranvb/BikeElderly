@@ -353,6 +353,92 @@
       "scheduled": false,
       "completed": false,
       "id": 22
+    },
+    {
+      "day": "2024-01-28T00:00:00.000Z",
+      "startTime": "2024-01-28T11:00:00.000Z",
+      "endTime": "2024-01-28T12:30:00.000Z",
+      "client": {
+        "id": 3,
+        "full_name": "MANUEL DEL RIO CANO"
+      },
+      "volunteer": {
+        "id": 36,
+        "full_name": "Josefa LOPEZ DEL POZO"
+      },
+      "good": {
+        "id": 2,
+        "full_name": "Eléctrica negra"
+      },
+      "scheduled": false,
+      "completed": false,
+      "id": 23
+    },
+    {
+      "day": "2024-01-29T00:00:00.000Z",
+      "startTime": "2024-01-29T09:00:00.000Z",
+      "endTime": "2024-01-29T10:00:00.000Z",
+      "client": {
+        "id": 5,
+        "full_name": "JONATHAN ROCA CABELLO"
+      },
+      "volunteer": {
+        "id": 33,
+        "full_name": "Karen Montgomery Pearse"
+      },
+      "good": {
+        "id": 1,
+        "full_name": "Cargo Bike groga"
+      },
+      "scheduled": false,
+      "completed": false,
+      "id": 24
+    },
+    {
+      "day": "2024-01-29T00:00:00.000Z",
+      "startTime": "2024-01-29T11:30:00.000Z",
+      "endTime": "2024-01-29T13:00:00.000Z",
+      "client": {
+        "id": 2,
+        "full_name": "SAUL CASTILLO ALARCON"
+      },
+      "volunteer": {
+        "id": 29,
+        "full_name": "Jennie Nichols Martz"
+      },
+      "good": {
+        "id": 2,
+        "full_name": "Eléctrica negra"
+      },
+      "scheduled": [
+        "false"
+      ],
+      "completed": false,
+      "id": 25
+    },
+    {
+      "day": "2024-01-30T00:00:00.000Z",
+      "startTime": "2024-01-30T07:00:00.000Z",
+      "endTime": "2024-01-30T09:30:00.000Z",
+      "client": {
+        "id": 4,
+        "full_name": "GONZALO GRAU CARRILLO"
+      },
+      "volunteer": {
+        "id": 38,
+        "full_name": "BIEL GUERRERO NOGUERA"
+      },
+      "good": {
+        "id": 1,
+        "full_name": "Cargo Bike groga"
+      },
+      "scheduled": [
+        null,
+        null,
+        null
+      ],
+      "completed": false,
+      "id": 26
     }
   ],
   "goods": [
