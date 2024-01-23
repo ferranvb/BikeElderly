@@ -439,6 +439,68 @@
       ],
       "completed": false,
       "id": 26
+    },
+    {
+      "day": "2024-01-16T00:00:00.000Z",
+      "startTime": "2024-01-16T07:00:00.000Z",
+      "endTime": "2024-01-16T09:00:00.000Z",
+      "client": {
+        "id": 1,
+        "full_name": "SUSANA MENA OLMEDO"
+      },
+      "volunteer": {
+        "id": 27,
+        "full_name": "Ferran Vidal Bort"
+      },
+      "good": {
+        "id": 1,
+        "full_name": "Cargo Bike groga"
+      },
+      "scheduled": [
+        "true"
+      ],
+      "completed": false,
+      "id": 27
+    },
+    {
+      "day": "2024-01-23T00:00:00.000Z",
+      "startTime": "2024-01-23T07:00:00.000Z",
+      "endTime": "2024-01-23T09:00:00.000Z",
+      "client": {
+        "id": 1,
+        "full_name": "SUSANA MENA OLMEDO"
+      },
+      "volunteer": {
+        "id": 27,
+        "full_name": "Ferran Vidal Bort"
+      },
+      "good": {
+        "id": 1,
+        "full_name": "Cargo Bike groga"
+      },
+      "scheduled": true,
+      "completed": false,
+      "id": 28
+    },
+    {
+      "day": "2024-01-24T00:00:00.000Z",
+      "startTime": "2024-01-24T07:00:00.000Z",
+      "endTime": "2024-01-24T09:00:00.000Z",
+      "client": {
+        "id": 4,
+        "full_name": "GONZALO GRAU CARRILLO"
+      },
+      "volunteer": {
+        "id": 33,
+        "full_name": "Karen Montgomery Pearse"
+      },
+      "good": {
+        "id": 1,
+        "full_name": "Cargo Bike groga"
+      },
+      "scheduled": false,
+      "completed": false,
+      "id": 29
     }
   ],
   "goods": [

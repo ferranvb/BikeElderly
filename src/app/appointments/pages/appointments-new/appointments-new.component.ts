@@ -13,10 +13,10 @@ import { ClientsService } from 'src/app/clients/services/clients.service';
 import { Appointment } from '../../model/appointment';
 import { IGood } from 'src/app/goods/model/iGood';
 import { GoodsService } from 'src/app/goods/services/goods.service';
-import { map } from 'rxjs';
+import { map, scheduled } from 'rxjs';
 import { AppointmentsService } from '../../appointments.service';
 import { Router } from '@angular/router';
-import { CheckboxModule } from 'primeng/checkbox';
+import { CheckboxChangeEvent, CheckboxModule } from 'primeng/checkbox';
 interface Good {
   id: number;
   name: string;
@@ -187,6 +187,10 @@ export class AppointmentsNewComponent implements OnInit{
   resetAppointment(): void {
     this.formAppointment.reset();
   }
+
+  mostraValor($event:CheckboxChangeEvent):void {
+    console.log('Valor ', this.formAppointment.get('scheduled')?.value);
+    }
 
   
 }

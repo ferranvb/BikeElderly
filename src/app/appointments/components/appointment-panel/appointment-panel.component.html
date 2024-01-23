@@ -16,6 +16,13 @@
         Voluntari <span class="text-blue-300 font-semibold ml-3">{{ appointment?.volunteer?.full_name}}</span></div>
     
     <ng-template pTemplate="footer">
+        Cita Concertada: 
+        @if ( appointment?.scheduled ) {
+            <p-image src="assets/images/green-dot.svg" alt="Image" width="10" class="ml-3"></p-image>
+        } @else {
+            <p-image src="assets/images/red-dot.svg" alt="Image" width="10" class="ml-3"></p-image>    
+        }
+
         <!-- <p-button label="Save" icon="pi pi-check"></p-button>
         <p-button label="Cancel" icon="pi pi-times" styleClass="p-button-secondary" [style]="{ 'margin-left': '.5em' }"></p-button> -->
     </ng-template>
