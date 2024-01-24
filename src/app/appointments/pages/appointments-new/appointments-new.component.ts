@@ -17,6 +17,7 @@ import { map, scheduled } from 'rxjs';
 import { AppointmentsService } from '../../appointments.service';
 import { Router } from '@angular/router';
 import { CheckboxChangeEvent, CheckboxModule } from 'primeng/checkbox';
+import { IClient } from 'src/app/clients/model/iClient';
 interface Good {
   id: number;
   name: string;
@@ -71,11 +72,6 @@ export class AppointmentsNewComponent implements OnInit{
     
     this.showFullForm = false;
   
-   
-  
-
-
-
     this.formAppointment = this.fb.group({
       day: new FormControl('',[Validators.required],[]),
       good: new FormControl(null,[Validators.required],[]),
@@ -86,14 +82,24 @@ export class AppointmentsNewComponent implements OnInit{
       scheduled: new FormControl(false, [Validators.required])
     })
 
-    
+    this.getListVolunteersMinSelection();
+    this.getListGoodsMinSelection();
+
     if ( this.clientsService.iClientSelected!=null ) {
       this.clientName = this.clientsService.iClientSelected.full_name;
       this.formAppointment.patchValue({'client': this.clientsService.iClientSelected});
     }
 
-    this.getListVolunteersMinSelection();
-    this.getListGoodsMinSelection();
+    if ( this.appointmentsService.editAppointment ) {
+      console.log('Entro per omplir form');
+      this.showFullForm = true;
+      this.fillFormWithAppointment( this.appointmentsService.appointmentSelected);
+      const client: IClient = this.formAppointment.get('client')?.value;
+      this.clientName = client.full_name;
+      
+      console.log("Omplert form",this.formAppointment.value);
+    }
+    this.appointmentsService.editAppointment = false;
   }
 
 
@@ -193,14 +199,19 @@ export class AppointmentsNewComponent implements OnInit{
     }
 
   
+
+
+
+ fillFormWithAppointment(appointmentSelected: Appointment):void {
+  this.formAppointment.patchValue({'day': appointmentSelected.day});
+  this.formAppointment.patchValue({'startTime': appointmentSelected.startTime});
+  this.formAppointment.patchValue({'endTime': appointmentSelected.endTime});
+  this.formAppointment.patchValue({'client': appointmentSelected.client});
+  this.formAppointment.patchValue({'volunteer': appointmentSelected.volunteer});
+  this.formAppointment.patchValue({'good': appointmentSelected.good});
+  this.formAppointment.patchValue({'scheduled': appointmentSelected.scheduled});
+  this.formAppointment.patchValue({'completed': appointmentSelected.completed});
+
 }
 
-// id?: number;
-//   day?: Date;
-//   startTime?: Date;
-//   endTime?: Date;
-//   good?: number;
-//   volunteer?: iVolunteer;
-//   client?: Client;
-//   scheduled?: boolean;
-//   completed?: boolean;
+}

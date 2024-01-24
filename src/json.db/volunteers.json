@@ -13,18 +13,21 @@
   ],
   "volunteers": [
     {
-      "id": 27,
       "dni": "78580254M",
       "nom": "Ferran",
       "cognom1": "Vidal",
       "cognom2": "Bort",
       "data_naixement": "24.02.1972",
-      "telefon_contacte": "636992000",
       "url_foto": "assets/images/no-foto.jpg",
+      "telefon_contacte": "636992000",
       "email": "ferranvb@gmail.com",
-      "associacio": "",
+      "adreca": "c/Madrid 13",
+      "codi_postal": "43870",
+      "poblacio": "Amposta",
+      "provincia": "Tarragona",
+      "organitzacio": "Club BTT Montbike",
       "actiu": true,
-      "rol": ""
+      "id": 27
     },
     {
       "dni": "12345678M",

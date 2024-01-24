@@ -16,30 +16,35 @@
         <ng-template pTemplate="header">
             <tr>
                 <!-- <th pSortableColumn="id" style="width:20%">Id<p-sortIcon field="id"></p-sortIcon></th> -->
-                <th>Id</th>
+                <!-- <th>Id</th> -->
                 <th pSortableColumn="day" style="width:20%">Dia<p-sortIcon field="day"></p-sortIcon></th>
                 <th>Hora Inici</th>
                 <th>Hora Fi</th>
                 <th>Client</th>
                 <th>Estri</th>
                 <th>Voluntari</th>
+                <th>Programada</th>
                 <th>ACCIÓ</th>
             </tr>
         </ng-template>
         <ng-template pTemplate="body" let-appointment>
             <tr>
-                <td>{{ appointment.id }}</td>
+                <!-- <td>{{ appointment.id }}</td> -->
                 <td>{{ appointment.day | date: 'dd-MM-YYYY'}}</td>
                 <td>{{ appointment.startTime | date: 'HH:mm' }}</td>
                 <td>{{ appointment.endTime | date: 'HH:mm' }}</td>
                 <td>{{ appointment.client?.full_name }}</td>
                 <td>{{ appointment.good?.full_name }}</td>
                 <td>{{ appointment.volunteer?.full_name }}</td> 
-                <!-- <td>
-                    <p-tag [value]="cita.voluntari==''?'pendent':cita.voluntari" 
-                    [severity]="cita.voluntari==''?'warning':'primary'"></p-tag>
-                </td> -->
-                <button pButton pRipple label="Submit" class="p-button-success"></button>
+                <td>
+                    @if ( appointment?.scheduled ) {
+                        <p-image src="assets/images/green-dot.svg" alt="Image" width="10" class="ml-3"></p-image>
+                    } @else {
+                        <p-image src="assets/images/red-dot.svg" alt="Image" width="10" class="ml-3"></p-image>    
+                    }
+
+                </td>
+                <button pButton pRipple icon="pi pi-pencil" (click)="goEdit(appointment)" class="p-button-success mt-2"></button>
             </tr>
         </ng-template>
     </p-table>

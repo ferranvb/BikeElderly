@@ -12,12 +12,13 @@ import { AppointmentsService } from '../../appointments.service';
 import { ConfirmationService, MessageService } from 'primeng/api';
 import { Appointment } from '../../model/appointment';
 import { SpiningComponent } from 'src/app/shared/components/spining/spining.component';
+import { ImageModule } from 'primeng/image';
 
 @Component({
   selector: 'appointments-list',
   standalone: true,
   imports: [
-    CommonModule,TableModule,ButtonModule,TagModule, RouterLink, RouterOutlet,SpiningComponent
+    CommonModule,TableModule,ButtonModule,TagModule, RouterLink, RouterOutlet,SpiningComponent,ImageModule
   ],
   providers: [ConfirmationService, MessageService],
   templateUrl: './appointments-list.component.html',
@@ -43,10 +44,18 @@ export class AppointmentListComponent implements OnInit {
   getAppointmentList(): void { 
     this.appointmentsService.getAppointments()
        .subscribe( (response) => 
-        { console.log("getAppointmentList",response);
+        { 
           this.appointmentsList = response;}
         );
   }
- 
+
+  goEdit(appointment: Appointment):void {
+    if ( appointment){
+      this.appointmentsService.appointmentSelected = appointment;
+      this.appointmentsService.editAppointment = true;
+      let idAux: string = '/app/appointments/new';
+      this.router.navigate([idAux]);
+    }
+  }
  
  }

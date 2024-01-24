@@ -20,6 +20,7 @@ export class AppointmentsService {
 
   public editAppointment:boolean = false;
   public appointmentSelected!: Appointment;
+  
 
   constructor() { }
 
