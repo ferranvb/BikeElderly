@@ -14,6 +14,7 @@ import { Volunteer } from '../../model/volunteer';
 import { IOrganization } from 'src/app/organizations/model/iOrganization';
 import { FieldsetModule } from 'primeng/fieldset'
 import { IVolunteer } from '../../model/iVolunteer';
+import { ToggleButtonModule } from 'primeng/togglebutton';
 
 interface City {
   name: string;
@@ -27,7 +28,7 @@ interface City {
   imports: [
     CommonModule,RouterLink,
     ReactiveFormsModule,InputTextModule,DropdownModule,ButtonModule,CheckboxModule,ImageModule,FileUploadModule,InputTextareaModule,
-    FieldsetModule 
+    FieldsetModule, ToggleButtonModule
 
   ],
   templateUrl: './volunteers-new.component.html',
@@ -121,7 +122,7 @@ export class VolunteersNewComponent implements OnInit {
         next: (res) => {
           console.log("Add this.Volunteer", res);
           //this.submitted = true;
-          this.router.navigate(['/layout/volunteers/', res.id]);
+          this.router.navigate(['/app/volunteers/', res.id]);
         },
         error: (e) => console.error(e)
       });
@@ -140,7 +141,7 @@ export class VolunteersNewComponent implements OnInit {
          // console.log("editVolunteer() ",res);
           //this.submitted = true;
           this.volunteersService.editVolunteer = false;
-          this.router.navigate(['/layout/volunteers']);
+          this.router.navigate(['/app/volunteers/', res.id]);
         },
         error: (e) => console.error(e)
       });;

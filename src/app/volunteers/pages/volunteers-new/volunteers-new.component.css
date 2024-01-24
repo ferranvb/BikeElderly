@@ -1,3 +1,29 @@
 :host {
   display: block;
 }
+
+@layer primeng {
+  .p-togglebutton.p-button
+{
+    background:  red;
+    border: 1px solid  red;
+    color: #ffffff;
+    transition: background-color 0.15s, border-color 0.15s, box-shadow 0.15s;
+  }
+}
+
+/* .p-ripple .p-element .different .p-button .p-togglebutton .p-component
+{
+    background: #cb270a;
+    border: 1px solid #6c757d;
+    color: #fff;
+    transition: background-color 0.15s, border-color 0.15s, box-shadow 0.15s;
+  }
+
+
+.p-togglebutton .p-button .p-highlight {
+  background: #12910e !important;
+  border: 1px solid #366d07;
+  color: #fff;
+  transition: background-color 0.15s, border-color 0.15s, box-shadow 0.15s;
+} */

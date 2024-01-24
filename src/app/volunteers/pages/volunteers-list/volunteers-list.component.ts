@@ -14,7 +14,7 @@ import { ImageModule } from 'primeng/image';
 import { ConfirmationService, MessageService, ConfirmEventType, LazyLoadEvent } from 'primeng/api';
 import { SpiningComponent } from 'src/app/shared/components/spining/spining.component';
 import { Volunteer } from '../../model/volunteer';
-import { IVolunteer } from '../../model/iVolunteer';
+// import { IVolunteer } from '../../model/iVolunteer';
 
 @Component({
   selector: 'volunteers-list',

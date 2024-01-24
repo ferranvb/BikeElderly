@@ -122,10 +122,29 @@
     </span>
 </div>
 <div class="field grid">
-    <label for="actiu" class="px-2">actiu *</label>
-    <p-checkbox formControlName="actiu" [binary]="true" inputId="actiu" class="mr-10"></p-checkbox>
+    <label for="actiu" class="px-2 mr-4">actiu *</label>
+    <!-- <p-checkbox formControlName="actiu" [binary]="true" inputId="actiu" class="mr-10"></p-checkbox> -->
+    <p-toggleButton id="actiu" formControlName="actiu" onLabel="Actiu" offLabel="Desactivat"  styleClass="different" [style]="{ width: '8em' }"></p-toggleButton>
    
 </div>
+<br>
+<div class="formgroup-inline">
+    @if ( editForm) {
+        <button pButton pRipple (click)="editVolunteer()"  label="Actualitza" class="p-button-primary"></button>
+    } @else {
+    <button pButton pRipple (click)="addVolunteer()"  label="Afegeix" class="p-button-primary"></button>
+    }
+</div>
+</form>
+</div>
+<div class="col  px-2 py-5">
+    <p-fieldset legend="Fotografia" >
+        <p-image src="assets/images/no-foto.jpg" alt="Image" width="125"></p-image>
+    </p-fieldset>
+</div>
+</div>
+</div>
+
 
 
 
@@ -162,22 +181,3 @@
         </div>
     </div>
   </div> -->
-
-
-<br>
-<div class="formgroup-inline">
-    @if ( editForm) {
-        <button pButton pRipple (click)="editVolunteer()"  label="Edita" class="p-button-primary"></button>
-    } @else {
-    <button pButton pRipple (click)="addVolunteer()"  label="Afegeix" class="p-button-success"></button>
-    }
-</div>
-</form>
-</div>
-<div class="col  px-2 py-5">
-    <p-fieldset legend="Fotografia" >
-        <p-image src="assets/images/no-foto.jpg" alt="Image" width="125"></p-image>
-    </p-fieldset>
-</div>
-</div>
-</div>

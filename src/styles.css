@@ -5,3 +5,40 @@
 html {
     font-size: 11px;
 }
+
+@layer primeng {
+    .p-togglebutton.p-button
+  {
+      background:  red;
+      border: 1px solid  red;
+      color: #ffffff;
+      /* transition: background-color 0.15s, border-color 0.15s, box-shadow 0.15s; */
+    }
+}  
+@layer primeng {
+  .p-togglebutton.p-button.p-highlight
+  {
+      background:  green;
+      border: 1px solid  green;
+      color: #ffffff;
+      /* transition: background-color 0.15s, border-color 0.15s, box-shadow 0.15s; */
+    }
+  }
+
+@layer primeng {
+    .p-togglebutton.p-button:not(.p-disabled):not(.p-highlight):hover
+  {
+    background:  red;
+    border: 1px solid  red;
+    color: #ffffff;
+    }
+  }
+
+  @layer primeng {
+    .p-togglebutton.p-button.p-highlight:hover
+  {
+    background:  green;
+    border: 1px solid  green;
+    color: #ffffff;
+    }
+  }

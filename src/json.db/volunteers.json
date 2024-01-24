@@ -35,13 +35,16 @@
       "cognom1": "Nichols",
       "cognom2": "Martz",
       "data_naixement": "08.03.1992",
-      "urlFoto": "",
+      "url_foto": "assets/images/no-foto.jpg",
       "telefon_contacte": "(272) 790-0888",
       "email": "jennie.nichols@example.com",
-      "associacio": "",
-      "actiu": false,
-      "id": 29,
-      "url_foto": "assets/images/no-foto.jpg"
+      "adreca": "",
+      "codi_postal": "",
+      "poblacio": "",
+      "provincia": "",
+      "organitzacio": null,
+      "actiu": true,
+      "id": 29
     },
     {
       "dni": "41736832D",
@@ -49,12 +52,15 @@
       "cognom1": "Roberts",
       "cognom2": "West",
       "data_naixement": "28.02.2005",
-      "urlFoto": "",
+      "url_foto": "https://randomuser.me/api/portraits/men/6.jpg",
       "telefon_contacte": "(413)-521-8190",
       "email": "elijah.roberts@example.com",
-      "associacio": "Porirua",
+      "adreca": "",
+      "codi_postal": "",
+      "poblacio": "",
+      "provincia": "",
+      "organitzacio": null,
       "actiu": false,
-      "url_foto": "https://randomuser.me/api/portraits/men/6.jpg",
       "id": 32
     },
     {
@@ -77,14 +83,15 @@
       "cognom1": "Kuypers",
       "cognom2": "Wetstraat",
       "data_naixement": "29.12.1999",
-      "urlFoto": "https://randomuser.me/api/portraits/men/77.jpg",
+      "url_foto": "https://randomuser.me/api/portraits/men/77.jpg",
       "telefon_contacte": "(032) 3849348",
       "email": "nathaniel.kuypers@example.com",
-      "associacio": "Montbike",
-      "actiu": [
-        "true"
-      ],
-      "url_foto": "https://randomuser.me/api/portraits/men/77.jpg",
+      "adreca": "",
+      "codi_postal": "",
+      "poblacio": "",
+      "provincia": "",
+      "organitzacio": null,
+      "actiu": false,
       "id": 35
     },
     {
@@ -93,13 +100,16 @@
       "cognom1": "LOPEZ",
       "cognom2": "DEL POZO",
       "data_naixement": "18/03/1955",
-      "urlFoto": "https://randomuser.me/api/portraits/women/30.jpg",
+      "url_foto": "https://randomuser.me/api/portraits/women/30.jpg",
       "telefon_contacte": "681249224",
       "email": "josefalopez@scientist.com",
-      "associacio": "Montbike",
-      "actiu": true,
-      "id": 36,
-      "url_foto": "https://randomuser.me/api/portraits/women/30.jpg"
+      "adreca": "",
+      "codi_postal": "",
+      "poblacio": "",
+      "provincia": "",
+      "organitzacio": null,
+      "actiu": false,
+      "id": 36
     },
     {
       "dni": "84510763T",
@@ -111,9 +121,7 @@
       "telefon_contacte": "727086432",
       "email": "mariamilagros_63@lycos.es",
       "associacio": "Montbike",
-      "actiu": [
-        "true"
-      ],
+      "actiu": true,
       "id": 37,
       "url_foto": "https://randomuser.me/api/portraits/women/84.jpg"
     },
@@ -127,7 +135,7 @@
       "telefon_contacte": "642508451",
       "email": "biel_47@earthling.net",
       "associacio": "MONTBIKE",
-      "actiu": [],
+      "actiu": true,
       "id": 38
     },
     {
@@ -140,9 +148,7 @@
       "telefon_contacte": "071-722-5939",
       "email": "karen.montgomery@example.com",
       "associacio": "Athy",
-      "actiu": [
-        "true"
-      ],
+      "actiu": true,
       "url_foto": "https://randomuser.me/api/portraits/women/7.jpg",
       "id": 39
     },
@@ -504,6 +510,26 @@
       "scheduled": false,
       "completed": false,
       "id": 29
+    },
+    {
+      "day": "2024-01-24T00:00:00.000Z",
+      "startTime": "2024-01-24T07:00:00.000Z",
+      "endTime": "2024-01-24T09:00:00.000Z",
+      "client": {
+        "id": 4,
+        "full_name": "GONZALO GRAU CARRILLO"
+      },
+      "volunteer": {
+        "id": 33,
+        "full_name": "Karen Montgomery Pearse"
+      },
+      "good": {
+        "id": 1,
+        "full_name": "Cargo Bike groga"
+      },
+      "scheduled": true,
+      "completed": false,
+      "id": 30
     }
   ],
   "goods": [
