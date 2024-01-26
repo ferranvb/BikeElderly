@@ -12,12 +12,15 @@
     </div>
 
     @defer(on timer(300ms)) {
-    <p-table [value]="appointmentsList" styleClass="p-datatable-striped" [tableStyle]="{ 'min-width': '50rem' }">
+    <p-table [value]="appointmentsList" styleClass="p-datatable-striped" 
+        rowGroupMode="subheader" groupRowsBy="day"
+        [scrollable]="true"
+        [tableStyle]="{ 'min-width': '50rem' }">
         <ng-template pTemplate="header">
             <tr>
                 <!-- <th pSortableColumn="id" style="width:20%">Id<p-sortIcon field="id"></p-sortIcon></th> -->
                 <!-- <th>Id</th> -->
-                <th pSortableColumn="day" style="width:20%">Dia<p-sortIcon field="day"></p-sortIcon></th>
+                <th>Dia</th>
                 <th>Hora Inici</th>
                 <th>Hora Fi</th>
                 <th>Client</th>
@@ -27,10 +30,19 @@
                 <th>ACCIÓ</th>
             </tr>
         </ng-template>
-        <ng-template pTemplate="body" let-appointment>
+        <ng-template pTemplate="groupheader" let-appointment>
+            <tr pRowGroupHeader>
+                <td colspan="8">
+                    <span class="text-orange-300 text-lg font-semibold ml-1">
+                         {{ appointment.day | date: 'dd-MM-YYYY'}}
+                    </span>    
+                </td>
+            </tr>
+        </ng-template>
+        <ng-template pTemplate="body" let-appointment let-rowIndex="rowIndex">
             <tr>
                 <!-- <td>{{ appointment.id }}</td> -->
-                <td>{{ appointment.day | date: 'dd-MM-YYYY'}}</td>
+                <td></td>
                 <td>{{ appointment.startTime | date: 'HH:mm' }}</td>
                 <td>{{ appointment.endTime | date: 'HH:mm' }}</td>
                 <td>{{ appointment.client?.full_name }}</td>
