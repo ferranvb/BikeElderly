@@ -199,15 +199,6 @@
       "email": "avc@gmail.com",
       "status": "Inactiu",
       "id": 7
-    },
-    {
-      "name": "Batukada",
-      "description": "Associació de batukades",
-      "telefon_contacte": "65879450",
-      "email": "batuka@amposta.cat",
-      "status": "Actiu",
-      "type": "Voluntaris",
-      "id": 12
     }
   ],
   "clients": [
