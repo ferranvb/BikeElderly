@@ -3,7 +3,7 @@ import { ClientsService } from '../clients/services/clients.service';
 import { environment } from 'src/environments/environment';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Appointment } from './model/appointment';
-import { Observable, map, tap } from 'rxjs';
+import { Observable, map, mergeMap, of, tap } from 'rxjs';
 
 
 @Injectable({
@@ -23,6 +23,26 @@ export class AppointmentsService {
   
 
   constructor() { }
+
+  getAppointmentsFromToday(): Observable<Appointment[]> {
+    const url: string = this.urlServer + '/appointments';
+    console.log(url);
+  
+    return this.http.get<Appointment[]>(url)
+      .pipe(
+        mergeMap(appointments => {
+          const futureAppointments = appointments.filter(appointment => new Date(appointment.day!).setHours(0,0,0,0) >= new Date().setHours(0,0,0,0));
+          console.log(futureAppointments);
+          return of(futureAppointments);
+        }),
+        map(appoint => appoint.sort(
+          (x: Appointment, y: Appointment) =>
+            new Date(x.startTime!).getTime() > new Date(y.startTime!).getTime() ? 1 : -1
+        ))
+      );
+  
+    // TODO: add error handling
+  }
 
   getAppointments(): Observable<Appointment[]> {
     const url: string =this.urlServer + '/appointments';

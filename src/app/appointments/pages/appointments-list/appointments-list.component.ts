@@ -42,7 +42,7 @@ export class AppointmentListComponent implements OnInit {
   }
 
   getAppointmentList(): void { 
-    this.appointmentsService.getAppointments()
+    this.appointmentsService.getAppointmentsFromToday()
        .subscribe( (response) => 
         { 
           this.appointmentsList = response;}

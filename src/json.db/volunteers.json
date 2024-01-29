@@ -91,7 +91,7 @@
       "poblacio": "",
       "provincia": "",
       "organitzacio": null,
-      "actiu": false,
+      "actiu": true,
       "id": 35
     },
     {
@@ -521,6 +521,120 @@
       "scheduled": true,
       "completed": false,
       "id": 30
+    },
+    {
+      "day": "2024-02-01T00:00:00.000Z",
+      "startTime": "2024-02-01T07:00:00.000Z",
+      "endTime": "2024-02-01T08:00:00.000Z",
+      "client": {
+        "id": 3,
+        "full_name": "MANUEL DEL RIO CANO"
+      },
+      "volunteer": {
+        "id": 29,
+        "full_name": "Jennie Nichols Martz"
+      },
+      "good": null,
+      "scheduled": true,
+      "completed": false,
+      "id": 31
+    },
+    {
+      "day": "2024-02-01T00:00:00.000Z",
+      "startTime": "2024-02-01T07:00:00.000Z",
+      "endTime": "2024-02-01T08:00:00.000Z",
+      "client": {
+        "id": 3,
+        "full_name": "MANUEL DEL RIO CANO"
+      },
+      "volunteer": {
+        "id": 29,
+        "full_name": "Jennie Nichols Martz"
+      },
+      "good": null,
+      "scheduled": false,
+      "completed": false,
+      "id": 32
+    },
+    {
+      "day": "2024-01-27T00:00:00.000Z",
+      "startTime": "2024-01-27T07:00:00.000Z",
+      "endTime": "2024-01-27T09:00:00.000Z",
+      "client": {
+        "id": 2,
+        "full_name": "SAUL CASTILLO ALARCON"
+      },
+      "volunteer": {
+        "id": 27,
+        "full_name": "Ferran Vidal Bort"
+      },
+      "good": {
+        "id": 2,
+        "full_name": "Eléctrica negra"
+      },
+      "scheduled": true,
+      "completed": false,
+      "id": 33
+    },
+    {
+      "day": "2024-01-27T00:00:00.000Z",
+      "startTime": "2024-01-27T08:00:00.000Z",
+      "endTime": "2024-01-27T10:00:00.000Z",
+      "client": {
+        "id": 4,
+        "full_name": "GONZALO GRAU CARRILLO"
+      },
+      "volunteer": {
+        "id": 29,
+        "full_name": "Jennie Nichols Martz"
+      },
+      "good": {
+        "id": 2,
+        "full_name": "Eléctrica negra"
+      },
+      "scheduled": false,
+      "completed": false,
+      "id": 34
+    },
+    {
+      "day": "2024-01-27T00:00:00.000Z",
+      "startTime": "2024-01-27T19:00:00.000Z",
+      "endTime": "2024-01-27T20:00:00.000Z",
+      "client": {
+        "id": 3,
+        "full_name": "MANUEL DEL RIO CANO"
+      },
+      "volunteer": {
+        "id": 27,
+        "full_name": "Ferran Vidal Bort"
+      },
+      "good": {
+        "id": 2,
+        "full_name": "Eléctrica negra"
+      },
+      "scheduled": false,
+      "completed": false,
+      "id": 35
+    },
+    {
+      "day": "2024-01-29T00:00:00.000Z",
+      "startTime": "2024-01-29T22:00:00.000Z",
+      "endTime": "2024-01-29T23:00:00.000Z",
+      "client": {
+        "id": 4,
+        "full_name": "GONZALO GRAU CARRILLO"
+      },
+      "volunteer": {
+        "id": 29,
+        "full_name": "Jennie Nichols Martz"
+      },
+      "good": {
+        "id": 1,
+        "full_name": "Cargo Bike groga"
+      },
+      "scheduled": false,
+      "completed": false,
+      "id": 36
     }
   ],
   "goods": [
