@@ -64,20 +64,6 @@
       "id": 32
     },
     {
-      "dni": "14712980A",
-      "nom": "Karen",
-      "cognom1": "Montgomery",
-      "cognom2": "Pearse",
-      "data_naixement": "18.09.2001",
-      "urlFoto": "",
-      "telefon_contacte": "071-722-5939",
-      "email": "karen.montgomery@example.com",
-      "associacio": "Athy",
-      "actiu": true,
-      "url_foto": "https://randomuser.me/api/portraits/women/7.jpg",
-      "id": 33
-    },
-    {
       "dni": "46978412F",
       "nom": "Nathaniël",
       "cognom1": "Kuypers",
@@ -295,17 +281,14 @@
       "id": 19
     },
     {
-      "day": "2024-01-28T00:00:00.000Z",
-      "startTime": "2024-01-28T08:00:00.000Z",
-      "endTime": "2024-01-28T10:00:00.000Z",
+      "day": "2024-01-31T23:00:00.000Z",
+      "startTime": "2024-02-01T11:00:00.000Z",
+      "endTime": "2024-02-01T12:00:00.000Z",
       "client": {
-        "id": 4,
-        "full_name": "GONZALO GRAU CARRILLO"
+        "id": 2,
+        "full_name": "SAUL CASTILLO ALARCON"
       },
-      "volunteer": {
-        "id": 35,
-        "full_name": "Nathaniël Kuypers Wetstraat"
-      },
+      "volunteer": null,
       "good": {
         "id": 2,
         "full_name": "Eléctrica negra"
@@ -315,326 +298,24 @@
       "id": 20
     },
     {
-      "day": "2024-01-28T00:00:00.000Z",
-      "startTime": "2024-01-28T07:30:00.000Z",
-      "endTime": "2024-01-28T09:30:00.000Z",
+      "day": "2024-02-01T23:00:00.000Z",
+      "startTime": "2024-02-02T13:00:00.000Z",
+      "endTime": "2024-02-02T14:30:00.000Z",
       "client": {
-        "id": 1,
-        "full_name": "SUSANA MENA OLMEDO"
+        "id": 4,
+        "full_name": "GONZALO GRAU CARRILLO"
       },
       "volunteer": {
-        "id": 27,
-        "full_name": "Ferran Vidal Bort"
+        "id": 35,
+        "full_name": "Nathaniël Kuypers Wetstraat"
       },
       "good": {
         "id": 1,
         "full_name": "Cargo Bike groga"
-      },
-      "scheduled": false,
-      "completed": false,
-      "id": 21
-    },
-    {
-      "day": "2024-01-28T00:00:00.000Z",
-      "startTime": "2024-01-28T17:30:00.000Z",
-      "endTime": "2024-01-28T18:30:00.000Z",
-      "client": {
-        "id": 3,
-        "full_name": "MANUEL DEL RIO CANO"
-      },
-      "volunteer": {
-        "id": 27,
-        "full_name": "Ferran Vidal Bort"
-      },
-      "good": {
-        "id": 2,
-        "full_name": "Eléctrica negra"
       },
       "scheduled": false,
       "completed": false,
       "id": 22
-    },
-    {
-      "day": "2024-01-28T00:00:00.000Z",
-      "startTime": "2024-01-28T11:00:00.000Z",
-      "endTime": "2024-01-28T12:30:00.000Z",
-      "client": {
-        "id": 3,
-        "full_name": "MANUEL DEL RIO CANO"
-      },
-      "volunteer": {
-        "id": 36,
-        "full_name": "Josefa LOPEZ DEL POZO"
-      },
-      "good": {
-        "id": 2,
-        "full_name": "Eléctrica negra"
-      },
-      "scheduled": false,
-      "completed": false,
-      "id": 23
-    },
-    {
-      "day": "2024-01-29T00:00:00.000Z",
-      "startTime": "2024-01-29T09:00:00.000Z",
-      "endTime": "2024-01-29T10:00:00.000Z",
-      "client": {
-        "id": 5,
-        "full_name": "JONATHAN ROCA CABELLO"
-      },
-      "volunteer": {
-        "id": 33,
-        "full_name": "Karen Montgomery Pearse"
-      },
-      "good": {
-        "id": 1,
-        "full_name": "Cargo Bike groga"
-      },
-      "scheduled": false,
-      "completed": false,
-      "id": 24
-    },
-    {
-      "day": "2024-01-29T00:00:00.000Z",
-      "startTime": "2024-01-29T11:30:00.000Z",
-      "endTime": "2024-01-29T13:00:00.000Z",
-      "client": {
-        "id": 2,
-        "full_name": "SAUL CASTILLO ALARCON"
-      },
-      "volunteer": {
-        "id": 29,
-        "full_name": "Jennie Nichols Martz"
-      },
-      "good": {
-        "id": 2,
-        "full_name": "Eléctrica negra"
-      },
-      "scheduled": [
-        "false"
-      ],
-      "completed": false,
-      "id": 25
-    },
-    {
-      "day": "2024-01-30T00:00:00.000Z",
-      "startTime": "2024-01-30T07:00:00.000Z",
-      "endTime": "2024-01-30T09:30:00.000Z",
-      "client": {
-        "id": 4,
-        "full_name": "GONZALO GRAU CARRILLO"
-      },
-      "volunteer": {
-        "id": 38,
-        "full_name": "BIEL GUERRERO NOGUERA"
-      },
-      "good": {
-        "id": 1,
-        "full_name": "Cargo Bike groga"
-      },
-      "scheduled": [
-        null,
-        null,
-        null
-      ],
-      "completed": false,
-      "id": 26
-    },
-    {
-      "day": "2024-01-16T00:00:00.000Z",
-      "startTime": "2024-01-16T07:00:00.000Z",
-      "endTime": "2024-01-16T09:00:00.000Z",
-      "client": {
-        "id": 1,
-        "full_name": "SUSANA MENA OLMEDO"
-      },
-      "volunteer": {
-        "id": 27,
-        "full_name": "Ferran Vidal Bort"
-      },
-      "good": {
-        "id": 1,
-        "full_name": "Cargo Bike groga"
-      },
-      "scheduled": [
-        "true"
-      ],
-      "completed": false,
-      "id": 27
-    },
-    {
-      "day": "2024-01-23T00:00:00.000Z",
-      "startTime": "2024-01-23T07:00:00.000Z",
-      "endTime": "2024-01-23T09:00:00.000Z",
-      "client": {
-        "id": 1,
-        "full_name": "SUSANA MENA OLMEDO"
-      },
-      "volunteer": {
-        "id": 27,
-        "full_name": "Ferran Vidal Bort"
-      },
-      "good": {
-        "id": 1,
-        "full_name": "Cargo Bike groga"
-      },
-      "scheduled": true,
-      "completed": false,
-      "id": 28
-    },
-    {
-      "day": "2024-01-24T00:00:00.000Z",
-      "startTime": "2024-01-24T07:00:00.000Z",
-      "endTime": "2024-01-24T09:00:00.000Z",
-      "client": {
-        "id": 4,
-        "full_name": "GONZALO GRAU CARRILLO"
-      },
-      "volunteer": {
-        "id": 33,
-        "full_name": "Karen Montgomery Pearse"
-      },
-      "good": {
-        "id": 1,
-        "full_name": "Cargo Bike groga"
-      },
-      "scheduled": false,
-      "completed": false,
-      "id": 29
-    },
-    {
-      "day": "2024-01-24T00:00:00.000Z",
-      "startTime": "2024-01-24T07:00:00.000Z",
-      "endTime": "2024-01-24T09:00:00.000Z",
-      "client": {
-        "id": 4,
-        "full_name": "GONZALO GRAU CARRILLO"
-      },
-      "volunteer": {
-        "id": 33,
-        "full_name": "Karen Montgomery Pearse"
-      },
-      "good": {
-        "id": 1,
-        "full_name": "Cargo Bike groga"
-      },
-      "scheduled": true,
-      "completed": false,
-      "id": 30
-    },
-    {
-      "day": "2024-02-01T00:00:00.000Z",
-      "startTime": "2024-02-01T07:00:00.000Z",
-      "endTime": "2024-02-01T08:00:00.000Z",
-      "client": {
-        "id": 3,
-        "full_name": "MANUEL DEL RIO CANO"
-      },
-      "volunteer": {
-        "id": 29,
-        "full_name": "Jennie Nichols Martz"
-      },
-      "good": null,
-      "scheduled": true,
-      "completed": false,
-      "id": 31
-    },
-    {
-      "day": "2024-02-01T00:00:00.000Z",
-      "startTime": "2024-02-01T07:00:00.000Z",
-      "endTime": "2024-02-01T08:00:00.000Z",
-      "client": {
-        "id": 3,
-        "full_name": "MANUEL DEL RIO CANO"
-      },
-      "volunteer": {
-        "id": 29,
-        "full_name": "Jennie Nichols Martz"
-      },
-      "good": null,
-      "scheduled": false,
-      "completed": false,
-      "id": 32
-    },
-    {
-      "day": "2024-01-27T00:00:00.000Z",
-      "startTime": "2024-01-27T07:00:00.000Z",
-      "endTime": "2024-01-27T09:00:00.000Z",
-      "client": {
-        "id": 2,
-        "full_name": "SAUL CASTILLO ALARCON"
-      },
-      "volunteer": {
-        "id": 27,
-        "full_name": "Ferran Vidal Bort"
-      },
-      "good": {
-        "id": 2,
-        "full_name": "Eléctrica negra"
-      },
-      "scheduled": true,
-      "completed": false,
-      "id": 33
-    },
-    {
-      "day": "2024-01-27T00:00:00.000Z",
-      "startTime": "2024-01-27T08:00:00.000Z",
-      "endTime": "2024-01-27T10:00:00.000Z",
-      "client": {
-        "id": 4,
-        "full_name": "GONZALO GRAU CARRILLO"
-      },
-      "volunteer": {
-        "id": 29,
-        "full_name": "Jennie Nichols Martz"
-      },
-      "good": {
-        "id": 2,
-        "full_name": "Eléctrica negra"
-      },
-      "scheduled": false,
-      "completed": false,
-      "id": 34
-    },
-    {
-      "day": "2024-01-27T00:00:00.000Z",
-      "startTime": "2024-01-27T19:00:00.000Z",
-      "endTime": "2024-01-27T20:00:00.000Z",
-      "client": {
-        "id": 3,
-        "full_name": "MANUEL DEL RIO CANO"
-      },
-      "volunteer": {
-        "id": 27,
-        "full_name": "Ferran Vidal Bort"
-      },
-      "good": {
-        "id": 2,
-        "full_name": "Eléctrica negra"
-      },
-      "scheduled": false,
-      "completed": false,
-      "id": 35
-    },
-    {
-      "day": "2024-01-29T00:00:00.000Z",
-      "startTime": "2024-01-29T22:00:00.000Z",
-      "endTime": "2024-01-29T23:00:00.000Z",
-      "client": {
-        "id": 4,
-        "full_name": "GONZALO GRAU CARRILLO"
-      },
-      "volunteer": {
-        "id": 29,
-        "full_name": "Jennie Nichols Martz"
-      },
-      "good": {
-        "id": 1,
-        "full_name": "Cargo Bike groga"
-      },
-      "scheduled": false,
-      "completed": false,
-      "id": 36
     }
   ],
   "goods": [

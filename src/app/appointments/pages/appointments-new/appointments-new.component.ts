@@ -140,12 +140,12 @@ export class AppointmentsNewComponent implements OnInit{
   }
 
   public setStartEndTimeAppointment():void {
-    
+    console.log("Data",this.formAppointment.value.day)
     this.date = this.formAppointment.value.day;
-    this.date?.setHours(1);
+    // this.date?.setHours(1);
 
     this.startTimeDefault =  new Date(this.date!.getTime());
-    this.startTimeDefault.setHours(8);
+    this.startTimeDefault.setHours(8,0,0,0);
 
     this.endTimeDefault = new Date(this.date!.getTime());
     
@@ -159,7 +159,7 @@ export class AppointmentsNewComponent implements OnInit{
   }
 
   updateEndDate() {
-    
+    console.log("Hira inici",this.formAppointment.value.startDate);
     let dateAux:Date = new Date(this.formAppointment.get('startTime')?.value);
     dateAux.setHours(dateAux.getHours() + 1);
     

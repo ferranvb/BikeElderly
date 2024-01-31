@@ -53,7 +53,10 @@ export class AppointmentListComponent implements OnInit {
     if ( appointment){
       this.appointmentsService.appointmentSelected = appointment;
       this.appointmentsService.editAppointment = true;
-      let idAux: string = '/app/appointments/new';
+      let idAux: string = '/app/appointments/edit';
+
+      // console.log(idAux, " -- ", this.appointmentsService.appointmentSelected);
+
       this.router.navigate([idAux]);
     }
   }
