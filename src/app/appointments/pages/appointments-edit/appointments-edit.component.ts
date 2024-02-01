@@ -132,6 +132,7 @@ export class AppointmentsEditComponent implements OnInit {
   updateEndDate() {
     console.log("Hira inici",this.formAppointment.value.startDate);
     let dateAux:Date = new Date(this.formAppointment.get('startTime')?.value);
+    dateAux.setHours(dateAux.getHours() + 1);
     
     this.formAppointment.patchValue({'endTime': dateAux});
     
@@ -155,7 +156,7 @@ export class AppointmentsEditComponent implements OnInit {
   }
 
   updateAppointment() {
-
+    console.log(this.formAppointment.value);
   }
 
 
