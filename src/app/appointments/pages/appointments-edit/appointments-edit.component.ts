@@ -16,6 +16,7 @@ import { GoodsService } from 'src/app/goods/services/goods.service';
 import { Appointment } from '../../model/appointment';
 import { IClient } from 'src/app/clients/model/iClient';
 import { IGood } from 'src/app/goods/model/iGood';
+import { SpiningComponent } from 'src/app/shared/components/spining/spining.component';
 
 @Component({
   selector: 'app-appointments-edit',
@@ -23,7 +24,7 @@ import { IGood } from 'src/app/goods/model/iGood';
   imports: [
     CommonModule,ReactiveFormsModule,CalendarModule,InputTextModule,
     DropdownModule,DatePretyComponent,AppointmentPanelComponent,
-    AutoCompleteModule,CheckboxModule
+    AutoCompleteModule,CheckboxModule,SpiningComponent
   ],
   templateUrl: './appointments-edit.component.html',
   styleUrl: './appointments-edit.component.css',
@@ -51,6 +52,10 @@ export class AppointmentsEditComponent implements OnInit {
   
   public listGoodsMin: IGood[] = [];
 
+  public dateDefault!: Date;
+  public startDefault!: Date;
+  public endDefault!: Date;
+
   ngOnInit() {
  
   
@@ -66,22 +71,10 @@ export class AppointmentsEditComponent implements OnInit {
 
     this.getListVolunteersMinSelection();
     this.getListGoodsMinSelection();
+    
+    this.fillFormWithAppointment( this.appointmentsService.appointmentSelected );
 
-    if ( this.clientsService.iClientSelected!=null ) {
-      this.clientName = this.clientsService.iClientSelected.full_name;
-      this.formAppointment.patchValue({'client': this.clientsService.iClientSelected});
-    }
-
-    if ( this.appointmentsService.editAppointment ) {
-      console.log('Entro per omplir form');
-      
-      this.fillFormWithAppointment( this.appointmentsService.appointmentSelected);
-      const client: IClient = this.formAppointment.get('client')?.value;
-      this.clientName = client.full_name;
-      
-      console.log("Omplert form",this.formAppointment.value);
-    }
-    this.appointmentsService.editAppointment = false;
+    
   }
 
   fillFormWithAppointment(appointmentSelected: Appointment):void {
@@ -94,7 +87,12 @@ export class AppointmentsEditComponent implements OnInit {
     this.formAppointment.patchValue({'scheduled': appointmentSelected.scheduled});
     this.formAppointment.patchValue({'completed': appointmentSelected.completed});
 
+    this.dateDefault = new Date(appointmentSelected.day!);
+    this.startDefault = new Date(appointmentSelected.startTime!);
+    this.endDefault = new Date(appointmentSelected.endTime!);
     console.log("fillFormWithAppointment", this.formAppointment.value);
+
+    console.log("Sata", this.dateDefault);
   
   }
 

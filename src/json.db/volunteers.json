@@ -316,6 +316,26 @@
       "scheduled": false,
       "completed": false,
       "id": 22
+    },
+    {
+      "day": "2024-02-02T23:00:00.000Z",
+      "startTime": "2024-02-03T07:00:00.000Z",
+      "endTime": "2024-02-03T09:00:00.000Z",
+      "client": {
+        "id": 4,
+        "full_name": "GONZALO GRAU CARRILLO"
+      },
+      "volunteer": {
+        "id": 32,
+        "full_name": "Elijah Roberts West"
+      },
+      "good": {
+        "id": 2,
+        "full_name": "Eléctrica negra"
+      },
+      "scheduled": false,
+      "completed": false,
+      "id": 23
     }
   ],
   "goods": [
