@@ -1,13 +1,13 @@
 <div class="px-4 pt-0">
-    <div class="flex align-items-center w-full bg-no-repeat bg-center border-100 border-1 border-round px-0 pt-0" >
+    <div class="flex align-items-center bg-black-alpha-20 w-full  bg-center border-100 border-1 border-round px-0 pt-0" >
         <div class="flex-grow-1 flex align-items-left justify-content-left  font-bold ml-0 px-4 py-0">
           <h2>Llistat de Cites</h2>
         </div>
         <div class="flex-grow-1 flex align-items-right justify-content-end font-bold mr-4">
-            <a [routerLink]="'/app/appointment/new'"> 
-                <!-- <p-image src="assets/images/undo-48.jpg" alt="Image" width="20"></p-image> -->
+            <!-- <a [routerLink]="'/app/appointment/new'"> 
+               
                 Nou
-            </a>
+            </a> -->
         </div>
     </div>
 
@@ -33,9 +33,11 @@
         <ng-template pTemplate="groupheader" let-appointment>
             <tr pRowGroupHeader>
                 <td colspan="8">
-                    <span class="text-orange-300 text-lg font-semibold ml-1">
-                         {{ appointment.day | date: 'dd-MM-YYYY'}}
-                    </span>    
+                    <p-chip styleClass="bg-orange-800">
+                        <span class="bg-orange-800 font-normal text-white text-xl mt-1 mb-1">
+                            {{ appointment.day | date: 'dd-MM-YYYY'}}
+                        </span>
+                    </p-chip> 
                 </td>
             </tr>
         </ng-template>

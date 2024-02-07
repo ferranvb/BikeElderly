@@ -13,12 +13,12 @@ import { ConfirmationService, MessageService } from 'primeng/api';
 import { Appointment } from '../../model/appointment';
 import { SpiningComponent } from 'src/app/shared/components/spining/spining.component';
 import { ImageModule } from 'primeng/image';
-
+import { ChipModule } from 'primeng/chip';
 @Component({
   selector: 'appointments-list',
   standalone: true,
   imports: [
-    CommonModule,TableModule,ButtonModule,TagModule, RouterLink, RouterOutlet,SpiningComponent,ImageModule
+    CommonModule,TableModule,ButtonModule,TagModule, RouterLink, RouterOutlet,SpiningComponent,ImageModule,ChipModule
   ],
   providers: [ConfirmationService, MessageService],
   templateUrl: './appointments-list.component.html',
