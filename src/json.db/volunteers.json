@@ -297,6 +297,46 @@
       "scheduled": true,
       "completed": false,
       "id": 24
+    },
+    {
+      "day": "2024-02-07T23:00:00.000Z",
+      "startTime": "2024-02-08T11:30:00.000Z",
+      "endTime": "2024-02-08T12:30:00.000Z",
+      "client": {
+        "id": 5,
+        "full_name": "JONATHAN ROCA CABELLO"
+      },
+      "volunteer": {
+        "id": 41,
+        "full_name": "FLORENCIO DE LA FUENTE TORRES"
+      },
+      "good": {
+        "id": 2,
+        "full_name": "Eléctrica negra"
+      },
+      "scheduled": true,
+      "completed": false,
+      "id": 25
+    },
+    {
+      "day": "2024-02-08T23:00:00.000Z",
+      "startTime": "2024-02-09T07:00:00.000Z",
+      "endTime": "2024-02-09T09:00:00.000Z",
+      "client": {
+        "id": 4,
+        "full_name": "GONZALO GRAU CARRILLO"
+      },
+      "volunteer": {
+        "id": 38,
+        "full_name": "ADRIÀ ALCALDE ARENAS"
+      },
+      "good": {
+        "id": 2,
+        "full_name": "Eléctrica negra"
+      },
+      "scheduled": true,
+      "completed": false,
+      "id": 26
     }
   ],
   "goods": [
