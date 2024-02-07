@@ -17,6 +17,7 @@ import { IVolunteer } from '../../model/iVolunteer';
 import { ToggleButtonModule } from 'primeng/togglebutton';
 import { OrganizationsService } from 'src/app/organizations/services/organizations.service';
 
+
 @Component({
   selector: 'voluntaris-alta',
   standalone: true,
@@ -100,6 +101,7 @@ export class VolunteersNewComponent implements OnInit {
     provincia: [''],
     organitzacio: [this.org],
     actiu: [false,[Validators.required]],
+    observacions: ['']
 
     // actiu: new FormControl(''),
     // rol: new FormControl(''),

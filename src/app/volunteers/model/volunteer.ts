@@ -4,6 +4,7 @@ import { Person } from "src/app/shared/models/Person";
 export class Volunteer extends Person{
 
   organitzacio? : IOrganization;
+  observacions? : string;
   
 
   constructor() { 

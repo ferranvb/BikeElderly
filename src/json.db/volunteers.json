@@ -108,6 +108,27 @@
       },
       "actiu": true,
       "id": 41
+    },
+    {
+      "dni": "83064573G",
+      "nom": "JOSE ALBERTO",
+      "cognom1": "MERINO",
+      "cognom2": "GRACIA",
+      "data_naixement": "05/09/1947",
+      "url_foto": "https://randomuser.me/api/portraits/men/58.jpg",
+      "telefon_contacte": "732144120",
+      "email": "josealberto_47@libero.it",
+      "adreca": "Pasaje Horno,24",
+      "codi_postal": "26136",
+      "poblacio": "Santa Eulalia Bajera",
+      "provincia": "Rioja, La",
+      "organitzacio": {
+        "id": 7,
+        "name": "Associació Veterans Ciclistes"
+      },
+      "actiu": true,
+      "observacions": "Només pot en cap de setmana",
+      "id": 42
     }
   ],
   "organizations": [

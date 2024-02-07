@@ -127,6 +127,11 @@
     <p-toggleButton id="actiu" formControlName="actiu" onLabel="Actiu" offLabel="Desactivat"  styleClass="different" [style]="{ width: '8em' }"></p-toggleButton>
    
 </div>
+<div class="formgroup-inline">
+    <label for="observacions">Observacions</label>
+    <textarea id="observacions" rows="3" cols="80" pInputTextarea formControlName="observacions" class="px-12 ml-4" ></textarea>
+     
+</div>
 <br>
 <div class="formgroup-inline">
     @if ( editForm) {
