@@ -14,4 +14,9 @@ export const CLIENTS_ROUTE: Routes = [
     'title': 'Alta Clients', 
     loadComponent: () => import('./pages/clients-new/clients-new.component').then(m=>m.ClientsNewComponent)
   },
+ 
+  { 'path': ':id',
+    'title': 'Detall Voluntari', 
+    loadComponent: () => import('./pages/clients-detail/clients-detail.component').then(m=>m.ClientsDetailComponent)
+  }
 ]

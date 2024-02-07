@@ -1,0 +1,101 @@
+<p-panel>
+    <ng-template pTemplate="header">
+      <div class="flex align-items-center w-full bg-no-repeat bg-center border-100 border-1 border-round px-0 pt-0" >
+        <div class="flex-grow-0 flex align-items-left justify-content-left  font-bold ml-0 px-4 py-0">
+          <h2>Dades Voluntari</h2>
+        </div>
+        <div class="flex-grow-1 top-0 px-4 py-1 font-bold">
+          <!-- <p-avatar image={{client?.url_foto}} styleClass="ml-" size="large" shape="circle"></p-avatar> -->
+        </div>
+        <div class="flex-grow-1 flex align-items-right justify-content-end font-bold mr-4">
+            <a [routerLink]="'/app/clients/'"> 
+                <!-- <p-image src="assets/images/undo-48.jpg" alt="Image" width="20"></p-image> -->
+                tornar
+            </a>
+        </div>
+    </div>
+    </ng-template>
+ @defer(on timer(500ms)) {  
+
+<div class="grid">
+  <div class="col">
+  <p-fieldset legend="Dades Personals">
+    <div class="formgroup-inline">
+      <div class="field grid">
+        <span class="font-bold  text-primary-800 px-0 text-2xl">{{ client?.nom }} {{client?.cognom1}} {{ client?.cognom2}}</span>
+      </div>
+    </div>
+    
+    <div class="formgroup-inline">
+      <div class="field grid text-xl">
+        Dni: <span class="font-bold text-primary-800 ml-3" >{{ client?.dni }}</span>
+      </div>
+    
+      <div class="field grid  text-xl ml-4">
+        Data Naixement : <span class="font-bold text-primary-800 ml-3"> {{ client?.data_naixement }}</span>
+      </div>
+    </div>
+    <div class="formgroup-inline">
+      <div class="field grid text-xl">
+        Telèfon contacte:<span class="font-bold text-primary-800 ml-3"> {{ client?.telefon_contacte }}</span>
+      </div>
+    </div>
+    <div class="formgroup-inline">
+      <div class="field grid  text-xl">
+          Correu electrònic:<span class="font-bold text-primary-800 ml-3"> {{ client?.email }}</span>
+      </div>
+    </div>
+  </p-fieldset>
+  <p-fieldset legend="Adreça" class="m-2">
+
+    <div class="formgroup-inline">
+      <div class="field grid text-xl">
+        Adreça:<span class="font-bold text-primary-800 ml-3"> {{ client?.adreca }}</span>
+      </div>
+    </div>
+    <div class="formgroup-inline">
+      <div class="field grid text-xl ">
+        Població:<span class="font-bold text-primary-800 ml-3"> {{ client?.poblacio }}</span>
+      </div>
+      <div class="field grid text-xl ml-4">
+        Codi Postal:<span class="font-bold text-primary-800 ml-3"> {{ client?.codi_postal }}</span>
+      </div>
+    </div>
+        <div class="field grid text-xl">
+          Província:<span class="font-bold text-primary-800 ml-3"> {{ client?.provincia }}</span>
+        </div>
+  </p-fieldset>
+</div>
+<div class="col">
+  <p-fieldset legend="Dades voluntariat" class="m-0">
+  
+
+    <div class="formgroup-inline">
+      <div class="field grid text-xl">
+          Organització:<span class="font-bold text-primary-800 ml-3"> {{ client?.organitzacio?.name }}</span>
+      </div>
+    </div>
+    <div class="formgroup-inline">
+      <div class="field grid text-xl"> Actiu: 
+          @if ( client?.actiu ) {
+            <p-image src="assets/images/green-dot.svg" alt="Image" width="10" class="ml-4"></p-image>
+        } @else {
+            <p-image src="assets/images/red-dot.svg" alt="Image" width="10"  class="ml-4"></p-image>    
+        }
+      </div>
+    </div>
+  </p-fieldset> 
+  <p-fieldset legend="Foto" class="m-2">
+    <div class="col text-align-right  justify-content-end font-bold ml-6 border-round-xl">
+      <p-image src="{{ client?.url_foto }}" alt="Image" width="150" class="text-align-right justify-content-end border-circle"></p-image>
+    </div>
+    
+  </p-fieldset> 
+  </div>
+</div>
+} @placeholder() {
+  <shared-spining></shared-spining>>
+}
+   
+</p-panel>
+
