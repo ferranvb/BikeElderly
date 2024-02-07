@@ -3,7 +3,8 @@ import { Injectable, inject } from '@angular/core';
 import { Message, MessageService } from 'primeng/api';
 import { environment } from 'src/environments/environment';
 import { Organization } from '../model/organization';
-import { Observable, tap } from 'rxjs';
+import { Observable, map, tap } from 'rxjs';
+import { IOrganization } from '../model/iOrganization';
 
 @Injectable({
   providedIn: 'root'
@@ -33,6 +34,29 @@ export class OrganizationsService {
 
     //TODO manca control errors
   }
+
+   /** GET organizations from the server */
+   getOrganizationsMin(): Observable<IOrganization[]> {
+    const url: string =this.urlServer + '/organizations';
+    console.log(url); 
+    return this.http.get<IOrganization[]>(url)
+      .pipe( map(organization => organization.map(organization => this.mapToIOrganizations(organization)))
+      );
+
+    //TODO manca control errors
+  }
+
+  public mapToIOrganizations(organization: Organization): IOrganization {
+    // const full_name = `${client.nom} ${client.cognom1} ${client.cognom2}`;
+    return {
+      id: organization.id,
+      name: organization.name
+    };
+  }
+
+
+
+
 
   /** GET organization by id. */
   getOrganizationId(id: number): Observable<Organization> {

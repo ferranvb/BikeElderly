@@ -116,14 +116,14 @@
 </p-fieldset>
 <br>
 <div class="field grid">
-    <span class="p-float-label">
-        <input id="organitzacio" pInputText type="text" formControlName="organitzacio"   class="p-inputtext-sm">
-        <label for="organitzacio">organitzacio *</label>    
+    <span class="p-label">
+        <label for="organitzacio" class="px-2 mr-4">organitzacio *</label> 
+        <p-dropdown id="organitzacio" formControlName="organitzacio" [options]="listOrganizationsMin" optionLabel="name" class="px-12 ml-4" ></p-dropdown>
+          
     </span>
 </div>
 <div class="field grid">
     <label for="actiu" class="px-2 mr-4">actiu *</label>
-    <!-- <p-checkbox formControlName="actiu" [binary]="true" inputId="actiu" class="mr-10"></p-checkbox> -->
     <p-toggleButton id="actiu" formControlName="actiu" onLabel="Actiu" offLabel="Desactivat"  styleClass="different" [style]="{ width: '8em' }"></p-toggleButton>
    
 </div>

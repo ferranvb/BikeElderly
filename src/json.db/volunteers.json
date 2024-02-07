@@ -18,13 +18,19 @@
       "cognom1": "ROSADO",
       "cognom2": "FRAILE",
       "data_naixement": "29/05/1963",
-      "urlFoto": "",
+      "url_foto": "https://randomuser.me/api/portraits/women/74.jpg",
       "telefon_contacte": "727086432",
       "email": "mariamilagros_63@lycos.es",
-      "associacio": "Montbike",
+      "adreca": "carrer Madrid, 3",
+      "codi_postal": "43870",
+      "poblacio": "Amposta",
+      "provincia": "Tarragona",
+      "organitzacio": {
+        "id": 6,
+        "name": "Ames de Casa"
+      },
       "actiu": true,
-      "id": 37,
-      "url_foto": "https://randomuser.me/api/portraits/women/84.jpg"
+      "id": 37
     },
     {
       "dni": "66125677X",
@@ -32,16 +38,76 @@
       "cognom1": "ALCALDE",
       "cognom2": "ARENAS",
       "data_naixement": "03/12/1996",
-      "url_foto": "assets/images/no-foto.jpg",
+      "url_foto": "https://randomuser.me/api/portraits/men/29.jpg",
       "telefon_contacte": "702421123",
       "email": "adria_96@caramail.com",
-      "adreca": "",
-      "codi_postal": "",
-      "poblacio": "",
-      "provincia": "",
+      "adreca": "Pasaje San Juan, 67",
+      "codi_postal": "33075",
+      "poblacio": "Villanueva de Oscos",
+      "provincia": "Asturias",
       "organitzacio": "Viure en Bici",
       "actiu": false,
       "id": 38
+    },
+    {
+      "dni": "77785614M",
+      "nom": "SERAFIN",
+      "cognom1": "SILVA",
+      "cognom2": "ARCE",
+      "data_naixement": "30/06/1998",
+      "url_foto": "https://randomuser.me/api/portraits/men/33.jpg",
+      "telefon_contacte": "621913786",
+      "email": "serafin_98@journalism.com",
+      "adreca": "Camino Miguel Hernández, 23",
+      "codi_postal": "34446",
+      "poblacio": "Villaherreros",
+      "provincia": "Palencia",
+      "organitzacio": {
+        "id": 7,
+        "name": "Associació Veterans Ciclistes"
+      },
+      "actiu": true,
+      "id": 39
+    },
+    {
+      "dni": "84212987M",
+      "nom": "PASCUAL",
+      "cognom1": "CUESTA",
+      "cognom2": "LLAMAS",
+      "data_naixement": "28/02/1994",
+      "url_foto": "https://randomuser.me/api/portraits/men/18.jpg",
+      "telefon_contacte": "765988334",
+      "email": "",
+      "adreca": "Ronda María Zambrano, 57",
+      "codi_postal": "08147",
+      "poblacio": "Olesa de Montserrat",
+      "provincia": "Barcelona",
+      "organitzacio": {
+        "id": 7,
+        "name": "Associació Veterans Ciclistes"
+      },
+      "actiu": true,
+      "id": 40
+    },
+    {
+      "dni": "49037263K",
+      "nom": "FLORENCIO",
+      "cognom1": "DE LA FUENTE",
+      "cognom2": "TORRES",
+      "data_naixement": "25/12/1965",
+      "url_foto": "https://randomuser.me/api/portraits/men/34.jpg",
+      "telefon_contacte": "786474060",
+      "email": "florencio_65@msn.com",
+      "adreca": "camino de Pedralbes, 19",
+      "codi_postal": "16023",
+      "poblacio": "Chillarón de Cuenca",
+      "provincia": "Cuenca",
+      "organitzacio": {
+        "id": 7,
+        "name": "Associació Veterans Ciclistes"
+      },
+      "actiu": true,
+      "id": 41
     }
   ],
   "organizations": [

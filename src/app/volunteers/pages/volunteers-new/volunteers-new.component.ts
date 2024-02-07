@@ -15,12 +15,7 @@ import { IOrganization } from 'src/app/organizations/model/iOrganization';
 import { FieldsetModule } from 'primeng/fieldset'
 import { IVolunteer } from '../../model/iVolunteer';
 import { ToggleButtonModule } from 'primeng/togglebutton';
-
-interface City {
-  name: string;
-  code: string;
-}
-
+import { OrganizationsService } from 'src/app/organizations/services/organizations.service';
 
 @Component({
   selector: 'voluntaris-alta',
@@ -43,6 +38,7 @@ export class VolunteersNewComponent implements OnInit {
   @Input() 
   volunteer!: Volunteer;
 
+  listOrganizationsMin!: IOrganization[];
   org!:IOrganization;
 
   public volunteersMinSelectedList!: IVolunteer[];
@@ -50,6 +46,7 @@ export class VolunteersNewComponent implements OnInit {
 
 
   private volunteersService = inject(VolunteersService);
+  private organizationsService = inject(OrganizationsService);
   private router = inject(Router);
   private fb = inject(FormBuilder);
 
@@ -57,11 +54,27 @@ export class VolunteersNewComponent implements OnInit {
   
   ngOnInit(): void {
     this.editForm = this.volunteersService.editVolunteer;
+    this.getListGoodsMinSelection();
 
     // if ( this.editForm ) {
       this.volunteerForm.patchValue(this.volunteersService.volunteerSelected);
     // }
+  }
 
+  getListGoodsMinSelection(): void {
+    
+    const _this = this;
+  
+    this.organizationsService.getOrganizationsMin()
+      .subscribe( data => {
+          this.listOrganizationsMin = data;
+        }
+      );  
+      this.organizationsService.getOrganizationsMin()
+      .subscribe( data => {
+          this.listOrganizationsMin = data;
+        }
+      );    
   }
 
   ngOnChanges() {

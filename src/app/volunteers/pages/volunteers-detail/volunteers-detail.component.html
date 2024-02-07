@@ -2,10 +2,10 @@
     <ng-template pTemplate="header">
       <div class="flex align-items-center w-full bg-no-repeat bg-center border-100 border-1 border-round px-0 pt-0" >
         <div class="flex-grow-0 flex align-items-left justify-content-left  font-bold ml-0 px-4 py-0">
-          <h2>Voluntari : <span class="text-orange-400">{{ volunteer?.nom }} {{volunteer?.cognom1}} {{ volunteer?.cognom2}}</span></h2>
+          <h2>Dades Voluntari</h2>
         </div>
         <div class="flex-grow-1 top-0 px-4 py-1 font-bold">
-          <p-avatar image={{volunteer?.url_foto}} styleClass="ml-" size="large" shape="circle"></p-avatar>
+          <!-- <p-avatar image={{volunteer?.url_foto}} styleClass="ml-" size="large" shape="circle"></p-avatar> -->
         </div>
         <div class="flex-grow-1 flex align-items-right justify-content-end font-bold mr-4">
             <a [routerLink]="'/app/volunteers/'"> 
@@ -17,30 +17,82 @@
     </ng-template>
  @defer(on timer(500ms)) {  
 
-  <div class="grid">
-    <div class="col">
-  <h3> Dni: <span class="text-orange-400" >{{ volunteer?.dni }}</span></h3>
-  
-  <h3> Nom complet: <span class="text-orange-400" >{{ volunteer?.nom }} {{ volunteer?.cognom1 }} {{ volunteer?.cognom2 }}</span></h3>
-  
-  <h3> Correu electrònic:<span class="text-orange-400"> {{ volunteer?.email }}</span></h3>
-  
-  <h3> Telèfon contacte:<span class="text-orange-400"> {{ volunteer?.telefon_contacte }}</span></h3>
+<div class="grid">
+  <div class="col">
+  <p-fieldset legend="Dades Personals">
+    <div class="formgroup-inline">
+      <div class="field grid">
+        <span class="font-bold  text-primary-800 px-0 text-2xl">{{ volunteer?.nom }} {{volunteer?.cognom1}} {{ volunteer?.cognom2}}</span>
+      </div>
+    </div>
+    
+    <div class="formgroup-inline">
+      <div class="field grid text-xl">
+        Dni: <span class="font-bold text-primary-800 ml-3" >{{ volunteer?.dni }}</span>
+      </div>
+    
+      <div class="field grid  text-xl ml-4">
+        Data Naixement : <span class="font-bold text-primary-800 ml-3"> {{ volunteer?.data_naixement }}</span>
+      </div>
+    </div>
+    <div class="formgroup-inline">
+      <div class="field grid text-xl">
+        Telèfon contacte:<span class="font-bold text-primary-800 ml-3"> {{ volunteer?.telefon_contacte }}</span>
+      </div>
+    </div>
+    <div class="formgroup-inline">
+      <div class="field grid  text-xl">
+          Correu electrònic:<span class="font-bold text-primary-800 ml-3"> {{ volunteer?.email }}</span>
+      </div>
+    </div>
+  </p-fieldset>
+  <p-fieldset legend="Adreça" class="m-2">
 
-  <h3> Actiu: 
-    @if ( volunteer?.actiu ) {
-      <p-image src="assets/images/green-dot.svg" alt="Image" width="10" class="ml-4"></p-image>
-  } @else {
-      <p-image src="assets/images/red-dot.svg" alt="Image" width="10"  class="ml-4"></p-image>    
-  }
-  </h3>
-  </div>
-  <div class="col text-align-right  justify-content-end font-bold mr-4 border-round-xl">
-    <p-image src="{{ volunteer?.url_foto }}" alt="Image" width="150" class="text-align-right justify-content-end border-circle"></p-image>
-  </div>
-  </div>
+    <div class="formgroup-inline">
+      <div class="field grid text-xl">
+        Adreça:<span class="font-bold text-primary-800 ml-3"> {{ volunteer?.adreca }}</span>
+      </div>
+    </div>
+    <div class="formgroup-inline">
+      <div class="field grid text-xl ">
+        Població:<span class="font-bold text-primary-800 ml-3"> {{ volunteer?.poblacio }}</span>
+      </div>
+      <div class="field grid text-xl ml-4">
+        Codi Postal:<span class="font-bold text-primary-800 ml-3"> {{ volunteer?.codi_postal }}</span>
+      </div>
+    </div>
+        <div class="field grid text-xl">
+          Província:<span class="font-bold text-primary-800 ml-3"> {{ volunteer?.provincia }}</span>
+        </div>
+  </p-fieldset>
+</div>
+<div class="col">
+  <p-fieldset legend="Dades voluntariat" class="m-0">
+  
 
-
+    <div class="formgroup-inline">
+      <div class="field grid text-xl">
+          Organització:<span class="font-bold text-primary-800 ml-3"> {{ volunteer?.organitzacio?.name }}</span>
+      </div>
+    </div>
+    <div class="formgroup-inline">
+      <div class="field grid text-xl"> Actiu: 
+          @if ( volunteer?.actiu ) {
+            <p-image src="assets/images/green-dot.svg" alt="Image" width="10" class="ml-4"></p-image>
+        } @else {
+            <p-image src="assets/images/red-dot.svg" alt="Image" width="10"  class="ml-4"></p-image>    
+        }
+      </div>
+    </div>
+  </p-fieldset> 
+  <p-fieldset legend="Foto" class="m-2">
+    <div class="col text-align-right  justify-content-end font-bold ml-6 border-round-xl">
+      <p-image src="{{ volunteer?.url_foto }}" alt="Image" width="150" class="text-align-right justify-content-end border-circle"></p-image>
+    </div>
+    
+  </p-fieldset> 
+  </div>
+</div>
 } @placeholder() {
   <shared-spining></shared-spining>>
 }
