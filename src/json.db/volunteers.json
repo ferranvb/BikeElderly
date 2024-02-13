@@ -30,6 +30,7 @@
         "name": "Ames de Casa"
       },
       "actiu": true,
+      "observacions": "Només pot en cap de setmana",
       "id": 37
     },
     {
@@ -47,6 +48,7 @@
       "provincia": "Asturias",
       "organitzacio": "Viure en Bici",
       "actiu": false,
+      "observacions": "Només pot en cap de setmana",
       "id": 38
     },
     {
@@ -67,6 +69,7 @@
         "name": "Associació Veterans Ciclistes"
       },
       "actiu": true,
+      "observacions": "Només pot en cap de setmana",
       "id": 39
     },
     {
@@ -87,6 +90,7 @@
         "name": "Associació Veterans Ciclistes"
       },
       "actiu": true,
+      "observacions": "Només pot en cap de setmana",
       "id": 40
     },
     {
@@ -107,6 +111,7 @@
         "name": "Associació Veterans Ciclistes"
       },
       "actiu": true,
+      "observacions": "Només pot en cap de setmana",
       "id": 41
     },
     {

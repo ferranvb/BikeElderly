@@ -9,14 +9,14 @@ import { ImageModule } from 'primeng/image';
 import { SpiningComponent } from 'src/app/shared/components/spining/spining.component';
 import { Volunteer } from '../../model/volunteer';
 import { FieldsetModule } from 'primeng/fieldset';
-
+import { ChipModule } from 'primeng/chip';
 
 @Component({
   selector: 'app-volunteer-detail',
   standalone: true,
   imports: [
     CommonModule,RouterLink,PanelModule,AvatarModule,ImageModule,SpiningComponent,
-    FieldsetModule
+    FieldsetModule,ChipModule
   ],
   templateUrl: './volunteers-detail.component.html',
   styleUrl: './volunteers-detail.component.css',

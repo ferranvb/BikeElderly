@@ -68,20 +68,27 @@
 </div>
 <div class="col">
   <p-fieldset legend="Dades voluntariat" class="m-0">
-  
+    <div class="field grid text-xl pl-0">
+      @if ( volunteer?.actiu ) {
+        <!-- <p-image src="assets/images/green-dot.svg" alt="Image" width="10" class="ml-4"></p-image> -->
+        <p-chip styleClass="bg-green-400 text-white pl-3 pr-3 pt-2 pb-2">ACTIU</p-chip>
+    } @else {
+        <!-- <p-image src="assets/images/red-dot.svg" alt="Image" width="10"  class="ml-4"></p-image> -->
+        <p-chip styleClass="bg-red-400 text-white pl-3 pr-3 pt-2 pb-2">INACTIU</p-chip>
+    }
+  </div>
 
     <div class="formgroup-inline">
       <div class="field grid text-xl">
           Organització:<span class="font-bold text-primary-800 ml-3"> {{ volunteer?.organitzacio?.name }}</span>
       </div>
+    
+    
+      
     </div>
     <div class="formgroup-inline">
-      <div class="field grid text-xl"> Actiu: 
-          @if ( volunteer?.actiu ) {
-            <p-image src="assets/images/green-dot.svg" alt="Image" width="10" class="ml-4"></p-image>
-        } @else {
-            <p-image src="assets/images/red-dot.svg" alt="Image" width="10"  class="ml-4"></p-image>    
-        }
+      <div class="field grid text-xl">
+          Observacions:<span class="font-normal text-primary-800 ml-3"> {{ volunteer?.observacions }}</span>
       </div>
     </div>
   </p-fieldset> 
