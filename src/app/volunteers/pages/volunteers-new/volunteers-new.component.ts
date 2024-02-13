@@ -57,9 +57,11 @@ export class VolunteersNewComponent implements OnInit {
     this.editForm = this.volunteersService.editVolunteer;
     this.getListGoodsMinSelection();
 
-    // if ( this.editForm ) {
+    if ( this.editForm ) {
       this.volunteerForm.patchValue(this.volunteersService.volunteerSelected);
-    // }
+
+      console.log("Edit",this.volunteerForm.value);
+    }
   }
 
   getListGoodsMinSelection(): void {

@@ -115,23 +115,7 @@
 </div>
 </p-fieldset>
 <br>
-<div class="field grid">
-    <span class="p-label">
-        <label for="organitzacio" class="px-2 mr-4">organitzacio *</label> 
-        <p-dropdown id="organitzacio" formControlName="organitzacio" [options]="listOrganizationsMin" optionLabel="name" class="px-12 ml-4" ></p-dropdown>
-          
-    </span>
-</div>
-<div class="field grid">
-    <label for="actiu" class="px-2 mr-4">actiu *</label>
-    <p-toggleButton id="actiu" formControlName="actiu" onLabel="Actiu" offLabel="Desactivat"  styleClass="different" [style]="{ width: '8em' }"></p-toggleButton>
-   
-</div>
-<div class="formgroup-inline">
-    <label for="observacions">Observacions</label>
-    <textarea id="observacions" rows="3" cols="80" pInputTextarea formControlName="observacions" class="px-12 ml-4" ></textarea>
-     
-</div>
+
 <br>
 <div class="formgroup-inline">
     @if ( editForm) {
@@ -143,6 +127,25 @@
 </form>
 </div>
 <div class="col  px-2 py-5">
+    <p-fieldset legend="Dades voluntariat">
+        <div class="field grid">
+            <span class="p-label">
+                <label for="organitzacio" class="px-2 mr-4">organitzacio *</label> 
+                <p-dropdown id="organitzacio" formControlName="organitzacio" [options]="listOrganizationsMin" optionLabel="name" class="px-12 ml-4" ></p-dropdown>
+                  
+            </span>
+        </div>
+        <div class="field grid">
+            <label for="actiu" class="px-2 mr-4">actiu *</label>
+            <p-toggleButton id="actiu" formControlName="actiu" onLabel="Actiu" offLabel="Desactivat"  styleClass="different" [style]="{ width: '8em' }"></p-toggleButton>
+           
+        </div>
+        <div class="formgroup-inline">
+            <label for="observacions">Observacions</label>
+            <textarea id="observacions" rows="3" cols="80" pInputTextarea formControlName="observacions" class="px-12 ml-4" ></textarea>
+             
+        </div>
+    </p-fieldset>
     <p-fieldset legend="Fotografia" >
         <p-image src="assets/images/no-foto.jpg" alt="Image" width="125"></p-image>
     </p-fieldset>
