@@ -1,7 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { ChangeDetectionStrategy, Component, OnInit, inject } from '@angular/core';
 import { VolunteersService } from '../../services/volunteers.service';
-import { TableModule } from 'primeng/table';
+import { Table, TableModule } from 'primeng/table';
 import { ButtonModule } from 'primeng/button';
 import { TagModule } from 'primeng/tag';
 import { ConfirmDialogModule } from 'primeng/confirmdialog';
@@ -126,6 +126,10 @@ goEdit(volunteer: Volunteer) {
     let idAux: string = '/app/volunteers/new';
     this.router.navigate([idAux]);
   }
+}
+
+clear(table: Table) {
+  table.clear();
 }
 
   // http.get('/images/dog.jpg', {responseType: 'arraybuffer'}).subscribe(buffer => {
