@@ -53,7 +53,7 @@ export class VolunteerListComponent implements OnInit {
   
   getVolunteers(): void {
     this.volunteersService.getVolunteers()
-    // .subscribe(response => console.log('data',response));
+
        .subscribe( (response) => 
         { console.log('response',response);
           this.volunteersList = response;}
@@ -91,19 +91,6 @@ export class VolunteerListComponent implements OnInit {
               console.log("Volunteer", volunteer.nom);
               this.volunteersService.deleteVolunteer(volunteer).subscribe();
             }
-            //   {
-            //     next: data => {
-            //         console.log('Delete successful');
-            //         messageAux = 'Delete successful';
-            //     },
-            //     error: error => {
-            //         console.log('There was an error!', error);
-            //         messageAux = error.message;
-            //         console.error('There was an error!', error);
-            //     }
-            // } 
-
-            // );
             this.messageService.add({ severity: 'info', summary: 'Confirmat', detail: 'Voluntari esborrat' });
         },
         reject: () => {
@@ -122,6 +109,7 @@ goDetail(volunteer: Volunteer) {
 goEdit(volunteer: Volunteer) {
   if ( volunteer){
     this.volunteersService.volunteerSelected = volunteer;
+    console.log("Volunteer selected", this.volunteersService.volunteerSelected);
     this.volunteersService.editVolunteer = true;
     let idAux: string = '/app/volunteers/new';
     this.router.navigate([idAux]);

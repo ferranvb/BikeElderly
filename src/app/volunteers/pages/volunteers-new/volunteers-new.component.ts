@@ -51,6 +51,8 @@ export class VolunteersNewComponent implements OnInit {
   private router = inject(Router);
   private fb = inject(FormBuilder);
 
+  public fotoUrl : string = "assets/images/no-foto.jpg";
+
   
   
   ngOnInit(): void {
@@ -58,7 +60,7 @@ export class VolunteersNewComponent implements OnInit {
     this.getListGoodsMinSelection();
 
     if ( this.editForm ) {
-      this.volunteerForm.patchValue(this.volunteersService.volunteerSelected);
+      this.fillFormWithVolunteer(this.volunteersService.volunteerSelected);
 
       console.log("Edit",this.volunteerForm.value);
     }
@@ -83,8 +85,9 @@ export class VolunteersNewComponent implements OnInit {
   ngOnChanges() {
     this.editForm = this.volunteersService.editVolunteer;
     if ( this.editForm ) {
-      this.volunteerForm.patchValue(this.volunteersService.volunteerSelected);
+      this.fillFormWithVolunteer(this.volunteersService.volunteerSelected);
     }
+    console.log("STOP");
   }
 
   volunteerForm = this.fb.nonNullable.group(
@@ -104,17 +107,29 @@ export class VolunteersNewComponent implements OnInit {
     organitzacio: [this.org],
     actiu: [false,[Validators.required]],
     observacions: ['']
-
-    // actiu: new FormControl(''),
-    // rol: new FormControl(''),
-    // address: new FormGroup({
-    //   street: new FormControl(''),
-    //   city: new FormControl(''),
-    //   zip: new FormControl(''),
-    // }),
   }
 
   );
+
+  fillFormWithVolunteer(volunteerSelected: Volunteer):void {
+    this.volunteerForm.patchValue({'dni': volunteerSelected.dni});
+    this.volunteerForm.patchValue({'nom': volunteerSelected.nom});
+    this.volunteerForm.patchValue({'cognom1': volunteerSelected.cognom1});
+    this.volunteerForm.patchValue({'cognom2': volunteerSelected.cognom2});
+    this.volunteerForm.patchValue({'url_foto': volunteerSelected.url_foto});
+    this.volunteerForm.patchValue({'data_naixement': volunteerSelected.data_naixement});
+    this.volunteerForm.patchValue({'telefon_contacte': volunteerSelected.telefon_contacte});
+    this.volunteerForm.patchValue({'email': volunteerSelected.email});
+    this.volunteerForm.patchValue({'adreca': volunteerSelected.adreca});
+    this.volunteerForm.patchValue({'codi_postal': volunteerSelected.codi_postal});
+    this.volunteerForm.patchValue({'poblacio': volunteerSelected.poblacio});
+    this.volunteerForm.patchValue({'organitzacio': volunteerSelected.organitzacio});
+
+    this.volunteerForm.patchValue({'actiu': volunteerSelected.actiu});
+    this.volunteerForm.patchValue({'observacions': volunteerSelected.observacions});
+    
+    this.fotoUrl = this.volunteerForm.get('url_foto')!.value;
+  }
 
   getVolunteersMinSelectedList(): void {
     this.volunteersService.getVolunteersMin()
@@ -124,11 +139,6 @@ export class VolunteersNewComponent implements OnInit {
           this.volunteersMinSelectedList = response;}
         );
   }
-
-  // onBasicUploadAuto(event: UploadEvent) {
-  //   console.log(event);
-  //   // this.messageService.add({ severity: 'info', summary: 'Success', detail: 'File Uploaded with Auto Mode' });
-  // }
 
   addVolunteer(): void {
     let volunteer: Volunteer = this.volunteerForm.value;
